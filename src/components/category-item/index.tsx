@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native'
-import { Category } from 'src/types/data'
+import { Category } from 'src/types'
 
 const CategoryItem = ({ name }: Category) => {
   return (
