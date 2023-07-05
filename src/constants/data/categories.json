@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Muffins y budines",
+    "backgroundImage": ""
+  },
+  {
+    "id": 2,
+    "name": "Tartas",
+    "backgroundImage": ""
+  },
+  {
+    "id": 3,
+    "name": "Cookies",
+    "backgroundImage": ""
+  },
+  {
+    "id": 4,
+    "name": "Panadería",
+    "backgroundImage": ""
+  },
+  {
+    "id": 5,
+    "name": "Postres fríos",
+    "backgroundImage": ""
+  },
+  {
+    "id": 6,
+    "name": "Saludables",
+    "backgroundImage": ""
+  }
+]
