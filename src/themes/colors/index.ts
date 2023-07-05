@@ -2,8 +2,8 @@ export const COLORS = {
   primary: '',
   secondary: '',
   accent: '',
-  text: '',
+  text: '#000000',
   background: '',
-  black: '',
-  white: '',
+  black: '#000000',
+  white: '#FFFFFF',
 }

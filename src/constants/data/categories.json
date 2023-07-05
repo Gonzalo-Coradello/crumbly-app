@@ -2,31 +2,31 @@
   {
     "id": 1,
     "name": "Muffins y budines",
-    "backgroundImage": ""
+    "backgroundImage": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg"
   },
   {
     "id": 2,
     "name": "Tartas",
-    "backgroundImage": ""
+    "backgroundImage": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg"
   },
   {
     "id": 3,
     "name": "Cookies",
-    "backgroundImage": ""
+    "backgroundImage": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg"
   },
   {
     "id": 4,
     "name": "Panadería",
-    "backgroundImage": ""
+    "backgroundImage": "https://www.alphafoodie.com/wp-content/uploads/2020/04/Homemade-Croissant-1-of-1-6-500x500.jpeg"
   },
   {
     "id": 5,
     "name": "Postres fríos",
-    "backgroundImage": ""
+    "backgroundImage": "https://cocinerosargentinos.com/content/recipes/500x500/recipes.19547.jpg"
   },
   {
     "id": 6,
     "name": "Saludables",
-    "backgroundImage": ""
+    "backgroundImage": "https://www.wellplated.com/wp-content/uploads/2016/03/Easy-Strawberry-Oatmeal-Bars-500x500.jpg"
   }
 ]

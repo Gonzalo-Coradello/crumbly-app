@@ -1,11 +1,16 @@
-import { View, Text } from 'react-native'
+import { Text, ImageBackground } from 'react-native'
 import { Category } from 'src/types'
 
-const CategoryItem = ({ name }: Category) => {
+import { styles } from './styles'
+const CategoryItem = ({ name, backgroundImage }: Category) => {
   return (
-    <View>
-      <Text>{name}</Text>
-    </View>
+    <ImageBackground
+      source={{ uri: backgroundImage }}
+      resizeMode="cover"
+      style={styles.backgroundImage}
+    >
+      <Text style={styles.categoryName}>{name}</Text>
+    </ImageBackground>
   )
 }
 

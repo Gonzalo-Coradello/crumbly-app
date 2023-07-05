@@ -5,9 +5,11 @@ import { styles } from './styles'
 const HomeIntro = () => {
   return (
     <View>
-      <Text>Buenos días, Isabella</Text>
-      <View>
-        <Text>¿Con qué vas a acompañar tu bebida favorita hoy? ☕</Text>
+      <Text style={styles.heading}>Buenos días, Isabella</Text>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>
+          ¿Con qué vas a acompañar tu bebida favorita hoy? ☕
+        </Text>
       </View>
       <Image
         source={{

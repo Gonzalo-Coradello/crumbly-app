@@ -5,7 +5,7 @@ import { styles } from './styles'
 
 export default function App() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <HomeIntro />
         <Categories />
