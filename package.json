@@ -1,5 +1,5 @@
 {
-  "name": "react-native-app",
+  "name": "crumbly",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
