@@ -16,6 +16,7 @@ const Categories = () => {
         contentContainerStyle={styles.categoryList}
         columnWrapperStyle={styles.columnWrapper}
         numColumns={2}
+        scrollEnabled={false}
       />
     </View>
   )
