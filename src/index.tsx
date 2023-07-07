@@ -1,18 +1,14 @@
-import { SafeAreaView, ScrollView } from 'react-native'
+import { SafeAreaView, View } from 'react-native'
 
-import { Categories, HomeIntro } from './components'
+import { Home } from './screens'
 import { styles } from './styles'
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView
-        style={styles.container}
-        showsVerticalScrollIndicator={false}
-        overScrollMode="never">
-        <HomeIntro />
-        <Categories />
-      </ScrollView>
+      <View style={styles.container}>
+        <Home />
+      </View>
     </SafeAreaView>
   )
 }
