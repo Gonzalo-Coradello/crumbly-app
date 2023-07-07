@@ -9,7 +9,6 @@ export default function App() {
   const [isCategorySelected, setIsCategorySelected] = useState(false)
 
   const handleCategory = (category: string) => {
-    console.warn(category)
     setSelectedCategory(category)
     setIsCategorySelected(!isCategorySelected)
   }
@@ -21,7 +20,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.container}>
+      <View>
         {isCategorySelected ? (
           <Recipes category={selectedCategory!} handleGoBack={handleNavigate} />
         ) : (

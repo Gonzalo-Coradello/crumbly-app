@@ -1,2 +1,5 @@
 export { default as HomeIntro } from './home-intro'
 export { default as Categories } from './categories'
+export { default as Input } from './input'
+export { default as RecipeList } from './recipe-list'
+export { default as Recipe } from './recipe-item'
