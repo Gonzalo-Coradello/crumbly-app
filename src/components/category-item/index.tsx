@@ -1,16 +1,22 @@
-import { Text, ImageBackground } from 'react-native'
+import { Text, ImageBackground, TouchableOpacity } from 'react-native'
 import { Category } from 'src/types'
 
 import { styles } from './styles'
-const CategoryItem = ({ name, backgroundImage }: Category) => {
+
+interface Props extends Category {
+  handleCategory: (category: string) => void
+}
+
+const CategoryItem = ({ name, backgroundImage, handleCategory }: Props) => {
   return (
-    <ImageBackground
-      source={{ uri: backgroundImage }}
-      resizeMode="cover"
-      style={styles.backgroundImage}
-    >
-      <Text style={styles.categoryName}>{name}</Text>
-    </ImageBackground>
+    <TouchableOpacity onPress={() => handleCategory(name)}>
+      <ImageBackground
+        source={{ uri: backgroundImage }}
+        resizeMode="cover"
+        style={styles.backgroundImage}>
+        <Text style={styles.categoryName}>{name}</Text>
+      </ImageBackground>
+    </TouchableOpacity>
   )
 }
 

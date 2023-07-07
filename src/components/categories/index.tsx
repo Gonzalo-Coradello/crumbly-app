@@ -4,14 +4,18 @@ import CATEGORIES from 'src/constants/data/categories.json'
 import { styles } from './styles'
 import CategoryItem from '../category-item'
 
-const Categories = () => {
+type Props = {
+  handleCategory: (category: string) => void
+}
+
+const Categories = ({ handleCategory }: Props) => {
   return (
     <View style={styles.categoryListContainer}>
       <Text style={styles.title}>Categorías</Text>
       <FlatList
         keyExtractor={(item) => String(item.id)}
         data={CATEGORIES}
-        renderItem={({ item }) => <CategoryItem {...item} />}
+        renderItem={({ item }) => <CategoryItem {...item} handleCategory={handleCategory} />}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.categoryList}
         columnWrapperStyle={styles.columnWrapper}
