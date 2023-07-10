@@ -17,4 +17,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  recipeList: {
+    gap: 20,
+  },
 })

@@ -31,6 +31,7 @@ const RecipeList = ({ recipes, category, handleGoBack }: Props) => {
         data={recipes}
         renderItem={({ item }) => <Recipe {...item} />}
         keyExtractor={(item) => item.id.toString()}
+        contentContainerStyle={styles.recipeList}
       />
     </View>
   )
