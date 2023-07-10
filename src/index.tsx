@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SafeAreaView, View } from 'react-native'
+import { SafeAreaView } from 'react-native'
 
 import { Home, Recipes } from './screens'
 import { styles } from './styles'
@@ -20,13 +20,11 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        {isCategorySelected ? (
-          <Recipes category={selectedCategory!} handleGoBack={handleNavigate} />
-        ) : (
-          <Home handleCategory={handleCategory} />
-        )}
-      </View>
+      {isCategorySelected ? (
+        <Recipes category={selectedCategory!} handleGoBack={handleNavigate} />
+      ) : (
+        <Home handleCategory={handleCategory} />
+      )}
     </SafeAreaView>
   )
 }

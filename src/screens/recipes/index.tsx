@@ -1,9 +1,9 @@
 import { View } from 'react-native'
 // import { Input } from 'src/components'
-import { RecipeList } from 'src/components'
+import { Header, RecipeList } from 'src/components'
 // import { COLORS } from 'src/themes'
 
-// import { styles } from './styles'
+import { styles } from './styles'
 
 // import { useState } from 'react'
 
@@ -95,7 +95,8 @@ const Recipes = ({ category, handleGoBack }: Props) => {
   const recipesByCategory = mockRecipes.filter((recipe) => recipe.category === category)
 
   return (
-    <View>
+    <View style={styles.container}>
+      <Header title={category} />
       <RecipeList recipes={recipesByCategory} handleGoBack={handleGoBack} category={category} />
     </View>
   )

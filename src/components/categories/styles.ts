@@ -8,11 +8,13 @@ export const styles = StyleSheet.create({
   },
   categoryListContainer: {
     flex: 1,
-    paddingBottom: 20,
+    paddingBottom: 25,
   },
   categoryList: {
+    flex: 1,
     gap: 25,
     alignItems: 'center',
+    paddingBottom: 25,
   },
   columnWrapper: {
     gap: 25,

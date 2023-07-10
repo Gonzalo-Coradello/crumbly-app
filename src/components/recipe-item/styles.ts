@@ -1,9 +1,18 @@
 import { StyleSheet } from 'react-native'
+import { COLORS } from 'src/themes'
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'lightblue',
+    backgroundColor: COLORS.white,
     borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   image: {
     height: 260,
@@ -14,9 +23,13 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 15,
   },
-  name: {},
+  name: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingVertical: 10,
   },
 })

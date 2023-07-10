@@ -3,7 +3,7 @@ export const COLORS = {
   secondary: '',
   accent: '',
   text: '#000000',
-  background: '',
+  background: '#EEEEEE',
   black: '#000000',
   white: '#FFFFFF',
 }
