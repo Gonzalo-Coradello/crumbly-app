@@ -10,7 +10,7 @@ interface Props extends Category {
 
 const CategoryItem = ({ name, backgroundImage, handleCategory }: Props) => {
   return (
-    <TouchableOpacity onPress={() => handleCategory(name)}>
+    <TouchableOpacity style={styles.container} onPress={() => handleCategory(name)}>
       <ImageBackground
         source={{ uri: backgroundImage }}
         resizeMode="cover"

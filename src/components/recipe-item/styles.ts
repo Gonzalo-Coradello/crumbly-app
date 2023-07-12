@@ -14,8 +14,28 @@ export const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
   },
+  tabletContainer: {
+    maxWidth: 600,
+    alignSelf: 'center',
+    backgroundColor: COLORS.white,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
   image: {
     height: 260,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+  },
+  tabletImage: {
+    width: '100%',
+    aspectRatio: '1/1',
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },

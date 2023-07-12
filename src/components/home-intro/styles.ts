@@ -4,10 +4,15 @@ export const styles = StyleSheet.create({
   heading: {
     width: 200,
   },
+  tabletHeading: {
+    width: 280,
+    marginBottom: 15,
+  },
   textContainer: {
+    maxWidth: 450,
+    alignSelf: 'center',
     backgroundColor: '#FFFFFF',
     paddingVertical: 10,
-    paddingHorizontal: 10,
     marginVertical: 20,
     borderRadius: 10,
     shadowColor: '#000',
@@ -20,11 +25,20 @@ export const styles = StyleSheet.create({
     elevation: 5,
   },
   text: {
-    maxWidth: 280,
+    maxWidth: 350,
     alignSelf: 'center',
+    paddingHorizontal: 30,
+  },
+  tabletText: {
+    maxWidth: 420,
+    alignSelf: 'center',
+    paddingHorizontal: 30,
   },
   image: {
     width: '100%',
-    height: 250,
+    minHeight: 250,
+  },
+  tabletImage: {
+    minHeight: 450,
   },
 })

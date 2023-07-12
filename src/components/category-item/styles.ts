@@ -2,9 +2,13 @@ import { StyleSheet } from 'react-native'
 import { COLORS } from 'src/themes'
 
 export const styles = StyleSheet.create({
+  container: {
+    flexBasis: '45%',
+  },
   backgroundImage: {
-    height: 150,
-    width: 150,
+    minHeight: 150,
+    minWidth: 150,
+    aspectRatio: '1/1',
     backgroundColor: COLORS.black,
     justifyContent: 'center',
     alignItems: 'center',

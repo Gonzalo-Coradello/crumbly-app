@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons'
-import { View, TouchableOpacity, FlatList } from 'react-native'
+import { View, TouchableOpacity, FlatList, useWindowDimensions } from 'react-native'
 import { RecipeItem, Typography } from 'src/components'
 import { COLORS } from 'src/themes'
 import { Recipe as RecipeType } from 'src/types'
@@ -13,8 +13,11 @@ type Props = {
 }
 
 const RecipeList = ({ recipes, category, handleGoBack }: Props) => {
+  const { width } = useWindowDimensions()
+
+  const isTablet = width > 650
   return (
-    <View style={styles.container}>
+    <View style={isTablet ? styles.tabletContainer : styles.container}>
       <TouchableOpacity style={styles.goBack} onPress={handleGoBack}>
         <Ionicons name="arrow-back" size={35} color={COLORS.black} />
       </TouchableOpacity>

@@ -1,4 +1,4 @@
-import { View, FlatList } from 'react-native'
+import { View, FlatList, useWindowDimensions } from 'react-native'
 import { Typography, CategoryItem } from 'src/components'
 import CATEGORIES from 'src/constants/data/categories.json'
 
@@ -9,9 +9,12 @@ type Props = {
 }
 
 const CategoryList = ({ handleCategory }: Props) => {
+  const { width } = useWindowDimensions()
+
+  const isTablet = width > 650
   return (
     <View style={styles.categoryListContainer}>
-      <Typography variant="bold" size={20}>
+      <Typography variant="bold" size={isTablet ? 25 : 20}>
         Categorías
       </Typography>
       <FlatList

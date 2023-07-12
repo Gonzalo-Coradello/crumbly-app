@@ -6,4 +6,9 @@ export const styles = StyleSheet.create({
     paddingTop: 20,
     paddingHorizontal: 20,
   },
+  tabletContainer: {
+    flex: 1,
+    paddingTop: 60,
+    paddingHorizontal: 60,
+  },
 })

@@ -8,6 +8,11 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 15,
     flex: 1,
   },
+  tabletContainer: {
+    flex: 1,
+    backgroundColor: COLORS.background,
+    paddingHorizontal: 60,
+  },
   goBack: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -1,4 +1,4 @@
-import { ScrollView } from 'react-native'
+import { ScrollView, useWindowDimensions } from 'react-native'
 import { CategoryList, HomeIntro } from 'src/components'
 
 import { styles } from './styles'
@@ -8,9 +8,12 @@ type Props = {
 }
 
 const Home = ({ handleCategory }: Props) => {
+  const { width } = useWindowDimensions()
+
+  const isTablet = width > 650
   return (
     <ScrollView
-      style={styles.container}
+      style={isTablet ? styles.tabletContainer : styles.container}
       showsVerticalScrollIndicator={false}
       overScrollMode="never">
       <HomeIntro />

@@ -1,18 +1,23 @@
-import { View, Image } from 'react-native'
+import { View, Image, useWindowDimensions } from 'react-native'
 import { Typography } from 'src/components'
 import { Recipe as RecipeType } from 'src/types'
 
 import { styles } from './styles'
 
 const RecipeItem = ({ name, image, author }: RecipeType) => {
+  const { width } = useWindowDimensions()
+
+  const isTablet = width > 650
   return (
-    <View style={styles.container}>
-      <Image source={{ uri: image }} style={styles.image} />
+    <View style={isTablet ? styles.tabletContainer : styles.container}>
+      <Image source={{ uri: image }} style={isTablet ? styles.tabletImage : styles.image} />
       <View style={styles.body}>
-        <Typography variant="bold">{name}</Typography>
+        <Typography variant="bold" size={isTablet ? 25 : 14}>
+          {name}
+        </Typography>
         <View style={styles.row}>
-          <Typography>{author}</Typography>
-          <Typography>Guardar</Typography>
+          <Typography size={isTablet ? 20 : 14}>{author}</Typography>
+          <Typography size={isTablet ? 20 : 14}>Guardar</Typography>
         </View>
       </View>
     </View>
