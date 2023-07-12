@@ -6,8 +6,6 @@ export const styles = StyleSheet.create({
     flexBasis: '45%',
   },
   backgroundImage: {
-    minHeight: 150,
-    minWidth: 150,
     aspectRatio: '1/1',
     backgroundColor: COLORS.black,
     justifyContent: 'center',
