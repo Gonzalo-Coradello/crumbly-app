@@ -2,8 +2,6 @@ import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   heading: {
-    fontWeight: 'normal',
-    fontSize: 30,
     width: 200,
   },
   textContainer: {
@@ -22,9 +20,6 @@ export const styles = StyleSheet.create({
     elevation: 5,
   },
   text: {
-    fontSize: 20,
-    fontWeight: '300',
-    textAlign: 'center',
     maxWidth: 280,
     alignSelf: 'center',
   },

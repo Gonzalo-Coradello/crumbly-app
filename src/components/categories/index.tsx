@@ -1,8 +1,8 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, FlatList } from 'react-native'
+import { Typography, CategoryItem } from 'src/components'
 import CATEGORIES from 'src/constants/data/categories.json'
 
 import { styles } from './styles'
-import CategoryItem from '../category-item'
 
 type Props = {
   handleCategory: (category: string) => void
@@ -11,7 +11,9 @@ type Props = {
 const Categories = ({ handleCategory }: Props) => {
   return (
     <View style={styles.categoryListContainer}>
-      <Text style={styles.title}>Categorías</Text>
+      <Typography variant="bold" size={20}>
+        Categorías
+      </Typography>
       <FlatList
         keyExtractor={(item) => String(item.id)}
         data={CATEGORIES}

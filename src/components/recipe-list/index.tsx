@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons'
-import { View, TouchableOpacity, FlatList, Text } from 'react-native'
-import { Recipe } from 'src/components'
+import { View, TouchableOpacity, FlatList } from 'react-native'
+import { Recipe, Typography } from 'src/components'
 import { COLORS } from 'src/themes'
 import { Recipe as RecipeType } from 'src/types'
 
@@ -17,7 +17,6 @@ const RecipeList = ({ recipes, category, handleGoBack }: Props) => {
     <View style={styles.container}>
       <TouchableOpacity style={styles.goBack} onPress={handleGoBack}>
         <Ionicons name="arrow-back" size={35} color={COLORS.black} />
-        {/* <Text style={styles.goBackText}>Go back</Text> */}
       </TouchableOpacity>
       {/* <Input
         borderColor={COLORS.black}
@@ -26,9 +25,10 @@ const RecipeList = ({ recipes, category, handleGoBack }: Props) => {
         handleChangeText={() => {}}
         handleCreate={() => {}}
       /> */}
-      {/* <Text style={styles.title}>{category}</Text> */}
       {recipes.length === 0 ? (
-        <Text style={styles.empty}>No hay recetas disponibles</Text>
+        <Typography size={20} centered style={styles.empty}>
+          No hay recetas disponibles
+        </Typography>
       ) : (
         <FlatList
           data={recipes}

@@ -1,4 +1,5 @@
-import { View, Text, Image } from 'react-native'
+import { View, Image } from 'react-native'
+import { Typography } from 'src/components'
 import { Recipe as RecipeType } from 'src/types'
 
 import { styles } from './styles'
@@ -8,10 +9,10 @@ const Recipe = ({ name, image, author }: RecipeType) => {
     <View style={styles.container}>
       <Image source={{ uri: image }} style={styles.image} />
       <View style={styles.body}>
-        <Text style={styles.name}>{name}</Text>
+        <Typography variant="bold">{name}</Typography>
         <View style={styles.row}>
-          <Text>{author}</Text>
-          <Text>Guardar</Text>
+          <Typography>{author}</Typography>
+          <Typography>Guardar</Typography>
         </View>
       </View>
     </View>

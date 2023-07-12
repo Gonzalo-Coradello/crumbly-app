@@ -6,9 +6,4 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     paddingVertical: 15,
   },
-  title: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
 })

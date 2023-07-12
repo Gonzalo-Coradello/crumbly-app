@@ -19,11 +19,9 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
   },
   categoryName: {
-    fontWeight: 'bold',
     color: COLORS.white,
     backgroundColor: COLORS.black,
     width: '100%',
-    textAlign: 'center',
     paddingVertical: 5,
   },
 })

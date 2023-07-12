@@ -1,4 +1,5 @@
-import { Text, ImageBackground, TouchableOpacity } from 'react-native'
+import { ImageBackground, TouchableOpacity } from 'react-native'
+import { Typography } from 'src/components'
 import { Category } from 'src/types'
 
 import { styles } from './styles'
@@ -14,7 +15,9 @@ const CategoryItem = ({ name, backgroundImage, handleCategory }: Props) => {
         source={{ uri: backgroundImage }}
         resizeMode="cover"
         style={styles.backgroundImage}>
-        <Text style={styles.categoryName}>{name}</Text>
+        <Typography variant="bold" centered style={styles.categoryName}>
+          {name}
+        </Typography>
       </ImageBackground>
     </TouchableOpacity>
   )

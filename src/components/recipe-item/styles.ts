@@ -23,10 +23,6 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 15,
   },
-  name: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',

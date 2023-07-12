@@ -2,6 +2,14 @@ import { TextInput, View } from 'react-native'
 
 import { styles } from './styles'
 
+type Props = {
+  borderColor: string
+  handleFocus: () => void
+  handleBlur: () => void
+  handleChangeText: () => void
+  handleCreate: () => void
+}
+
 const Input = ({
   borderColor,
   handleFocus,
@@ -9,7 +17,7 @@ const Input = ({
   handleChangeText,
   handleCreate,
   ...props
-}) => {
+}: Props) => {
   return (
     <View style={styles.container}>
       <TextInput

@@ -1,13 +1,18 @@
-import { Image, Text, View } from 'react-native'
+import { Image, View } from 'react-native'
+import { Typography } from 'src/components'
 
 import { styles } from './styles'
 
 const HomeIntro = () => {
   return (
     <View>
-      <Text style={styles.heading}>Buenos días, Isabella</Text>
+      <Typography size={30} style={styles.heading}>
+        Buenos días, Isabella
+      </Typography>
       <View style={styles.textContainer}>
-        <Text style={styles.text}>¿Con qué vas a acompañar tu bebida favorita hoy? ☕</Text>
+        <Typography variant="light" size={20} centered style={styles.text}>
+          ¿Con qué vas a acompañar tu bebida favorita hoy? ☕
+        </Typography>
       </View>
       <Image
         source={{
