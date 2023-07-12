@@ -1,7 +1,8 @@
 import { View } from 'react-native'
-import { Typography } from 'src/components'
+// import { Typography } from 'src/components'
 
 import { styles } from './styles'
+import Typography from '../typography'
 
 type Props = {
   title: string

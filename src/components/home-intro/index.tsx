@@ -1,7 +1,7 @@
 import { Image, View, useWindowDimensions } from 'react-native'
-import { Typography } from 'src/components'
 
 import { styles } from './styles'
+import Typography from '../typography'
 
 const HomeIntro = () => {
   const { width } = useWindowDimensions()
@@ -12,7 +12,7 @@ const HomeIntro = () => {
       <Typography
         size={isTablet ? 40 : 30}
         style={isTablet ? styles.tabletHeading : styles.heading}>
-        Buenos días, Isabella
+        Buenos días, Gonzalo
       </Typography>
       <View style={styles.textContainer}>
         <Typography

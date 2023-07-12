@@ -1,8 +1,9 @@
 import { ImageBackground, TouchableOpacity } from 'react-native'
-import { Typography } from 'src/components'
+// import { Typography } from 'src/components'
 import { Category } from 'src/types'
 
 import { styles } from './styles'
+import Typography from '../typography'
 
 interface Props extends Category {
   handleCategory: (category: string) => void

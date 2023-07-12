@@ -1,8 +1,9 @@
 import { View, FlatList, useWindowDimensions } from 'react-native'
-import { Typography, CategoryItem } from 'src/components'
 import CATEGORIES from 'src/constants/data/categories.json'
 
 import { styles } from './styles'
+import CategoryItem from '../category-item'
+import Typography from '../typography'
 
 type Props = {
   handleCategory: (category: string) => void

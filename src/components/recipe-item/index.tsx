@@ -1,8 +1,8 @@
 import { View, Image, useWindowDimensions } from 'react-native'
-import { Typography } from 'src/components'
 import { Recipe as RecipeType } from 'src/types'
 
 import { styles } from './styles'
+import Typography from '../typography'
 
 const RecipeItem = ({ name, image, author }: RecipeType) => {
   const { width } = useWindowDimensions()

@@ -1,10 +1,11 @@
 import { Ionicons } from '@expo/vector-icons'
 import { View, TouchableOpacity, FlatList, useWindowDimensions } from 'react-native'
-import { RecipeItem, Typography } from 'src/components'
 import { COLORS } from 'src/themes'
 import { Recipe as RecipeType } from 'src/types'
 
 import { styles } from './styles'
+import RecipeItem from '../recipe-item'
+import Typography from '../typography'
 
 type Props = {
   recipes: RecipeType[]
