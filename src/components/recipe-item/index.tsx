@@ -4,7 +4,7 @@ import { Recipe as RecipeType } from 'src/types'
 
 import { styles } from './styles'
 
-const Recipe = ({ name, image, author }: RecipeType) => {
+const RecipeItem = ({ name, image, author }: RecipeType) => {
   return (
     <View style={styles.container}>
       <Image source={{ uri: image }} style={styles.image} />
@@ -19,4 +19,4 @@ const Recipe = ({ name, image, author }: RecipeType) => {
   )
 }
 
-export default Recipe
+export default RecipeItem

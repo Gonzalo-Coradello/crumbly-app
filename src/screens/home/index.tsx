@@ -1,5 +1,5 @@
 import { ScrollView } from 'react-native'
-import { Categories, HomeIntro } from 'src/components'
+import { CategoryList, HomeIntro } from 'src/components'
 
 import { styles } from './styles'
 
@@ -14,7 +14,7 @@ const Home = ({ handleCategory }: Props) => {
       showsVerticalScrollIndicator={false}
       overScrollMode="never">
       <HomeIntro />
-      <Categories handleCategory={handleCategory} />
+      <CategoryList handleCategory={handleCategory} />
     </ScrollView>
   )
 }

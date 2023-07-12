@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons'
 import { View, TouchableOpacity, FlatList } from 'react-native'
-import { Recipe, Typography } from 'src/components'
+import { RecipeItem, Typography } from 'src/components'
 import { COLORS } from 'src/themes'
 import { Recipe as RecipeType } from 'src/types'
 
@@ -32,7 +32,7 @@ const RecipeList = ({ recipes, category, handleGoBack }: Props) => {
       ) : (
         <FlatList
           data={recipes}
-          renderItem={({ item }) => <Recipe {...item} />}
+          renderItem={({ item }) => <RecipeItem {...item} />}
           keyExtractor={(item) => item.id.toString()}
           contentContainerStyle={styles.recipeList}
           showsVerticalScrollIndicator={false}

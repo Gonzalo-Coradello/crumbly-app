@@ -8,7 +8,7 @@ type Props = {
   handleCategory: (category: string) => void
 }
 
-const Categories = ({ handleCategory }: Props) => {
+const CategoryList = ({ handleCategory }: Props) => {
   return (
     <View style={styles.categoryListContainer}>
       <Typography variant="bold" size={20}>
@@ -28,4 +28,4 @@ const Categories = ({ handleCategory }: Props) => {
   )
 }
 
-export default Categories
+export default CategoryList
