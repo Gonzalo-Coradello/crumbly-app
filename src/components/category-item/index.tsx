@@ -6,12 +6,12 @@ import { styles } from './styles'
 import Typography from '../typography'
 
 interface Props extends Category {
-  handleCategory: (category: string) => void
+  handleNavigate: (category: string) => void
 }
 
-const CategoryItem = ({ name, backgroundImage, handleCategory }: Props) => {
+const CategoryItem = ({ name, backgroundImage, handleNavigate }: Props) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={() => handleCategory(name)}>
+    <TouchableOpacity style={styles.container} onPress={() => handleNavigate(name)}>
       <ImageBackground
         source={{ uri: backgroundImage }}
         resizeMode="cover"

@@ -10,16 +10,15 @@ import Typography from '../typography'
 type Props = {
   recipes: RecipeType[]
   category: string
-  handleGoBack: () => void
 }
 
-const RecipeList = ({ recipes, category, handleGoBack }: Props) => {
+const RecipeList = ({ recipes, category }: Props) => {
   const { width } = useWindowDimensions()
 
   const isTablet = width > 650
   return (
     <View style={isTablet ? styles.tabletContainer : styles.container}>
-      <TouchableOpacity style={styles.goBack} onPress={handleGoBack}>
+      <TouchableOpacity style={styles.goBack}>
         <Ionicons name="arrow-back" size={35} color={COLORS.black} />
       </TouchableOpacity>
       {/* <Input

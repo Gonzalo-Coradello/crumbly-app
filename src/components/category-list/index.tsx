@@ -6,10 +6,10 @@ import CategoryItem from '../category-item'
 import Typography from '../typography'
 
 type Props = {
-  handleCategory: (category: string) => void
+  handleNavigate: (category: string) => void
 }
 
-const CategoryList = ({ handleCategory }: Props) => {
+const CategoryList = ({ handleNavigate }: Props) => {
   const { width } = useWindowDimensions()
 
   const isTablet = width > 650
@@ -21,7 +21,7 @@ const CategoryList = ({ handleCategory }: Props) => {
       <FlatList
         keyExtractor={(item) => String(item.id)}
         data={CATEGORIES}
-        renderItem={({ item }) => <CategoryItem {...item} handleCategory={handleCategory} />}
+        renderItem={({ item }) => <CategoryItem {...item} handleNavigate={handleNavigate} />}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.categoryList}
         columnWrapperStyle={styles.columnWrapper}

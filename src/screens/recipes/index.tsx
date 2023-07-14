@@ -1,15 +1,14 @@
+import type { RouteProp } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { View } from 'react-native'
-// import { Input } from 'src/components'
-import { Header, RecipeList } from 'src/components'
-// import { COLORS } from 'src/themes'
+import { RecipeList } from 'src/components'
+import { RecipesParamList } from 'src/types'
 
 import { styles } from './styles'
 
-// import { useState } from 'react'
-
-type Props = {
-  category: string
-  handleGoBack: () => void
+type RecipesNavigationProp = {
+  navigation: NativeStackNavigationProp<RecipesParamList, 'Recipes'>
+  route: RouteProp<RecipesParamList, 'Recipes'>
 }
 
 const mockRecipes = [
@@ -87,7 +86,8 @@ const mockRecipes = [
   },
 ]
 
-const Recipes = ({ category, handleGoBack }: Props) => {
+const Recipes = ({ navigation, route }: RecipesNavigationProp) => {
+  const category = route.params.category
   // const [filteredRecipes, setFilteredRecipes] = useState([])
   // const [search, setSearch] = useState('')
   // const [borderColor] = useState(COLORS.primary)
@@ -96,8 +96,8 @@ const Recipes = ({ category, handleGoBack }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Header title={category} />
-      <RecipeList recipes={recipesByCategory} handleGoBack={handleGoBack} category={category} />
+      {/* <Header title={category} /> */}
+      <RecipeList recipes={recipesByCategory} category={category} />
     </View>
   )
 }

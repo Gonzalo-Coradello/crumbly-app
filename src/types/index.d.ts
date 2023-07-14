@@ -11,3 +11,8 @@ export interface Recipe {
   author: string
   image: string
 }
+
+export type RecipesParamList = {
+  Home: { category: string }
+  Recipes: { category: string }
+}
