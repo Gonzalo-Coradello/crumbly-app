@@ -21,13 +21,6 @@ const RecipeList = ({ recipes, category }: Props) => {
       <TouchableOpacity style={styles.goBack}>
         <Ionicons name="arrow-back" size={35} color={COLORS.black} />
       </TouchableOpacity>
-      {/* <Input
-        borderColor={COLORS.black}
-        handleFocus={() => {}}
-        handleBlur={() => {}}
-        handleChangeText={() => {}}
-        handleCreate={() => {}}
-      /> */}
       {recipes.length === 0 ? (
         <Typography size={20} centered style={styles.empty}>
           No hay recetas disponibles
