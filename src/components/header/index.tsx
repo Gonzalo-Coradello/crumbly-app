@@ -1,5 +1,4 @@
 import { View } from 'react-native'
-// import { Typography } from 'src/components'
 
 import { styles } from './styles'
 import Typography from '../typography'
@@ -11,7 +10,7 @@ type Props = {
 const Header = ({ title }: Props) => {
   return (
     <View style={styles.container}>
-      <Typography variant="bold" size={25} centered>
+      <Typography variant="bold" size={20} centered>
         {title}
       </Typography>
     </View>
