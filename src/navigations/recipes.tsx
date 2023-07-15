@@ -1,5 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack'
-import { Header } from 'src/components'
+import { Header, HeaderArrow } from 'src/components'
 import { Home, RecipeDetail, Recipes } from 'src/screens'
 import { RecipesParamList } from 'src/types'
 
@@ -15,6 +15,7 @@ export default function RecipesNavigator() {
         options={({ navigation, route }) => ({
           headerTitle: () => <Header title={route.params.category} />,
           headerTitleAlign: 'center',
+          headerLeft: () => <HeaderArrow goBack={navigation.goBack} />,
         })}
       />
       <Stack.Screen
@@ -23,6 +24,7 @@ export default function RecipesNavigator() {
         options={({ navigation, route }) => ({
           headerTitle: () => <Header title={route.params.recipeName} />,
           headerTitleAlign: 'center',
+          headerLeft: () => <HeaderArrow goBack={navigation.goBack} />,
         })}
       />
     </Stack.Navigator>
