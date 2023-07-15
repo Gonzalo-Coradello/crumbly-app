@@ -10,9 +10,10 @@ import Typography from '../typography'
 type Props = {
   recipes: RecipeType[]
   category: string
+  handleNavigate: (recipeId: number, recipeName: string) => void
 }
 
-const RecipeList = ({ recipes, category }: Props) => {
+const RecipeList = ({ recipes, category, handleNavigate }: Props) => {
   const { width } = useWindowDimensions()
 
   const isTablet = width > 650
@@ -28,7 +29,7 @@ const RecipeList = ({ recipes, category }: Props) => {
       ) : (
         <FlatList
           data={recipes}
-          renderItem={({ item }) => <RecipeItem {...item} />}
+          renderItem={({ item }) => <RecipeItem {...item} handleNavigate={handleNavigate} />}
           keyExtractor={(item) => item.id.toString()}
           contentContainerStyle={styles.recipeList}
           showsVerticalScrollIndicator={false}

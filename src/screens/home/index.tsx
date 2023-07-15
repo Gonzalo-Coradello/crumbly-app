@@ -1,15 +1,8 @@
-import type { RouteProp } from '@react-navigation/native'
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { ScrollView, useWindowDimensions } from 'react-native'
 import { CategoryList, HomeIntro } from 'src/components'
-import { RecipesParamList } from 'src/types'
+import { HomeNavigationProp } from 'src/types'
 
 import { styles } from './styles'
-
-type HomeNavigationProp = {
-  navigation: NativeStackNavigationProp<RecipesParamList, 'Home'>
-  route: RouteProp<RecipesParamList, 'Home'>
-}
 
 const Home = ({ navigation, route }: HomeNavigationProp) => {
   const { width } = useWindowDimensions()
