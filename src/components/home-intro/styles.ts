@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { COLORS } from 'src/themes'
 
 export const styles = StyleSheet.create({
   heading: {
@@ -11,7 +12,7 @@ export const styles = StyleSheet.create({
   textContainer: {
     maxWidth: 450,
     alignSelf: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.primary,
     paddingVertical: 10,
     marginVertical: 20,
     borderRadius: 10,

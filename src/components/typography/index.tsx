@@ -1,4 +1,5 @@
 import { Text } from 'react-native'
+import { COLORS } from 'src/themes'
 import { FONTS } from 'src/themes/fonts'
 
 type Props = {
@@ -6,10 +7,18 @@ type Props = {
   size?: number
   centered?: boolean
   style?: object
+  color?: 'black' | 'white'
   children: React.ReactNode
 }
 
-const Typography = ({ variant = 'regular', size, centered, style, children }: Props) => {
+const Typography = ({
+  variant = 'regular',
+  size,
+  centered,
+  color = 'black',
+  style,
+  children,
+}: Props) => {
   return (
     <Text
       style={[
@@ -26,6 +35,7 @@ const Typography = ({ variant = 'regular', size, centered, style, children }: Pr
               : '',
           fontSize: size,
           textAlign: centered ? 'center' : 'left',
+          color: color === 'black' ? COLORS.text : COLORS.white,
         },
         style,
       ]}>

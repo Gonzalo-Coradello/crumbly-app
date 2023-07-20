@@ -10,7 +10,7 @@ const HomeIntro = () => {
   return (
     <View>
       <Typography
-        size={isTablet ? 40 : 30}
+        size={isTablet ? 40 : 28}
         style={isTablet ? styles.tabletHeading : styles.heading}>
         Buenos días, Gonzalo
       </Typography>
@@ -19,6 +19,7 @@ const HomeIntro = () => {
           variant="light"
           size={isTablet ? 25 : 20}
           centered
+          color="white"
           style={isTablet ? styles.tabletText : styles.text}>
           ¿Con qué vas a acompañar tu bebida favorita hoy? ☕
         </Typography>

@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   backgroundImage: {
     aspectRatio: '1/1',
     backgroundColor: COLORS.black,
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
@@ -20,10 +20,12 @@ export const styles = StyleSheet.create({
     elevation: 5,
     borderRadius: 10,
   },
-  categoryName: {
-    color: COLORS.white,
-    backgroundColor: COLORS.black,
+  nameContainer: {
     width: '100%',
+  },
+  categoryName: {
+    backgroundColor: COLORS.transparent,
+    color: COLORS.white,
     paddingVertical: 5,
   },
 })
