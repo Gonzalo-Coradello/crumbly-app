@@ -9,11 +9,10 @@ import Typography from '../typography'
 
 type Props = {
   recipes: RecipeType[]
-  category: string
   handleNavigate: (recipeId: number, recipeName: string) => void
 }
 
-const RecipeList = ({ recipes, category, handleNavigate }: Props) => {
+const RecipeList = ({ recipes, handleNavigate }: Props) => {
   const { width } = useWindowDimensions()
 
   const isTablet = width > 650

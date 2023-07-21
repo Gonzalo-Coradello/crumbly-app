@@ -1,23 +1,26 @@
 import { BlurView } from 'expo-blur'
-import { ImageBackground, TouchableOpacity } from 'react-native'
+import { ImageBackground, Platform, TouchableOpacity } from 'react-native'
 import { Category } from 'src/types'
 
 import { styles } from './styles'
 import Typography from '../typography'
 
 interface Props extends Category {
-  handleNavigate: (category: string) => void
+  handleNavigate: (categoryId: string, category: string) => void
 }
 
-const CategoryItem = ({ name, backgroundImage, handleNavigate }: Props) => {
+const CategoryItem = ({ id, name, backgroundImage, handleNavigate }: Props) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={() => handleNavigate(name)}>
+    <TouchableOpacity style={styles.container} onPress={() => handleNavigate(id, name)}>
       <ImageBackground
         source={{ uri: backgroundImage }}
         resizeMode="cover"
         style={styles.backgroundImage}>
-        <BlurView style={styles.nameContainer} intensity={5}>
-          <Typography variant="bold" size={16} centered style={styles.categoryName}>
+        <BlurView
+          style={styles.nameContainer}
+          intensity={Platform.OS === 'ios' ? 5 : 85}
+          tint="dark">
+          <Typography variant="semibold" size={16} centered style={styles.categoryName}>
             {name}
           </Typography>
         </BlurView>

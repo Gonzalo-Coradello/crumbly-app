@@ -4,6 +4,7 @@ import { COLORS } from 'src/themes'
 export const styles = StyleSheet.create({
   heading: {
     width: 200,
+    marginBottom: 30,
   },
   tabletHeading: {
     width: 280,
@@ -13,7 +14,7 @@ export const styles = StyleSheet.create({
     maxWidth: 450,
     alignSelf: 'center',
     backgroundColor: COLORS.primary,
-    paddingVertical: 10,
+    paddingVertical: 18,
     marginVertical: 20,
     borderRadius: 10,
     shadowColor: '#000',
@@ -26,9 +27,10 @@ export const styles = StyleSheet.create({
     elevation: 5,
   },
   text: {
-    maxWidth: 350,
+    maxWidth: 320,
     alignSelf: 'center',
-    paddingHorizontal: 30,
+    paddingHorizontal: 15,
+    lineHeight: 30,
   },
   tabletText: {
     maxWidth: 420,
@@ -36,8 +38,10 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 30,
   },
   image: {
-    width: '100%',
-    minHeight: 250,
+    width: 250,
+    minHeight: 200,
+    alignSelf: 'center',
+    marginBottom: 20,
   },
   tabletImage: {
     minHeight: 450,

@@ -1,7 +1,6 @@
 import { Ionicons } from '@expo/vector-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { COLORS } from 'src/themes'
-import { FONTS } from 'src/themes/fonts'
+import { COLORS, FONTS } from 'src/themes'
 
 import ProfileNavigator from './profile'
 import RecipesNavigator from './recipes'

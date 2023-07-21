@@ -7,8 +7,8 @@ import { styles } from './styles'
 const Home = ({ navigation, route }: HomeNavigationProp) => {
   const { width } = useWindowDimensions()
 
-  const handleNavigate = (category: string) => {
-    navigation.navigate('Recipes', { category })
+  const handleNavigate = (categoryId: string, category: string) => {
+    navigation.navigate('Recipes', { categoryId, category })
   }
 
   const isTablet = width > 650

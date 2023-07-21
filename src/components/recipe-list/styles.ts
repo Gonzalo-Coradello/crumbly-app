@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native'
 import { COLORS } from 'src/themes'
-import { FONTS } from 'src/themes/fonts'
 
 export const styles = StyleSheet.create({
   container: {
@@ -24,12 +23,6 @@ export const styles = StyleSheet.create({
   goBackText: {
     fontSize: 14,
     color: COLORS.text,
-  },
-  title: {
-    fontSize: 25,
-    fontFamily: FONTS.bold,
-    textAlign: 'center',
-    marginBottom: 15,
   },
   recipeList: {
     gap: 20,

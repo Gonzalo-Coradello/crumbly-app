@@ -1,9 +1,8 @@
-import { Text } from 'react-native'
-import { COLORS } from 'src/themes'
-import { FONTS } from 'src/themes/fonts'
+import { Text, TextProps } from 'react-native'
+import { FONTS, COLORS } from 'src/themes'
 
-type Props = {
-  variant?: 'bold' | 'medium' | 'regular' | 'light'
+interface Props extends TextProps {
+  variant?: 'bold' | 'semibold' | 'medium' | 'regular' | 'light' | 'extralight'
   size?: number
   centered?: boolean
   style?: object
@@ -18,6 +17,7 @@ const Typography = ({
   color = 'black',
   style,
   children,
+  ...props
 }: Props) => {
   return (
     <Text
@@ -28,17 +28,22 @@ const Typography = ({
               ? FONTS.regular
               : variant === 'bold'
               ? FONTS.bold
-              : variant === 'light'
-              ? FONTS.light
+              : variant === 'semibold'
+              ? FONTS.semibold
               : variant === 'medium'
               ? FONTS.medium
+              : variant === 'light'
+              ? FONTS.light
+              : variant === 'extralight'
+              ? FONTS.extralight
               : '',
           fontSize: size,
           textAlign: centered ? 'center' : 'left',
           color: color === 'black' ? COLORS.text : COLORS.white,
         },
         style,
-      ]}>
+      ]}
+      {...props}>
       {children}
     </Text>
   )

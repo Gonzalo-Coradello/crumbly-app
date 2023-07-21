@@ -22,7 +22,7 @@ export default function RecipesNavigator() {
         name="RecipeDetail"
         component={RecipeDetail}
         options={({ navigation, route }) => ({
-          headerTitle: () => <Header title={route.params.recipeName} />,
+          headerTitle: () => <Header title={route.params.category} />,
           headerTitleAlign: 'center',
           headerLeft: () => <HeaderArrow goBack={navigation.goBack} />,
         })}

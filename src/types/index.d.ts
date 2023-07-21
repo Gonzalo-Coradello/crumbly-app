@@ -2,7 +2,7 @@ import type { RouteProp } from '@react-navigation/native'
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 export interface Category {
-  id: number
+  id: string
   name: string
   backgroundImage: string
 }
@@ -10,15 +10,15 @@ export interface Category {
 export interface Recipe {
   id: number
   name: string
-  category: string
+  categoryId: string
   author: string
   image: string
 }
 
 export type RecipesParamList = {
   Home: { category: string }
-  Recipes: { category: string }
-  RecipeDetail: { recipeId: number; recipeName: string }
+  Recipes: { categoryId: string; category: string }
+  RecipeDetail: { recipeId: number; category: string }
 }
 
 export type HomeNavigationProp = {

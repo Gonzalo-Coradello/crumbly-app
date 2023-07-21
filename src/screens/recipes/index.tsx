@@ -6,16 +6,16 @@ import { RecipesNavigationProp } from 'src/types'
 import { styles } from './styles'
 
 const Recipes = ({ navigation, route }: RecipesNavigationProp) => {
-  const category = route.params.category
-  const recipesByCategory = RECIPES.filter((recipe) => recipe.category === category)
+  const { categoryId, category } = route.params
+  const recipesByCategory = RECIPES.filter((recipe) => recipe.categoryId === categoryId)
 
   const handleNavigate = (recipeId: number, recipeName: string) => {
-    navigation.navigate('RecipeDetail', { recipeId, recipeName })
+    navigation.navigate('RecipeDetail', { recipeId, category })
   }
 
   return (
     <View style={styles.container}>
-      <RecipeList recipes={recipesByCategory} category={category} handleNavigate={handleNavigate} />
+      <RecipeList recipes={recipesByCategory} handleNavigate={handleNavigate} />
     </View>
   )
 }

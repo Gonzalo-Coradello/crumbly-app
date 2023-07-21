@@ -1,8 +1,10 @@
 import { View, Text } from 'react-native'
 
+import { styles } from './styles'
+
 const Profile = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Profile</Text>
     </View>
   )

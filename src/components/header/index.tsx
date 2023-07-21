@@ -10,7 +10,7 @@ type Props = {
 const Header = ({ title }: Props) => {
   return (
     <View style={styles.container}>
-      <Typography variant="bold" size={20} centered>
+      <Typography variant="bold" size={20} centered numberOfLines={1} ellipsizeMode="tail">
         {title}
       </Typography>
     </View>

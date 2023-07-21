@@ -6,7 +6,7 @@ import CategoryItem from '../category-item'
 import Typography from '../typography'
 
 type Props = {
-  handleNavigate: (category: string) => void
+  handleNavigate: (categoryId: string, category: string) => void
 }
 
 const CategoryList = ({ handleNavigate }: Props) => {
@@ -14,20 +14,22 @@ const CategoryList = ({ handleNavigate }: Props) => {
 
   const isTablet = width > 650
   return (
-    <View style={styles.categoryListContainer}>
-      <Typography variant="bold" size={isTablet ? 25 : 20}>
+    <View style={styles.container}>
+      <Typography variant="regular" size={isTablet ? 25 : 24}>
         Categorías
       </Typography>
-      <FlatList
-        keyExtractor={(item) => String(item.id)}
-        data={CATEGORIES}
-        renderItem={({ item }) => <CategoryItem {...item} handleNavigate={handleNavigate} />}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.categoryList}
-        columnWrapperStyle={styles.columnWrapper}
-        numColumns={2}
-        scrollEnabled={false}
-      />
+      <View style={styles.categoryListContainer}>
+        <FlatList
+          keyExtractor={(item) => String(item.id)}
+          data={CATEGORIES}
+          renderItem={({ item }) => <CategoryItem {...item} handleNavigate={handleNavigate} />}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.categoryList}
+          columnWrapperStyle={styles.columnWrapper}
+          numColumns={2}
+          scrollEnabled={false}
+        />
+      </View>
     </View>
   )
 }

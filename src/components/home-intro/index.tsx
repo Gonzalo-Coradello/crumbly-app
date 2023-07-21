@@ -16,12 +16,12 @@ const HomeIntro = () => {
       </Typography>
       <View style={styles.textContainer}>
         <Typography
-          variant="light"
+          variant="extralight"
           size={isTablet ? 25 : 20}
           centered
           color="white"
           style={isTablet ? styles.tabletText : styles.text}>
-          ¿Con qué vas a acompañar tu bebida favorita hoy? ☕
+          ¿Con qué vas a acompañar tu bebida favorita hoy?
         </Typography>
       </View>
       <Image

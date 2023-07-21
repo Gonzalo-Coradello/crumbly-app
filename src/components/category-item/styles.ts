@@ -4,9 +4,12 @@ import { COLORS } from 'src/themes'
 export const styles = StyleSheet.create({
   container: {
     flexBasis: '45%',
+    borderRadius: 8,
+    overflow: 'hidden',
   },
   backgroundImage: {
-    aspectRatio: '1/1',
+    // aspectRatio: '1/1',
+    height: 175,
     backgroundColor: COLORS.black,
     justifyContent: 'flex-end',
     alignItems: 'center',
@@ -22,10 +25,14 @@ export const styles = StyleSheet.create({
   },
   nameContainer: {
     width: '100%',
+    height: 40,
+    backgroundColor: COLORS.transparent,
+    justifyContent: 'center',
   },
   categoryName: {
-    backgroundColor: COLORS.transparent,
     color: COLORS.white,
-    paddingVertical: 5,
+    paddingHorizontal: 10,
+    lineHeight: 16,
+    paddingTop: 5,
   },
 })
