@@ -1,3 +1,4 @@
+import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons'
 import { View, Image, useWindowDimensions, TouchableOpacity } from 'react-native'
 import { Recipe } from 'src/types'
 
@@ -22,7 +23,11 @@ const RecipeItem = ({ id, name, image, author, handleNavigate }: Props) => {
           </Typography>
           <View style={styles.row}>
             <Typography size={isTablet ? 20 : 14}>{author}</Typography>
-            <Typography size={isTablet ? 20 : 14}>Guardar</Typography>
+            <View style={styles.iconsContainer}>
+              <MaterialCommunityIcons name="share-outline" size={28} />
+              <Ionicons name="bookmark-outline" size={25} />
+              {/* <Ionicons name="add-circle-outline" size={25} /> */}
+            </View>
           </View>
         </View>
       </TouchableOpacity>

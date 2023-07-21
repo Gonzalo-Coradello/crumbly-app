@@ -48,4 +48,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: 10,
   },
+  iconsContainer: {
+    flexDirection: 'row',
+  },
 })
