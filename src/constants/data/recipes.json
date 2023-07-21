@@ -3,69 +3,69 @@
     "id": 1,
     "name": "Muffin de chocolate",
     "categoryId": "1",
-    "author": "Equipo Crumbly",
+    "author": "Crumbly",
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [{ "ingredient": "", "quantity": 1 }],
     "steps": ["step 1", "step 2"],
     "rating": 9,
-    "ratings": ["ratingId1", "ratingId2"],
+    "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
   {
     "id": 2,
     "name": "Muffin de chocolate",
     "categoryId": "1",
-    "author": "Equipo Crumbly",
+    "author": "Crumbly",
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg"
   },
   {
     "id": 3,
     "name": "Muffin de chocolate",
     "categoryId": "1",
-    "author": "Equipo Crumbly",
+    "author": "Crumbly",
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg"
   },
   {
     "id": 4,
     "name": "Tarta de manzanas",
     "categoryId": "5",
-    "author": "Equipo Crumbly",
+    "author": "Crumbly",
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg"
   },
   {
     "id": 5,
     "name": "Tarta de manzanas",
     "categoryId": "5",
-    "author": "Equipo Crumbly",
+    "author": "Crumbly",
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg"
   },
   {
     "id": 6,
     "name": "Tarta de manzanas",
     "categoryId": "5",
-    "author": "Equipo Crumbly",
+    "author": "Crumbly",
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg"
   },
   {
     "id": 7,
     "name": "Cookies",
     "categoryId": "2",
-    "author": "Equipo Crumbly",
+    "author": "Crumbly",
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg"
   },
   {
     "id": 8,
     "name": "Cookies",
     "categoryId": "2",
-    "author": "Equipo Crumbly",
+    "author": "Crumbly",
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg"
   },
   {
     "id": 9,
     "name": "Cookies",
     "categoryId": "2",
-    "author": "Equipo Crumbly",
+    "author": "Crumbly",
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg"
   }
 ]

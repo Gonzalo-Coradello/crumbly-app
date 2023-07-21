@@ -13,6 +13,33 @@ export interface Recipe {
   categoryId: string
   author: string
   image: string
+  description: string
+  ingredients: { ingredient: string; quantity: number }[]
+  steps: string[]
+  rating: number
+  reviews: string[]
+  createdAt: date | string
+}
+
+export interface Review {
+  id: number | string
+  recipeId: number | string
+  userId: number | string
+  rating: number
+  review: string
+  images: string[]
+  createdAt: date | string
+  likes: number
+}
+
+export interface User {
+  id: number | string
+  email: string
+  password: string
+  profile: string // url
+  recipes: string[] //recipeId
+  favorites: string[] //recipeId
+  lists: { name: string; recipes: string[] }[] // recipes: ["recipeId", "recipeId"]
 }
 
 export type RecipesParamList = {

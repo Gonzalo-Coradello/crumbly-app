@@ -4,7 +4,7 @@
     "email": "",
     "password": "",
     "profile": "imageurl",
-    "recipes": "recipeId",
+    "recipes": ["recipeId"],
     "favorites": ["recipeId1", "recipeId2"],
     "lists": {
       "name": "budines",
