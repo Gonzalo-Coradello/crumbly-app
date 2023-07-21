@@ -1,7 +1,9 @@
 import { useFonts } from 'expo-font'
 import { ActivityIndicator, SafeAreaView, View } from 'react-native'
+import { Provider } from 'react-redux'
 
 import RootNavigator from './navigations'
+import store from './store'
 import { styles } from './styles'
 
 export default function App() {
@@ -27,8 +29,10 @@ export default function App() {
     )
 
   return (
-    <SafeAreaView style={styles.container}>
-      <RootNavigator />
-    </SafeAreaView>
+    <Provider store={store}>
+      <SafeAreaView style={styles.container}>
+        <RootNavigator />
+      </SafeAreaView>
+    </Provider>
   )
 }

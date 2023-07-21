@@ -1,13 +1,14 @@
 import { View } from 'react-native'
+import { useSelector } from 'react-redux'
 import { RecipeList } from 'src/components'
-import RECIPES from 'src/constants/data/recipes.json'
-import { RecipesNavigationProp } from 'src/types'
+import { RecipesNavigationProp, Recipe } from 'src/types'
 
 import { styles } from './styles'
 
 const Recipes = ({ navigation, route }: RecipesNavigationProp) => {
   const { categoryId, category } = route.params
-  const recipesByCategory = RECIPES.filter((recipe) => recipe.categoryId === categoryId)
+  const recipes: Recipe[] = useSelector(({ recipes }) => recipes.data)
+  const recipesByCategory = recipes.filter((recipe) => recipe.categoryId === categoryId)
 
   const handleNavigate = (recipeId: number, recipeName: string) => {
     navigation.navigate('RecipeDetail', { recipeId, category })

@@ -1,5 +1,6 @@
 import { View, FlatList, useWindowDimensions } from 'react-native'
-import CATEGORIES from 'src/constants/data/categories.json'
+import { useSelector } from 'react-redux'
+import { Category } from 'src/types'
 
 import { styles } from './styles'
 import CategoryItem from '../category-item'
@@ -10,6 +11,7 @@ type Props = {
 }
 
 const CategoryList = ({ handleNavigate }: Props) => {
+  const categories: Category[] = useSelector(({ categories }) => categories.data)
   const { width } = useWindowDimensions()
 
   const isTablet = width > 650
@@ -21,7 +23,7 @@ const CategoryList = ({ handleNavigate }: Props) => {
       <View style={styles.categoryListContainer}>
         <FlatList
           keyExtractor={(item) => String(item.id)}
-          data={CATEGORIES}
+          data={categories}
           renderItem={({ item }) => <CategoryItem {...item} handleNavigate={handleNavigate} />}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.categoryList}
