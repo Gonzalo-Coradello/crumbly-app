@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "email": "",
+    "password": "",
+    "profile": "imageurl",
+    "recipes": "recipeId",
+    "favorites": ["recipeId1", "recipeId2"],
+    "lists": {
+      "name": "budines",
+      "recipes": ["recipeId1", "recipeId2"]
+    }
+  }
+]

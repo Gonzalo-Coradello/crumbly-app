@@ -1,32 +1,37 @@
 [
   {
-    "id": 1,
-    "name": "Muffins y budines",
-    "backgroundImage": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg"
+    "id": "1",
+    "name": "Muffins, budines y bizcochos",
+    "backgroundImage": "https://www.figma.com/file/o05ZQiFEvYvdjrZPbikjpn/image/6c1723208bc42dac78fc9452e3ee3f90bb62ee9d"
   },
   {
-    "id": 2,
-    "name": "Tartas",
-    "backgroundImage": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg"
+    "id": "2",
+    "name": "Galletas",
+    "backgroundImage": "https://www.figma.com/file/o05ZQiFEvYvdjrZPbikjpn/image/11531222ed7f13a9bc9f2da5a3a1c23d823bdb27"
   },
   {
-    "id": 3,
-    "name": "Cookies",
-    "backgroundImage": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg"
+    "id": "3",
+    "name": "Waffles y crepes",
+    "backgroundImage": "https://www.gourmet.cl/wp-content/uploads/2019/04/Waffles-editada.jpg"
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "Panadería",
     "backgroundImage": "https://www.alphafoodie.com/wp-content/uploads/2020/04/Homemade-Croissant-1-of-1-6-500x500.jpeg"
   },
   {
-    "id": 5,
-    "name": "Postres fríos",
+    "id": "5",
+    "name": "Tortas y postres",
+    "backgroundImage": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Sin azúcar",
     "backgroundImage": "https://www.cronista.com/files/image/307/307256/5ffe2f88d2a71_934_695!.jpg?s=6217bd05f06b1335a98deca25fd5d6a7&d=1654442327"
   },
   {
-    "id": 6,
-    "name": "Saludables",
-    "backgroundImage": "https://www.wellplated.com/wp-content/uploads/2016/03/Easy-Strawberry-Oatmeal-Bars-500x500.jpg"
+    "id": "7",
+    "name": "Sin gluten",
+    "backgroundImage": "https://gastronomiaycia.republica.com/wp-content/uploads/2020/05/15recetasdiaceliaco2020-680x515.jpg"
   }
 ]

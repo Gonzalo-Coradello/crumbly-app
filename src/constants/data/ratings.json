@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "recipeId": "",
+    "userId": "",
+    "rating": 7,
+    "review": "Me encantó la receta...",
+    "images": ["url"],
+    "createdAt": "date",
+    "likes": 3
+  }
+]
