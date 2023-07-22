@@ -1,10 +1,11 @@
-import { FontAwesome, Ionicons } from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons'
 import { Image, ScrollView, View } from 'react-native'
 import { useSelector } from 'react-redux'
-import { COLORS } from 'src/themes'
 import { Recipe } from 'src/types'
 
 import { styles } from './styles'
+import RecipeRater from '../recipe-rater'
+import RecipeRating from '../recipe-rating'
 import Typography from '../typography'
 
 type Props = {
@@ -14,6 +15,8 @@ type Props = {
 const RecipeDetail = ({ recipeId }: Props) => {
   const recipes: Recipe[] = useSelector(({ recipes }) => recipes.data)
   const recipe = recipes.find((recipe) => recipe.id === recipeId)
+
+  if (!recipe) return null
 
   return (
     <ScrollView
@@ -26,13 +29,7 @@ const RecipeDetail = ({ recipeId }: Props) => {
           {recipe?.name}
         </Typography>
         <View style={styles.row}>
-          <View style={styles.stars}>
-            <FontAwesome name="star" size={30} color={COLORS.yellow} />
-            <FontAwesome name="star" size={30} color={COLORS.yellow} />
-            <FontAwesome name="star" size={30} color={COLORS.yellow} />
-            <FontAwesome name="star" size={30} color={COLORS.yellow} />
-            <FontAwesome name="star-half-full" size={30} color={COLORS.yellow} />
-          </View>
+          <RecipeRating rating={recipe.rating} />
           <View style={styles.icons}>
             <Ionicons name="arrow-redo-outline" size={25} />
             <Ionicons name="bookmark-outline" size={25} />
@@ -70,13 +67,7 @@ const RecipeDetail = ({ recipeId }: Props) => {
         </View>
         <View>
           <Typography>¿Te ha gustado la receta?</Typography>
-          <View style={styles.stars}>
-            <FontAwesome name="star-o" size={30} color={COLORS.yellow} />
-            <FontAwesome name="star-o" size={30} color={COLORS.yellow} />
-            <FontAwesome name="star-o" size={30} color={COLORS.yellow} />
-            <FontAwesome name="star-o" size={30} color={COLORS.yellow} />
-            <FontAwesome name="star-o" size={30} color={COLORS.yellow} />
-          </View>
+          <RecipeRater />
         </View>
         {recipe?.reviews?.length ? (
           <View>
