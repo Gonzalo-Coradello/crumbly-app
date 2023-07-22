@@ -1,5 +1,6 @@
 import { Ionicons } from '@expo/vector-icons'
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, View } from 'react-native'
+import { COLORS } from 'src/themes'
 
 import { styles } from './styles'
 
@@ -10,7 +11,8 @@ type Props = {
 const HeaderArrow = ({ goBack }: Props) => {
   return (
     <TouchableOpacity style={styles.iconContainer} onPress={goBack}>
-      <Ionicons name="arrow-back" size={30} />
+      <Ionicons name="arrow-back-circle-outline" size={30} color={COLORS.black} />
+      <View style={styles.arrowBackground} />
     </TouchableOpacity>
   )
 }

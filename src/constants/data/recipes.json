@@ -6,8 +6,11 @@
     "author": "Crumbly",
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "", "quantity": 1 }],
-    "steps": ["step 1", "step 2"],
+    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "steps": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+    ],
     "rating": 9,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
@@ -19,8 +22,11 @@
     "author": "Crumbly",
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "", "quantity": 1 }],
-    "steps": ["step 1", "step 2"],
+    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "steps": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+    ],
     "rating": 9,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
@@ -32,8 +38,11 @@
     "author": "Crumbly",
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "", "quantity": 1 }],
-    "steps": ["step 1", "step 2"],
+    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "steps": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+    ],
     "rating": 9,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
@@ -45,8 +54,11 @@
     "author": "Crumbly",
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "", "quantity": 1 }],
-    "steps": ["step 1", "step 2"],
+    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "steps": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+    ],
     "rating": 9,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
@@ -58,8 +70,11 @@
     "author": "Crumbly",
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "", "quantity": 1 }],
-    "steps": ["step 1", "step 2"],
+    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "steps": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+    ],
     "rating": 9,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
@@ -71,8 +86,11 @@
     "author": "Crumbly",
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "", "quantity": 1 }],
-    "steps": ["step 1", "step 2"],
+    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "steps": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+    ],
     "rating": 9,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
@@ -84,8 +102,11 @@
     "author": "Crumbly",
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "", "quantity": 1 }],
-    "steps": ["step 1", "step 2"],
+    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "steps": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+    ],
     "rating": 9,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
@@ -97,8 +118,11 @@
     "author": "Crumbly",
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "", "quantity": 1 }],
-    "steps": ["step 1", "step 2"],
+    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "steps": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+    ],
     "rating": 9,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
@@ -110,8 +134,11 @@
     "author": "Crumbly",
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "", "quantity": 1 }],
-    "steps": ["step 1", "step 2"],
+    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "steps": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+    ],
     "rating": 9,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"

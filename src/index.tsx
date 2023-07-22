@@ -1,5 +1,5 @@
 import { useFonts } from 'expo-font'
-import { ActivityIndicator, SafeAreaView, View } from 'react-native'
+import { ActivityIndicator, Platform, StatusBar, View } from 'react-native'
 import { Provider } from 'react-redux'
 
 import RootNavigator from './navigations'
@@ -30,9 +30,8 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <SafeAreaView style={styles.container}>
-        <RootNavigator />
-      </SafeAreaView>
+      <StatusBar barStyle={Platform.OS === 'android' ? 'default' : 'dark-content'} />
+      <RootNavigator />
     </Provider>
   )
 }

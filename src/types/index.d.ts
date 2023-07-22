@@ -14,7 +14,7 @@ export interface Recipe {
   author: string
   image: string
   description: string
-  ingredients: { ingredient: string; quantity: number }[]
+  ingredients: { ingredient: string; quantity: number; unit: string }[]
   steps: string[]
   rating: number
   reviews: string[]

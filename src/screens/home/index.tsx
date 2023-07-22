@@ -1,4 +1,4 @@
-import { ScrollView, useWindowDimensions } from 'react-native'
+import { SafeAreaView, ScrollView, useWindowDimensions } from 'react-native'
 import { CategoryList, HomeIntro } from 'src/components'
 import { HomeNavigationProp } from 'src/types'
 
@@ -13,13 +13,16 @@ const Home = ({ navigation, route }: HomeNavigationProp) => {
 
   const isTablet = width > 650
   return (
-    <ScrollView
-      style={isTablet ? styles.tabletContainer : styles.container}
-      showsVerticalScrollIndicator={false}
-      overScrollMode="never">
-      <HomeIntro />
-      <CategoryList handleNavigate={handleNavigate} />
-    </ScrollView>
+    <>
+      <SafeAreaView style={styles.safeArea} />
+      <ScrollView
+        style={isTablet ? styles.tabletContainer : styles.container}
+        showsVerticalScrollIndicator={false}
+        overScrollMode="never">
+        <HomeIntro />
+        <CategoryList handleNavigate={handleNavigate} />
+      </ScrollView>
+    </>
   )
 }
 

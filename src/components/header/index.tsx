@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { SafeAreaView } from 'react-native'
 
 import { styles } from './styles'
 import Typography from '../typography'
@@ -9,11 +9,17 @@ type Props = {
 
 const Header = ({ title }: Props) => {
   return (
-    <View style={styles.container}>
-      <Typography variant="bold" size={20} centered numberOfLines={1} ellipsizeMode="tail">
+    <SafeAreaView style={styles.container}>
+      <Typography
+        variant="bold"
+        size={20}
+        centered
+        numberOfLines={1}
+        ellipsizeMode="tail"
+        style={styles.header}>
         {title}
       </Typography>
-    </View>
+    </SafeAreaView>
   )
 }
 
