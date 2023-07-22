@@ -11,7 +11,7 @@
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 9,
+    "rating": 4.5,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -27,7 +27,7 @@
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 9,
+    "rating": 4.5,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -43,7 +43,7 @@
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 9,
+    "rating": 4.5,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -59,7 +59,7 @@
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 9,
+    "rating": 4.5,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -75,7 +75,7 @@
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 9,
+    "rating": 4.5,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -91,7 +91,7 @@
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 9,
+    "rating": 4.5,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -107,7 +107,7 @@
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 9,
+    "rating": 4.5,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -123,12 +123,12 @@
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 9,
+    "rating": 4.5,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
   {
-    "id": 9,
+    "id": 4.5,
     "name": "Cookies",
     "categoryId": "2",
     "author": "Crumbly",
@@ -139,7 +139,7 @@
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 9,
+    "rating": 4.5,
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   }

@@ -1,4 +1,4 @@
-import { FontAwesome, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons'
+import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import { Image, ScrollView, View } from 'react-native'
 import { useSelector } from 'react-redux'
 import { COLORS } from 'src/themes'
@@ -34,7 +34,7 @@ const RecipeDetail = ({ recipeId }: Props) => {
             <FontAwesome name="star-half-full" size={30} color={COLORS.yellow} />
           </View>
           <View style={styles.icons}>
-            <MaterialCommunityIcons name="share-outline" size={28} />
+            <Ionicons name="arrow-redo-outline" size={25} />
             <Ionicons name="bookmark-outline" size={25} />
           </View>
         </View>
