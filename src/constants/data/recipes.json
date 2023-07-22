@@ -6,12 +6,16 @@
     "author": "Crumbly",
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "ingredients": [
+      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
+      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
+      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+    ],
     "steps": [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 4.5,
+    "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -22,12 +26,16 @@
     "author": "Crumbly",
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "ingredients": [
+      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
+      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
+      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+    ],
     "steps": [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 4.5,
+    "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -38,12 +46,16 @@
     "author": "Crumbly",
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "ingredients": [
+      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
+      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
+      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+    ],
     "steps": [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 4.5,
+    "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -54,12 +66,16 @@
     "author": "Crumbly",
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "ingredients": [
+      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
+      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
+      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+    ],
     "steps": [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 4.5,
+    "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -70,12 +86,16 @@
     "author": "Crumbly",
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "ingredients": [
+      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
+      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
+      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+    ],
     "steps": [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 4.5,
+    "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -86,12 +106,16 @@
     "author": "Crumbly",
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "ingredients": [
+      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
+      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
+      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+    ],
     "steps": [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 4.5,
+    "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -102,12 +126,16 @@
     "author": "Crumbly",
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "ingredients": [
+      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
+      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
+      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+    ],
     "steps": [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 4.5,
+    "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -118,12 +146,16 @@
     "author": "Crumbly",
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "ingredients": [
+      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
+      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
+      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+    ],
     "steps": [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 4.5,
+    "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   },
@@ -134,12 +166,16 @@
     "author": "Crumbly",
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
-    "ingredients": [{ "ingredient": "harina", "quantity": 250, "unit": "gr" }],
+    "ingredients": [
+      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
+      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
+      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+    ],
     "steps": [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
     ],
-    "rating": 4.5,
+    "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
     "createdAt": "date"
   }

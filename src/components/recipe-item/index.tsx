@@ -3,6 +3,7 @@ import { View, Image, useWindowDimensions, TouchableOpacity } from 'react-native
 import { Recipe } from 'src/types'
 
 import { styles } from './styles'
+import ProfileCircle from '../profile-circle'
 import Typography from '../typography'
 
 interface Props extends Recipe {
@@ -22,7 +23,10 @@ const RecipeItem = ({ id, name, image, author, handleNavigate }: Props) => {
             {name}
           </Typography>
           <View style={styles.row}>
-            <Typography size={isTablet ? 20 : 14}>{author}</Typography>
+            <View style={styles.profile}>
+              <ProfileCircle size={30} />
+              <Typography size={isTablet ? 20 : 14}>{author}</Typography>
+            </View>
             <View style={styles.iconsContainer}>
               <Ionicons name="arrow-redo-outline" size={25} />
               <Ionicons name="bookmark-outline" size={25} />

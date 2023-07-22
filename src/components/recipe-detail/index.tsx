@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { Recipe } from 'src/types'
 
 import { styles } from './styles'
+import ProfileCircle from '../profile-circle'
 import RecipeRater from '../recipe-rater'
 import RecipeRating from '../recipe-rating'
 import Typography from '../typography'
@@ -29,25 +30,30 @@ const RecipeDetail = ({ recipeId }: Props) => {
           {recipe?.name}
         </Typography>
         <View style={styles.row}>
-          <RecipeRating rating={recipe.rating} />
-          <View style={styles.icons}>
+          <RecipeRating ratings={recipe.ratings} />
+          <View style={styles.iconsContainer}>
             <Ionicons name="arrow-redo-outline" size={25} />
             <Ionicons name="bookmark-outline" size={25} />
           </View>
         </View>
         <View style={styles.recipeInfo}>
-          <View>
+          <View style={styles.author}>
+            <ProfileCircle size={60} />
             <Typography variant="semibold" size={20}>
               {recipe?.author}
             </Typography>
           </View>
-          <Typography>{recipe?.description}</Typography>
+          <Typography variant="light" size={16} centered style={styles.description}>
+            {recipe.description}
+          </Typography>
         </View>
         <View style={styles.recipe}>
-          <Typography>Ingredientes</Typography>
-          <View>
+          <Typography variant="semibold" size={18}>
+            Ingredientes
+          </Typography>
+          <View style={styles.ingredients}>
             {recipe?.ingredients.map(({ ingredient, quantity, unit }) => (
-              <View key={ingredient}>
+              <View style={styles.ingredient} key={ingredient}>
                 <Typography>{ingredient}</Typography>
                 <Typography>
                   {quantity} {unit}
@@ -55,23 +61,27 @@ const RecipeDetail = ({ recipeId }: Props) => {
               </View>
             ))}
           </View>
-          <Typography>Pasos</Typography>
-          <View>
+          <Typography variant="semibold" size={18}>
+            Pasos
+          </Typography>
+          <View style={styles.steps}>
             {recipe?.steps.map((step, idx) => (
-              <View key={`step${idx}`}>
+              <View key={`step${idx}`} style={styles.step}>
                 <Typography>{idx + 1}</Typography>
                 <Typography>{step}</Typography>
               </View>
             ))}
           </View>
         </View>
-        <View>
+        <View style={styles.ratingContainer}>
           <Typography>¿Te ha gustado la receta?</Typography>
           <RecipeRater />
         </View>
         {recipe?.reviews?.length ? (
           <View>
-            <Typography>Valoraciones</Typography>
+            <Typography variant="semibold" size={18}>
+              Valoraciones
+            </Typography>
             {recipe.reviews.map((review) => (
               <View key={review}>
                 <Typography>{review}</Typography>

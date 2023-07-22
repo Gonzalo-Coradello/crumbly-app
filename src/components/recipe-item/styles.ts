@@ -51,4 +51,9 @@ export const styles = StyleSheet.create({
   iconsContainer: {
     flexDirection: 'row',
   },
+  profile: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+  },
 })

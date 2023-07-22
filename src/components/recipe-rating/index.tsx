@@ -5,17 +5,18 @@ import { COLORS } from 'src/themes'
 import { styles } from './styles'
 
 type Props = {
-  rating: number
+  ratings: number[]
 }
 
-const RecipeRating = ({ rating }: Props) => {
+const RecipeRating = ({ ratings }: Props) => {
+  const rating = ratings.reduce((acc, curr) => acc + curr, 0) / ratings.length
   const stars = [1, 2, 3, 4, 5].map((star) =>
     rating >= star ? (
-      <FontAwesome key={star} name="star" size={30} color={COLORS.yellow} />
+      <FontAwesome key={star} name="star" size={25} color={COLORS.yellow} />
     ) : star - Math.floor(rating) === 1 && rating - Math.floor(rating) >= 0.5 ? (
-      <FontAwesome key={star} name="star-half-full" size={30} color={COLORS.yellow} />
+      <FontAwesome key={star} name="star-half-full" size={25} color={COLORS.yellow} />
     ) : (
-      <FontAwesome key={star} name="star-o" size={30} color={COLORS.yellow} />
+      <FontAwesome key={star} name="star-o" size={25} color={COLORS.yellow} />
     )
   )
 

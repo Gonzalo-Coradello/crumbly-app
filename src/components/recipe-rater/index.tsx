@@ -7,11 +7,11 @@ import { styles } from './styles'
 const RecipeRater = () => {
   return (
     <View style={styles.starsContainer}>
-      <FontAwesome name="star" size={30} color={COLORS.yellow} />
-      <FontAwesome name="star" size={30} color={COLORS.yellow} />
-      <FontAwesome name="star" size={30} color={COLORS.yellow} />
-      <FontAwesome name="star" size={30} color={COLORS.yellow} />
-      <FontAwesome name="star-half-full" size={30} color={COLORS.yellow} />
+      <FontAwesome name="star-o" size={30} color={COLORS.yellow} />
+      <FontAwesome name="star-o" size={30} color={COLORS.yellow} />
+      <FontAwesome name="star-o" size={30} color={COLORS.yellow} />
+      <FontAwesome name="star-o" size={30} color={COLORS.yellow} />
+      <FontAwesome name="star-o" size={30} color={COLORS.yellow} />
     </View>
   )
 }
