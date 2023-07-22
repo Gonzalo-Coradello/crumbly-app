@@ -6,8 +6,4 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.background,
   },
-  image: {
-    width: '100%',
-    height: 300,
-  },
 })
