@@ -18,7 +18,7 @@ const FavoriteList = ({ recipes, handleNavigate }: Props) => {
     <View style={isTablet ? styles.tabletContainer : styles.container}>
       {recipes.length === 0 ? (
         <Typography size={20} centered style={styles.empty}>
-          No hay recetas disponibles
+          Aún no has guardado ninguna receta en esta lista.
         </Typography>
       ) : (
         <FlatList
