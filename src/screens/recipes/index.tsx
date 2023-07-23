@@ -10,7 +10,7 @@ const Recipes = ({ navigation, route }: RecipesNavigationProp) => {
   const recipes: Recipe[] = useSelector(({ recipes }) => recipes.data)
   const recipesByCategory = recipes.filter((recipe) => recipe.categoryId === categoryId)
 
-  const handleNavigate = (recipeId: number) => {
+  const handleNavigate = (recipeId: string) => {
     navigation.navigate('RecipeDetail', { recipeId })
   }
 

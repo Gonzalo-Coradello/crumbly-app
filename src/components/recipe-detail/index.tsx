@@ -10,7 +10,7 @@ import RecipeRating from '../recipe-rating'
 import Typography from '../typography'
 
 type Props = {
-  recipeId: number
+  recipeId: string
 }
 
 const RecipeDetail = ({ recipeId }: Props) => {
@@ -38,9 +38,9 @@ const RecipeDetail = ({ recipeId }: Props) => {
         </View>
         <View style={styles.recipeInfo}>
           <View style={styles.author}>
-            <ProfileCircle size={60} />
+            <ProfileCircle size={60} crumbly={recipe.fromCrumbly} />
             <Typography variant="semibold" size={20}>
-              {recipe?.author}
+              {recipe?.authorId}
             </Typography>
           </View>
           <Typography variant="light" size={16} centered style={styles.description}>

@@ -1,9 +1,10 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Muffin de chocolate",
     "categoryId": "1",
-    "author": "Crumbly",
+    "authorId": "0",
+    "fromCrumbly": true,
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
@@ -20,10 +21,11 @@
     "createdAt": "date"
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "Muffin de chocolate",
     "categoryId": "1",
-    "author": "Crumbly",
+    "authorId": "0",
+    "fromCrumbly": true,
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
@@ -40,10 +42,11 @@
     "createdAt": "date"
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "Muffin de chocolate",
     "categoryId": "1",
-    "author": "Crumbly",
+    "authorId": "0",
+    "fromCrumbly": true,
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
@@ -60,10 +63,11 @@
     "createdAt": "date"
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "Tarta de manzanas",
     "categoryId": "5",
-    "author": "Crumbly",
+    "authorId": "0",
+    "fromCrumbly": true,
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
@@ -80,10 +84,11 @@
     "createdAt": "date"
   },
   {
-    "id": 5,
+    "id": "5",
     "name": "Tarta de manzanas",
     "categoryId": "5",
-    "author": "Crumbly",
+    "authorId": "0",
+    "fromCrumbly": true,
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
@@ -100,10 +105,11 @@
     "createdAt": "date"
   },
   {
-    "id": 6,
+    "id": "6",
     "name": "Tarta de manzanas",
     "categoryId": "5",
-    "author": "Crumbly",
+    "authorId": "0",
+    "fromCrumbly": true,
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
@@ -120,10 +126,11 @@
     "createdAt": "date"
   },
   {
-    "id": 7,
+    "id": "7",
     "name": "Cookies",
     "categoryId": "2",
-    "author": "Crumbly",
+    "authorId": "0",
+    "fromCrumbly": true,
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
@@ -140,10 +147,11 @@
     "createdAt": "date"
   },
   {
-    "id": 8,
+    "id": "8",
     "name": "Cookies",
     "categoryId": "2",
-    "author": "Crumbly",
+    "authorId": "0",
+    "fromCrumbly": true,
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
@@ -160,10 +168,11 @@
     "createdAt": "date"
   },
   {
-    "id": 4.5,
+    "id": "9",
     "name": "Cookies",
     "categoryId": "2",
-    "author": "Crumbly",
+    "authorId": "0",
+    "fromCrumbly": true,
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [

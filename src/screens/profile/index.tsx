@@ -11,7 +11,7 @@ const Profile = () => {
   return (
     <View style={styles.container}>
       <View style={styles.user}>
-        <ProfileCircle size={50} />
+        <ProfileCircle crumbly={false} size={50} />
         <View>
           <Typography variant="semibold" size={22} style={{ lineHeight: 26 }}>
             {user.name}

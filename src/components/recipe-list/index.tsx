@@ -7,7 +7,7 @@ import Typography from '../typography'
 
 type Props = {
   recipes: RecipeType[]
-  handleNavigate: (recipeId: number, recipeName: string) => void
+  handleNavigate: (recipeId: string, recipeName: string) => void
 }
 
 const RecipeList = ({ recipes, handleNavigate }: Props) => {

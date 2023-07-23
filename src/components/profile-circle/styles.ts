@@ -14,6 +14,6 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
   text: {
-    paddingTop: 5,
+    // paddingTop: 5,
   },
 })

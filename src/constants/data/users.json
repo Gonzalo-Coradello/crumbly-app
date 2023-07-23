@@ -1,14 +1,12 @@
 [
   {
-    "id": 1,
-    "email": "",
+    "id": "1",
+    "name": "Gonzalo Coradello",
+    "email": "gonzalocoradello@gmail.com",
     "password": "",
-    "profile": "imageurl",
-    "recipes": ["recipeId"],
-    "favorites": ["recipeId1", "recipeId2"],
-    "lists": {
-      "name": "budines",
-      "recipes": ["recipeId1", "recipeId2"]
-    }
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "recipes": [],
+    "favorites": ["1", "7"],
+    "lists": [{ "name": "Budines", "recipes": ["2"] }]
   }
 ]

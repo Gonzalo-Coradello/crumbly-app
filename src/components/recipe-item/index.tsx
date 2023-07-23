@@ -7,10 +7,10 @@ import ProfileCircle from '../profile-circle'
 import Typography from '../typography'
 
 interface Props extends Recipe {
-  handleNavigate: (recipeId: number, recipeName: string) => void
+  handleNavigate: (recipeId: string, recipeName: string) => void
 }
 
-const RecipeItem = ({ id, name, image, author, handleNavigate }: Props) => {
+const RecipeItem = ({ id, name, image, authorId, fromCrumbly, handleNavigate }: Props) => {
   const { width } = useWindowDimensions()
 
   const isTablet = width > 650
@@ -24,8 +24,8 @@ const RecipeItem = ({ id, name, image, author, handleNavigate }: Props) => {
           </Typography>
           <View style={styles.row}>
             <View style={styles.profile}>
-              <ProfileCircle size={30} />
-              <Typography size={isTablet ? 20 : 14}>{author}</Typography>
+              <ProfileCircle size={30} crumbly={fromCrumbly} />
+              <Typography size={isTablet ? 20 : 14}>{authorId}</Typography>
             </View>
             <View style={styles.iconsContainer}>
               <Ionicons name="arrow-redo-outline" size={25} />

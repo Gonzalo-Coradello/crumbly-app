@@ -8,10 +8,11 @@ export interface Category {
 }
 
 export interface Recipe {
-  id: number
+  id: string
   name: string
   categoryId: string
-  author: string
+  authorId: string
+  fromCrumbly: boolean
   image: string
   description: string
   ingredients: { ingredient: string; quantity: number; unit: string }[]
@@ -22,8 +23,8 @@ export interface Recipe {
 }
 
 export interface Review {
-  id: number | string
-  recipeId: number | string
+  id: string
+  recipeId: string
   userId: number | string
   rating: number
   review: string
@@ -33,10 +34,11 @@ export interface Review {
 }
 
 export interface User {
-  id: number | string
+  id: string
+  name: string
   email: string
   password: string
-  profile: string // url
+  picture: string // url
   recipes: string[] //recipeId
   favorites: string[] //recipeId
   lists: { name: string; recipes: string[] }[] // recipes: ["recipeId", "recipeId"]
@@ -45,12 +47,12 @@ export interface User {
 export type RecipesParamList = {
   Home: { category: string }
   Recipes: { categoryId: string; category: string }
-  RecipeDetail: { recipeId: number }
+  RecipeDetail: { recipeId: string }
 }
 
 export type FavoritesParamList = {
   Favorites: object
-  RecipeDetail: { recipeId: number }
+  RecipeDetail: { recipeId: string }
 }
 
 export type HomeNavigationProp = {
