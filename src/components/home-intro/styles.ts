@@ -38,8 +38,8 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 30,
   },
   image: {
-    width: 250,
-    minHeight: 200,
+    width: 300,
+    height: 250,
     alignSelf: 'center',
     marginBottom: 20,
   },

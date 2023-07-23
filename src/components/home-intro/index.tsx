@@ -1,8 +1,8 @@
 import { Image, View, useWindowDimensions } from 'react-native'
+import { homeImage } from 'src/images'
 
 import { styles } from './styles'
 import Typography from '../typography'
-
 const HomeIntro = () => {
   const { width } = useWindowDimensions()
 
@@ -25,9 +25,7 @@ const HomeIntro = () => {
         </Typography>
       </View>
       <Image
-        source={{
-          uri: 'https://cdn.pixabay.com/photo/2020/07/21/17/31/coffee-5426922_960_720.jpg',
-        }}
+        source={homeImage}
         resizeMode="contain"
         style={isTablet ? styles.tabletImage : styles.image}
       />
