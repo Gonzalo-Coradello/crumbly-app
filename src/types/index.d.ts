@@ -45,7 +45,12 @@ export interface User {
 export type RecipesParamList = {
   Home: { category: string }
   Recipes: { categoryId: string; category: string }
-  RecipeDetail: { recipeId: number; category: string }
+  RecipeDetail: { recipeId: number }
+}
+
+export type FavoritesParamList = {
+  Favorites: object
+  RecipeDetail: { recipeId: number }
 }
 
 export type HomeNavigationProp = {
@@ -61,4 +66,9 @@ export type RecipesNavigationProp = {
 export type DetailNavigationProps = {
   navigation: NativeStackNavigationProp<RecipesParamList, 'RecipeDetail'>
   route: RouteProp<RecipesParamList, 'RecipeDetail'>
+}
+
+export type FavoritesNavigationProp = {
+  navigation: NativeStackNavigationProp<FavoritesParamList, 'Favorites'>
+  route: RouteProp<FavoritesParamList, 'Favorites'>
 }

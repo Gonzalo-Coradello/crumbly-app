@@ -1,7 +1,8 @@
-import { Ionicons } from '@expo/vector-icons'
+import { Ionicons, FontAwesome } from '@expo/vector-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { COLORS, FONTS } from 'src/themes'
 
+import FavoritesNavigator from './favorites'
 import ProfileNavigator from './profile'
 import RecipesNavigator from './recipes'
 
@@ -30,6 +31,16 @@ export default function TabNavigator() {
           tabBarLabel: 'Recetas',
           tabBarIcon: ({ focused, color, size }) => {
             return <Ionicons name={focused ? 'home' : 'home-outline'} size={22} color={color} />
+          },
+        }}
+      />
+      <Tab.Screen
+        name="FavoritesTab"
+        component={FavoritesNavigator}
+        options={{
+          tabBarLabel: 'Favoritos',
+          tabBarIcon: ({ focused, color, size }) => {
+            return <FontAwesome name={focused ? 'star' : 'star-o'} size={22} color={color} />
           },
         }}
       />

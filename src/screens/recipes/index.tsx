@@ -6,12 +6,12 @@ import { RecipesNavigationProp, Recipe } from 'src/types'
 import { styles } from './styles'
 
 const Recipes = ({ navigation, route }: RecipesNavigationProp) => {
-  const { categoryId, category } = route.params
+  const { categoryId } = route.params
   const recipes: Recipe[] = useSelector(({ recipes }) => recipes.data)
   const recipesByCategory = recipes.filter((recipe) => recipe.categoryId === categoryId)
 
-  const handleNavigate = (recipeId: number, recipeName: string) => {
-    navigation.navigate('RecipeDetail', { recipeId, category })
+  const handleNavigate = (recipeId: number) => {
+    navigation.navigate('RecipeDetail', { recipeId })
   }
 
   return (

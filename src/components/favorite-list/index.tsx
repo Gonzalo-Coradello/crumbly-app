@@ -1,16 +1,16 @@
 import { View, FlatList, useWindowDimensions } from 'react-native'
-import { Recipe as RecipeType } from 'src/types'
+import { Recipe } from 'src/types'
 
 import { styles } from './styles'
 import RecipeItem from '../recipe-item'
 import Typography from '../typography'
 
 type Props = {
-  recipes: RecipeType[]
+  recipes: Recipe[]
   handleNavigate: (recipeId: number, recipeName: string) => void
 }
 
-const RecipeList = ({ recipes, handleNavigate }: Props) => {
+const FavoriteList = ({ recipes, handleNavigate }: Props) => {
   const { width } = useWindowDimensions()
 
   const isTablet = width > 650
@@ -34,4 +34,4 @@ const RecipeList = ({ recipes, handleNavigate }: Props) => {
   )
 }
 
-export default RecipeList
+export default FavoriteList
