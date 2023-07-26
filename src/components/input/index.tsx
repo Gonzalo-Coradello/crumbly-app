@@ -1,21 +1,23 @@
 import { TextInput, View } from 'react-native'
+import { COLORS } from 'src/themes'
 
 import { styles } from './styles'
 
 type Props = {
-  borderColor: string
-  handleFocus: () => void
-  handleBlur: () => void
-  handleChangeText: () => void
-  handleCreate: () => void
+  borderColor?: string
+  placeholder: string
+  multiline?: boolean
+  // handleChangeText: () => void
 }
 
 const Input = ({
-  borderColor,
-  handleFocus,
-  handleBlur,
-  handleChangeText,
-  handleCreate,
+  borderColor = COLORS.darkGray,
+  placeholder,
+  multiline,
+  // handleFocus,
+  // handleBlur,
+  // handleChangeText,
+  // handleCreate,
   ...props
 }: Props) => {
   return (
@@ -25,11 +27,12 @@ const Input = ({
         style={[styles.input, { borderColor }]}
         autoCapitalize="none"
         autoCorrect={false}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        onChangeText={handleChangeText}
+        // onChangeText={handleChangeText}
         cursorColor={borderColor}
         placeholderTextColor={borderColor}
+        placeholder={placeholder}
+        multiline={multiline}
+        numberOfLines={multiline ? 3 : 1}
       />
     </View>
   )
