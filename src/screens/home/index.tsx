@@ -8,7 +8,7 @@ const Home = ({ navigation, route }: HomeNavigationProp) => {
   const { width } = useWindowDimensions()
 
   const handleNavigate = (categoryId: string, category: string) => {
-    navigation.navigate('Recipes', { categoryId, category })
+    navigation.navigate('Recipes', { categoryId, category, list: '' })
   }
 
   const isTablet = width > 650

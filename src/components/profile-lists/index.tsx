@@ -6,7 +6,11 @@ import { User } from 'src/types'
 import { styles } from './styles'
 import Typography from '../typography'
 
-const ProfileLists = () => {
+type Props = {
+  navigateTo: (screenName: 'Recipes' | 'CreateList' | 'CreateRecipe', list?: string) => void
+}
+
+const ProfileLists = ({ navigateTo }: Props) => {
   const user: User = useSelector(({ users }) => users.current)
 
   return (
@@ -15,11 +19,13 @@ const ProfileLists = () => {
         Mis listas
       </Typography>
       <View style={styles.listsContainer}>
-        <TouchableOpacity style={styles.addListButton}>
+        <TouchableOpacity onPress={() => navigateTo('CreateList')} style={styles.addListButton}>
           <Ionicons name="add-circle-outline" size={28} color="black" />
           <Typography>Crear una lista nueva</Typography>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.favorites}>
+        <TouchableOpacity
+          onPress={() => navigateTo('Recipes', 'favorites')}
+          style={styles.favorites}>
           <FontAwesome name="star-o" size={28} color="black" />
           <View>
             <Typography variant="semibold" size={16}>
@@ -31,7 +37,10 @@ const ProfileLists = () => {
           </View>
         </TouchableOpacity>
         {user.lists.map(({ name, recipes }) => (
-          <TouchableOpacity key={name} style={styles.favorites}>
+          <TouchableOpacity
+            key={name}
+            onPress={() => navigateTo('Recipes', name)}
+            style={styles.favorites}>
             <FontAwesome name="star-o" size={28} color="black" />
             <View>
               <Typography variant="semibold" size={16}>

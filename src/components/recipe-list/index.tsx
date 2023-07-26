@@ -8,9 +8,10 @@ import Typography from '../typography'
 type Props = {
   recipes: RecipeType[]
   handleNavigate: (recipeId: string, recipeName: string) => void
+  emptyMessage: string
 }
 
-const RecipeList = ({ recipes, handleNavigate }: Props) => {
+const RecipeList = ({ recipes, handleNavigate, emptyMessage }: Props) => {
   const { width } = useWindowDimensions()
 
   const isTablet = width > 650
@@ -18,7 +19,7 @@ const RecipeList = ({ recipes, handleNavigate }: Props) => {
     <View style={isTablet ? styles.tabletContainer : styles.container}>
       {recipes.length === 0 ? (
         <Typography size={20} centered style={styles.empty}>
-          No hay recetas disponibles
+          {emptyMessage}
         </Typography>
       ) : (
         <FlatList

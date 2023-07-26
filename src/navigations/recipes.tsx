@@ -1,9 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import { Header, HeaderArrow } from 'src/components'
 import { Home, RecipeDetailContainer, Recipes } from 'src/screens'
-import { RecipesParamList } from 'src/types'
+import { HomeParamList } from 'src/types'
 
-const Stack = createStackNavigator<RecipesParamList>()
+const Stack = createStackNavigator<HomeParamList>()
 
 export default function RecipesNavigator() {
   return (

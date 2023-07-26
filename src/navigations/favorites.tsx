@@ -1,16 +1,17 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Header, HeaderArrow } from 'src/components'
-import { Favorites, RecipeDetailContainer } from 'src/screens'
-import { FavoritesParamList } from 'src/types'
+import { RecipeDetailContainer, Recipes } from 'src/screens'
+import { RecipesParamList } from 'src/types'
 
-const Stack = createNativeStackNavigator<FavoritesParamList>()
+const Stack = createNativeStackNavigator<RecipesParamList>()
 
 export default function FavoritesNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Favorites">
+    <Stack.Navigator initialRouteName="Recipes">
       <Stack.Screen
-        name="Favorites"
-        component={Favorites}
+        name="Recipes"
+        component={Recipes}
+        initialParams={{ list: 'favorites' }}
         options={{
           headerTitle: () => <Header title="Favoritos" />,
           headerTitleAlign: 'center',

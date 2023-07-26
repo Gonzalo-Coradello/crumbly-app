@@ -1,13 +1,25 @@
 import { View } from 'react-native'
 import { Typography, ProfileCircle, ProfileLists, ProfileRecipes } from 'src/components'
+import { ProfileNavigationProp } from 'src/types'
 
 import { styles } from './styles'
 
-const Profile = () => {
+const Profile = ({ navigation, route }: ProfileNavigationProp) => {
   const user = {
+    id: '1',
     name: 'Gonzalo Coradello',
     email: 'gonzalocoradello@gmail.com',
   }
+
+  // const navigateToRecipes = (list: string) => {
+  //   navigation.navigate('Recipes', { categoryId: '', category: '', list })
+  // }
+
+  const navigateTo = (screenName: 'Recipes' | 'CreateList' | 'CreateRecipe', list?: string) => {
+    const screen: any = screenName
+    navigation.navigate(screen, { list })
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.user}>
@@ -21,8 +33,8 @@ const Profile = () => {
           </Typography>
         </View>
       </View>
-      <ProfileLists />
-      <ProfileRecipes />
+      <ProfileLists navigateTo={navigateTo} />
+      <ProfileRecipes navigateTo={navigateTo} />
     </View>
   )
 }

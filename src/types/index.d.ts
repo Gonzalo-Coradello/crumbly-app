@@ -45,19 +45,23 @@ export interface User {
 }
 
 export type RecipesParamList = {
-  Home: { category: string }
-  Recipes: { categoryId: string; category: string }
+  Recipes: { categoryId: string; category: string; list: string }
   RecipeDetail: { recipeId: string }
 }
 
-export type FavoritesParamList = {
-  Favorites: object
-  RecipeDetail: { recipeId: string }
+export type HomeParamList = RecipesParamList & {
+  Home: undefined
+}
+
+export type ProfileParamList = RecipesParamList & {
+  Profile: { userId: string }
+  CreateList: undefined
+  CreateRecipe: undefined
 }
 
 export type HomeNavigationProp = {
-  navigation: NativeStackNavigationProp<RecipesParamList, 'Home'>
-  route: RouteProp<RecipesParamList, 'Home'>
+  navigation: NativeStackNavigationProp<HomeParamList, 'Home'>
+  route: RouteProp<HomeParamList, 'Home'>
 }
 
 export type RecipesNavigationProp = {
@@ -70,7 +74,7 @@ export type DetailNavigationProps = {
   route: RouteProp<RecipesParamList, 'RecipeDetail'>
 }
 
-export type FavoritesNavigationProp = {
-  navigation: NativeStackNavigationProp<FavoritesParamList, 'Favorites'>
-  route: RouteProp<FavoritesParamList, 'Favorites'>
+export type ProfileNavigationProp = {
+  navigation: NativeStackNavigationProp<ProfileParamList, 'Profile'>
+  route: RouteProp<ProfileParamList, 'Profile'>
 }
