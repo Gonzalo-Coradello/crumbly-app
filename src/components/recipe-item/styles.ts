@@ -47,9 +47,11 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 10,
+    paddingHorizontal: 5,
   },
   iconsContainer: {
     flexDirection: 'row',
+    gap: 15,
   },
   profile: {
     flexDirection: 'row',

@@ -11,7 +11,23 @@ const initialState: { current: User | undefined; userList: User[] } = {
 const usersSlice = createSlice({
   name: 'users',
   initialState,
-  reducers: {},
+  reducers: {
+    addToFavorites: (state, action) => {
+      const recipeId = action.payload
+      state.current?.favorites.push(recipeId)
+    },
+    removeFromFavorites: (state, action) => {
+      const recipeId = action.payload
+      const index = state.current?.favorites.indexOf(recipeId)
+      if (!index) {
+        console.warn('Recipe not found in your list')
+        return
+      }
+      state.current?.favorites.splice(index, 1)
+    },
+  },
 })
+
+export const { addToFavorites, removeFromFavorites } = usersSlice.actions
 
 export default usersSlice.reducer

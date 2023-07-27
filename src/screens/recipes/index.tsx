@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import { View } from 'react-native'
 import { useSelector } from 'react-redux'
-import { RecipeList } from 'src/components'
+import { RecipeList, SaveRecipeModal } from 'src/components'
 import { RecipesNavigationProp, Recipe, User } from 'src/types'
 
 import { styles } from './styles'
 
 const Recipes = ({ navigation, route }: RecipesNavigationProp) => {
+  const [modalVisible, setModalVisible] = useState(false)
+  const [selectedRecipe, setSelectedRecipe] = useState('')
   const { categoryId, list } = route.params
   const recipes: Recipe[] = useSelector(({ recipes }) => recipes.data)
   const user: User = useSelector(({ users }) => users.current)
@@ -27,14 +30,27 @@ const Recipes = ({ navigation, route }: RecipesNavigationProp) => {
     navigation.navigate('RecipeDetail', { recipeId })
   }
 
+  const openModal = (id: string) => {
+    setModalVisible(true)
+    setSelectedRecipe(id)
+  }
+
   return (
-    <View style={styles.container}>
-      <RecipeList
-        recipes={recipeList}
-        handleNavigate={handleNavigate}
-        emptyMessage={emptyMessage}
+    <>
+      <SaveRecipeModal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        selectedRecipe={selectedRecipe}
       />
-    </View>
+      <View style={styles.container}>
+        <RecipeList
+          recipes={recipeList}
+          handleNavigate={handleNavigate}
+          emptyMessage={emptyMessage}
+          openModal={openModal}
+        />
+      </View>
+    </>
   )
 }
 

@@ -6,7 +6,7 @@
     "password": "",
     "picture": "https://randomuser.me/api/portraits/men/32.jpg",
     "recipes": [],
-    "favorites": ["1", "7"],
-    "lists": [{ "name": "Budines", "recipes": ["2"] }]
+    "favorites": [],
+    "lists": [{ "name": "Budines", "recipes": [] }]
   }
 ]

@@ -9,9 +9,10 @@ type Props = {
   recipes: RecipeType[]
   handleNavigate: (recipeId: string, recipeName: string) => void
   emptyMessage: string
+  openModal: (id: string) => void
 }
 
-const RecipeList = ({ recipes, handleNavigate, emptyMessage }: Props) => {
+const RecipeList = ({ recipes, handleNavigate, emptyMessage, openModal }: Props) => {
   const { width } = useWindowDimensions()
 
   const isTablet = width > 650
@@ -24,7 +25,9 @@ const RecipeList = ({ recipes, handleNavigate, emptyMessage }: Props) => {
       ) : (
         <FlatList
           data={recipes}
-          renderItem={({ item }) => <RecipeItem {...item} handleNavigate={handleNavigate} />}
+          renderItem={({ item }) => (
+            <RecipeItem {...item} handleNavigate={handleNavigate} openModal={openModal} />
+          )}
           keyExtractor={(item) => item.id.toString()}
           contentContainerStyle={styles.recipeList}
           showsVerticalScrollIndicator={false}
