@@ -1,15 +1,12 @@
 import { View } from 'react-native'
+import { useSelector } from 'react-redux'
 import { Typography, ProfileCircle, ProfileLists, ProfileRecipes } from 'src/components'
 import { ProfileNavigationProp } from 'src/types'
 
 import { styles } from './styles'
 
 const Profile = ({ navigation, route }: ProfileNavigationProp) => {
-  const user = {
-    id: '1',
-    name: 'Gonzalo Coradello',
-    email: 'gonzalocoradello@gmail.com',
-  }
+  const user = useSelector(({ users }) => users.current)
 
   // const navigateToRecipes = (list: string) => {
   //   navigation.navigate('Recipes', { categoryId: '', category: '', list })

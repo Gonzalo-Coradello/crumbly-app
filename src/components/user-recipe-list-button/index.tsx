@@ -5,20 +5,20 @@ import { styles } from './styles'
 import Typography from '../typography'
 
 type Props = {
-  func: () => void
+  onPress: () => void
   title: string
   icon: 'add-circle-outline' | 'star'
   recipesLength?: number
 }
 
 const UserRecipeListButton = ({
-  func,
+  onPress,
   title,
   icon = 'add-circle-outline',
   recipesLength,
 }: Props) => {
   return (
-    <TouchableOpacity onPress={func} style={styles.favorites}>
+    <TouchableOpacity onPress={onPress} style={styles.favorites}>
       <Ionicons name={icon} size={28} color="black" />
       <View>
         <Typography

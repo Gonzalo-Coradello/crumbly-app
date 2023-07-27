@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     height: 370,
   },
   contentContainer: {
-    margin: 15,
+    margin: 20,
   },
   row: {
     flexDirection: 'row',
@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   },
   iconsContainer: {
     flexDirection: 'row',
-    gap: 5,
+    gap: 15,
   },
   recipeInfo: {},
   author: {

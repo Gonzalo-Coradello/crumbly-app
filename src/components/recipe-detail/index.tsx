@@ -1,7 +1,8 @@
 import { Ionicons } from '@expo/vector-icons'
 import { Image, ScrollView, View } from 'react-native'
-import { useSelector } from 'react-redux'
-import { Recipe } from 'src/types'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeFromList } from 'src/store/users/users.slice'
+import { Recipe, User } from 'src/types'
 
 import { styles } from './styles'
 import ProfileCircle from '../profile-circle'
@@ -11,11 +12,24 @@ import Typography from '../typography'
 
 type Props = {
   recipeId: string
+  user: User
+  openModal: () => void
 }
 
-const RecipeDetail = ({ recipeId }: Props) => {
+const RecipeDetail = ({ recipeId, user, openModal }: Props) => {
   const recipes: Recipe[] = useSelector(({ recipes }) => recipes.data)
   const recipe = recipes.find((recipe) => recipe.id === recipeId)
+
+  const dispatch = useDispatch()
+
+  const isFavorite = user.favorites.includes(recipeId)
+  const isSaved = user.lists.find((list) => list.recipes.includes(recipeId))
+
+  const remove = () => {
+    dispatch(removeFromList({ id: recipeId, listName: isFavorite ? 'favorites' : isSaved?.name }))
+  }
+
+  const author = recipe?.fromCrumbly ? 'Crumbly' : 'Someone'
 
   if (!recipe) return null
 
@@ -33,14 +47,18 @@ const RecipeDetail = ({ recipeId }: Props) => {
           <RecipeRating ratings={recipe.ratings} />
           <View style={styles.iconsContainer}>
             <Ionicons name="arrow-redo-outline" size={25} />
-            <Ionicons name="bookmark-outline" size={25} />
+            {isFavorite || isSaved ? (
+              <Ionicons name="bookmark" size={25} onPress={remove} />
+            ) : (
+              <Ionicons name="bookmark-outline" size={25} onPress={openModal} />
+            )}
           </View>
         </View>
         <View style={styles.recipeInfo}>
           <View style={styles.author}>
             <ProfileCircle size={60} crumbly={recipe.fromCrumbly} />
             <Typography variant="semibold" size={20}>
-              {recipe?.authorId}
+              {author}
             </Typography>
           </View>
           <Typography variant="light" size={16} centered style={styles.description}>

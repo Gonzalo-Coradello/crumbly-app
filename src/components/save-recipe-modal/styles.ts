@@ -8,13 +8,19 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.transparentDarker,
     flex: 1,
     margin: 0,
+    marginBottom: -30,
   },
-  contentContainer: {
-    alignItems: 'center',
-    backgroundColor: COLORS.white,
+  modalContainer: {
     width: '100%',
     height: 300,
+    flex: 1,
+    backgroundColor: COLORS.white,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
+    paddingHorizontal: 15,
+  },
+  contentContainer: {
+    gap: 15,
+    paddingVertical: 40,
   },
 })

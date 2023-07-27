@@ -41,6 +41,8 @@ const Recipes = ({ navigation, route }: RecipesNavigationProp) => {
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
         selectedRecipe={selectedRecipe}
+        user={user}
+        navigation={navigation}
       />
       <View style={styles.container}>
         <RecipeList

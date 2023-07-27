@@ -12,22 +12,45 @@ const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    addToFavorites: (state, action) => {
-      const recipeId = action.payload
-      state.current?.favorites.push(recipeId)
-    },
-    removeFromFavorites: (state, action) => {
-      const recipeId = action.payload
-      const index = state.current?.favorites.indexOf(recipeId)
-      if (!index) {
-        console.warn('Recipe not found in your list')
-        return
+    addToList: (state, action) => {
+      const { id, listName } = action.payload
+      const list =
+        listName === 'favorites'
+          ? state.current?.favorites
+          : state.current?.lists.find((l) => l.name === listName)?.recipes
+      if (list === undefined) {
+        return console.warn('No se pudo encontrar la lista')
       }
-      state.current?.favorites.splice(index, 1)
+      list.push(id)
+    },
+    removeFromList: (state, action) => {
+      const { id, listName } = action.payload
+      const list =
+        listName === 'favorites'
+          ? state.current?.favorites
+          : state.current?.lists.find((l) => l.name === listName)?.recipes
+      if (list === undefined) {
+        return console.warn('No se pudo encontrar la lista')
+      }
+      const index = list.indexOf(id)
+      list.splice(index, 1)
+    },
+    createList: (state, action) => {
+      const listName = action.payload.listName
+      const recipeId: string | undefined = action.payload.recipeId
+
+      const newList: { name: string; recipes: string[] } = {
+        name: listName,
+        recipes: [],
+      }
+      if (recipeId) {
+        newList.recipes.push(recipeId)
+      }
+      state.current?.lists.push(newList)
     },
   },
 })
 
-export const { addToFavorites, removeFromFavorites } = usersSlice.actions
+export const { addToList, removeFromList, createList } = usersSlice.actions
 
 export default usersSlice.reducer

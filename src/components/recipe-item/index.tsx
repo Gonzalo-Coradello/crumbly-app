@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons'
 import { View, Image, useWindowDimensions, TouchableOpacity } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFromFavorites } from 'src/store/users/users.slice'
+import { removeFromList } from 'src/store/users/users.slice'
 import { Recipe, User } from 'src/types'
 
 import { styles } from './styles'
@@ -27,10 +27,11 @@ const RecipeItem = ({
 
   const dispatch = useDispatch()
 
-  const isSaved = user.favorites.includes(id)
+  const isFavorite = user.favorites.includes(id)
+  const isSaved = user.lists.find((list) => list.recipes.includes(id))
 
-  const removeFromList = () => {
-    dispatch(removeFromFavorites(id))
+  const remove = () => {
+    dispatch(removeFromList({ id, listName: isFavorite ? 'favorites' : isSaved?.name }))
   }
 
   const author = fromCrumbly ? 'Crumbly' : 'Someone'
@@ -52,8 +53,8 @@ const RecipeItem = ({
           </View>
           <View style={styles.iconsContainer}>
             <Ionicons name="arrow-redo-outline" size={25} />
-            {isSaved ? (
-              <TouchableOpacity onPress={removeFromList}>
+            {isSaved || isFavorite ? (
+              <TouchableOpacity onPress={remove}>
                 <Ionicons name="bookmark" size={25} />
               </TouchableOpacity>
             ) : (

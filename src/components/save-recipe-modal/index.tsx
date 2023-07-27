@@ -1,6 +1,7 @@
-import { Modal, TouchableWithoutFeedback, View } from 'react-native'
+import { Modal, ScrollView, TouchableWithoutFeedback, View } from 'react-native'
 import { useDispatch } from 'react-redux'
-import { addToFavorites } from 'src/store/users/users.slice'
+import { addToList } from 'src/store/users/users.slice'
+import { User } from 'src/types'
 
 import { styles } from './styles'
 import Typography from '../typography'
@@ -10,13 +11,29 @@ type Props = {
   modalVisible: boolean
   setModalVisible: (visible: boolean) => void
   selectedRecipe: string
+  user: User
+  navigation: any
 }
 
-const SaveRecipeModal = ({ modalVisible, setModalVisible, selectedRecipe }: Props) => {
+const SaveRecipeModal = ({
+  modalVisible,
+  setModalVisible,
+  selectedRecipe,
+  user,
+  navigation,
+}: Props) => {
   const dispatch = useDispatch()
 
-  const saveRecipe = () => {
-    dispatch(addToFavorites(selectedRecipe))
+  const saveRecipe = (listName: string) => {
+    dispatch(addToList({ id: selectedRecipe, listName }))
+    setModalVisible(false)
+  }
+
+  const handleNavigate = () => {
+    navigation.navigate('ProfileTab', {
+      screen: 'CreateList',
+      params: { recipeId: selectedRecipe },
+    })
     setModalVisible(false)
   }
 
@@ -31,20 +48,31 @@ const SaveRecipeModal = ({ modalVisible, setModalVisible, selectedRecipe }: Prop
       <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
         <View style={styles.container} />
       </TouchableWithoutFeedback>
-      <View style={styles.contentContainer}>
-        <Typography>Guardar receta en:</Typography>
+      <ScrollView style={styles.modalContainer} contentContainerStyle={styles.contentContainer}>
+        <Typography variant="semibold" size={20} centered>
+          Guardar receta en:
+        </Typography>
         <UserRecipeListButton
-          func={saveRecipe}
+          onPress={handleNavigate}
           icon="add-circle-outline"
           title="Crear una lista nueva"
         />
         <UserRecipeListButton
-          func={saveRecipe}
+          onPress={() => saveRecipe('favorites')}
           icon="star"
-          recipesLength={1}
+          recipesLength={user.favorites.length}
           title="Mis favoritas"
         />
-      </View>
+        {user.lists.map(({ name, recipes }) => (
+          <UserRecipeListButton
+            key={name}
+            title={name}
+            onPress={() => saveRecipe(name)}
+            icon="star"
+            recipesLength={recipes.length}
+          />
+        ))}
+      </ScrollView>
     </Modal>
   )
 }

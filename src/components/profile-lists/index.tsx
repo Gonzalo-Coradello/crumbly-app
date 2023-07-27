@@ -20,12 +20,12 @@ const ProfileLists = ({ navigateTo }: Props) => {
       </Typography>
       <View style={styles.listsContainer}>
         <UserRecipeListButton
-          func={() => navigateTo('CreateList')}
+          onPress={() => navigateTo('CreateList')}
           icon="add-circle-outline"
           title="Crear una lista nueva"
         />
         <UserRecipeListButton
-          func={() => navigateTo('Recipes', 'favorites')}
+          onPress={() => navigateTo('Recipes', 'favorites')}
           icon="star"
           title="Mis favoritas"
           recipesLength={user.favorites.length}
@@ -33,7 +33,7 @@ const ProfileLists = ({ navigateTo }: Props) => {
         {user.lists.map(({ name, recipes }) => (
           <UserRecipeListButton
             key={name}
-            func={() => navigateTo('Recipes', name)}
+            onPress={() => navigateTo('Recipes', name)}
             title={name}
             recipesLength={recipes.length}
             icon="star"
