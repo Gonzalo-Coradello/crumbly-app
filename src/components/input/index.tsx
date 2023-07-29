@@ -21,10 +21,17 @@ const Input = ({
   ...props
 }: Props) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { borderColor }]}>
       <TextInput
         {...props}
-        style={[styles.input, { borderColor }]}
+        style={[
+          styles.input,
+          {
+            minHeight: multiline ? 60 : 45,
+            verticalAlign: multiline ? 'top' : 'middle',
+            paddingTop: multiline ? 12 : 10,
+          },
+        ]}
         autoCapitalize="none"
         autoCorrect={false}
         // onChangeText={handleChangeText}

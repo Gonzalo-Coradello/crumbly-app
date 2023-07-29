@@ -3,12 +3,13 @@ import { COLORS } from 'src/themes'
 
 export const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
   },
   title: {
     marginLeft: 15,
   },
   recipesContainer: {
+    flex: 1,
     gap: 15,
     marginTop: 10,
   },

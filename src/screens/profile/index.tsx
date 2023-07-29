@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 import { useSelector } from 'react-redux'
 import { Typography, ProfileCircle, ProfileLists, ProfileRecipes } from 'src/components'
 import { ProfileNavigationProp } from 'src/types'
@@ -18,7 +18,10 @@ const Profile = ({ navigation, route }: ProfileNavigationProp) => {
   }
 
   return (
-    <View style={styles.container}>
+    <ScrollView
+      contentContainerStyle={styles.container}
+      overScrollMode="never"
+      showsVerticalScrollIndicator={false}>
       <View style={styles.user}>
         <ProfileCircle crumbly={false} size={50} />
         <View>
@@ -32,7 +35,7 @@ const Profile = ({ navigation, route }: ProfileNavigationProp) => {
       </View>
       <ProfileLists navigateTo={navigateTo} />
       <ProfileRecipes navigateTo={navigateTo} />
-    </View>
+    </ScrollView>
   )
 }
 
