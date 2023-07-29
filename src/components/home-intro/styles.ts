@@ -44,6 +44,8 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
   },
   tabletImage: {
-    minHeight: 450,
+    height: 500,
+    alignSelf: 'center',
+    marginBottom: 20,
   },
 })
