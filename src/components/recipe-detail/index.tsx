@@ -5,6 +5,7 @@ import { removeFromList } from 'src/store/users/users.slice'
 import { Recipe, User } from 'src/types'
 
 import { styles } from './styles'
+import Description from '../description'
 import ProfileCircle from '../profile-circle'
 import RecipeRater from '../recipe-rater'
 import RecipeRating from '../recipe-rating'
@@ -56,14 +57,14 @@ const RecipeDetail = ({ recipeId, user, openModal }: Props) => {
         </View>
         <View style={styles.recipeInfo}>
           <View style={styles.author}>
-            <ProfileCircle size={60} crumbly={recipe.fromCrumbly} />
-            <Typography variant="semibold" size={20}>
+            <ProfileCircle size={45} crumbly={recipe.fromCrumbly} />
+            <Typography variant="semibold" size={18}>
               {author}
             </Typography>
           </View>
-          <Typography variant="light" size={16} centered style={styles.description}>
-            {recipe.description}
-          </Typography>
+          <View style={styles.description}>
+            <Description text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem deserunt ut perferendis unde, non laudantium laborum minus accusantium porro debitis reiciendis consectetur error omnis similique dolore. Dolore ratione quae error placeat magnam voluptatibus inventore deserunt consectetur in doloremque adipisci impedit voluptate numquam ab rerum qui perspiciatis sapiente consequuntur, et eligendi?" />
+          </View>
         </View>
         <View style={styles.recipe}>
           <Typography variant="semibold" size={18}>
@@ -72,8 +73,10 @@ const RecipeDetail = ({ recipeId, user, openModal }: Props) => {
           <View style={styles.ingredients}>
             {recipe?.ingredients.map(({ ingredient, quantity, unit }) => (
               <View style={styles.ingredient} key={ingredient}>
-                <Typography>{ingredient}</Typography>
-                <Typography>
+                <Typography variant="semibold" size={15}>
+                  {ingredient.charAt(0).toUpperCase() + ingredient.slice(1)}
+                </Typography>
+                <Typography size={15}>
                   {quantity} {unit}
                 </Typography>
               </View>
@@ -85,28 +88,40 @@ const RecipeDetail = ({ recipeId, user, openModal }: Props) => {
           <View style={styles.steps}>
             {recipe?.steps.map((step, idx) => (
               <View key={`step${idx}`} style={styles.step}>
-                <Typography>{idx + 1}</Typography>
-                <Typography>{step}</Typography>
+                <Typography variant="semibold" size={18}>
+                  {idx + 1}
+                </Typography>
+                <Typography variant="light" size={15}>
+                  {step}
+                </Typography>
               </View>
             ))}
           </View>
         </View>
         <View style={styles.ratingContainer}>
-          <Typography>¿Te ha gustado la receta?</Typography>
+          <Typography variant="semibold" size={18}>
+            ¿Te ha gustado la receta?
+          </Typography>
           <RecipeRater />
         </View>
-        {recipe?.reviews?.length ? (
-          <View>
-            <Typography variant="semibold" size={18}>
-              Valoraciones
-            </Typography>
-            {recipe.reviews.map((review) => (
+        <View>
+          <Typography variant="semibold" size={18}>
+            Valoraciones
+          </Typography>
+          {recipe.reviews.length ? (
+            recipe.reviews.map((review) => (
               <View key={review}>
                 <Typography>{review}</Typography>
               </View>
-            ))}
-          </View>
-        ) : null}
+            ))
+          ) : (
+            <View style={styles.emptyReviews}>
+              <Typography variant="light" size={15}>
+                Esta receta aún no tiene valoraciones.
+              </Typography>
+            </View>
+          )}
+        </View>
       </View>
     </ScrollView>
   )

@@ -11,38 +11,42 @@ export const styles = StyleSheet.create({
   },
   contentContainer: {
     margin: 20,
+    gap: 20,
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginVertical: 15,
   },
   iconsContainer: {
     flexDirection: 'row',
     gap: 15,
   },
-  recipeInfo: {},
+  recipeInfo: {
+    width: '90%',
+    alignSelf: 'center',
+    marginBottom: 10,
+  },
   author: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
   },
   description: {
-    marginTop: 5,
+    marginTop: 10,
   },
   recipe: {
-    marginVertical: 15,
+    gap: 15,
   },
   ingredients: {
     gap: 10,
-    marginBottom: 15,
+    marginBottom: 10,
   },
   ingredient: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: COLORS.white,
     paddingHorizontal: 15,
-    paddingVertical: 10,
+    paddingVertical: 15,
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: {
@@ -55,6 +59,7 @@ export const styles = StyleSheet.create({
   },
   steps: {
     paddingRight: 5,
+    gap: 15,
   },
   step: {
     flexDirection: 'row',
@@ -62,7 +67,10 @@ export const styles = StyleSheet.create({
   },
   ratingContainer: {
     alignItems: 'center',
-    gap: 5,
+    gap: 10,
     marginBottom: 15,
+  },
+  emptyReviews: {
+    marginVertical: 15,
   },
 })
