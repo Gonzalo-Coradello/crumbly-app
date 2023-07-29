@@ -112,4 +112,7 @@ export const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 3,
   },
+  selectedCategory: {
+    backgroundColor: COLORS.primary,
+  },
 })

@@ -13,8 +13,14 @@
       { "ingredient": "leche", "quantity": 100, "unit": "ml" }
     ],
     "steps": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      {
+        "id": 1,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore."
+      },
+      {
+        "id": 2,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      }
     ],
     "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
@@ -34,8 +40,14 @@
       { "ingredient": "leche", "quantity": 100, "unit": "ml" }
     ],
     "steps": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      {
+        "id": 1,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore."
+      },
+      {
+        "id": 2,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      }
     ],
     "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
@@ -55,8 +67,14 @@
       { "ingredient": "leche", "quantity": 100, "unit": "ml" }
     ],
     "steps": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      {
+        "id": 1,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore."
+      },
+      {
+        "id": 2,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      }
     ],
     "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
@@ -76,8 +94,14 @@
       { "ingredient": "leche", "quantity": 100, "unit": "ml" }
     ],
     "steps": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      {
+        "id": 1,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore."
+      },
+      {
+        "id": 2,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      }
     ],
     "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
@@ -97,8 +121,14 @@
       { "ingredient": "leche", "quantity": 100, "unit": "ml" }
     ],
     "steps": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      {
+        "id": 1,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore."
+      },
+      {
+        "id": 2,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      }
     ],
     "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
@@ -118,8 +148,14 @@
       { "ingredient": "leche", "quantity": 100, "unit": "ml" }
     ],
     "steps": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      {
+        "id": 1,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore."
+      },
+      {
+        "id": 2,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      }
     ],
     "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
@@ -139,8 +175,14 @@
       { "ingredient": "leche", "quantity": 100, "unit": "ml" }
     ],
     "steps": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      {
+        "id": 1,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore."
+      },
+      {
+        "id": 2,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      }
     ],
     "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
@@ -160,8 +202,14 @@
       { "ingredient": "leche", "quantity": 100, "unit": "ml" }
     ],
     "steps": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      {
+        "id": 1,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore."
+      },
+      {
+        "id": 2,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      }
     ],
     "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],
@@ -181,8 +229,14 @@
       { "ingredient": "leche", "quantity": 100, "unit": "ml" }
     ],
     "steps": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      {
+        "id": 1,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia obcaecati porro optio, modi blanditiis cum a eveniet tempora cumque, numquam veritatis! Quidem repudiandae id iure labore."
+      },
+      {
+        "id": 2,
+        "step": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci ullam maiores reiciendis repudiandae at saepe voluptas possimus, eos laborum."
+      }
     ],
     "ratings": [4, 5, 3, 5, 4, 5, 5],
     "reviews": ["reviewId1", "reviewId2"],

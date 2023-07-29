@@ -36,7 +36,7 @@ const ProfileLists = ({ navigateTo }: Props) => {
             onPress={() => navigateTo('Recipes', name)}
             title={name}
             recipesLength={recipes.length}
-            icon="star"
+            icon="book-outline"
           />
         ))}
       </View>

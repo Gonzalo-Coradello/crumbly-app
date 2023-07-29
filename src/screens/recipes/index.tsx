@@ -18,12 +18,16 @@ const Recipes = ({ navigation, route }: RecipesNavigationProp) => {
     ? recipes.filter((recipe) => recipe.categoryId === categoryId)
     : list === 'favorites'
     ? recipes.filter((recipe) => user.favorites.includes(recipe.id))
+    : list === 'author'
+    ? recipes.filter((recipe) => user.recipes.includes(recipe.id))
     : recipes.filter((recipe) => userRecipeList.includes(recipe.id))
 
   const emptyMessage = categoryId
     ? 'No hay recetas disponibles en esta categoría'
     : list === 'favorites'
     ? 'Aún no has guardado recetas en tus favoritos'
+    : list === 'author'
+    ? 'Aún no has creado ninguna receta'
     : 'Aún no has guardado recetas en esta lista'
 
   const handleNavigate = (recipeId: string) => {

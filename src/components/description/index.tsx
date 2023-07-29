@@ -17,7 +17,7 @@ const Description = ({ text, maxCh = 110 }: Props) => {
   return (
     <View style={styles.container}>
       <Typography variant="light" size={15}>
-        {show ? text : `${text.slice(0, maxCh)}...`}
+        {show || text.length <= maxCh ? text : `${text.slice(0, maxCh)}...`}
       </Typography>
       {text.length > maxCh && (
         <TouchableOpacity onPress={() => setShow(!show)}>

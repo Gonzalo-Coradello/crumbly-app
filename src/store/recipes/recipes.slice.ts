@@ -7,7 +7,13 @@ const initialState: { data: Recipe[] } = { data: RECIPES }
 const recipesSlice = createSlice({
   name: 'recipes',
   initialState,
-  reducers: {},
+  reducers: {
+    createRecipe: (state, action) => {
+      state.data.push(action.payload.recipe)
+    },
+  },
 })
+
+export const { createRecipe } = recipesSlice.actions
 
 export default recipesSlice.reducer

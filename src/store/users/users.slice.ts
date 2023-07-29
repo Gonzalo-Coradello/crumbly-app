@@ -48,9 +48,13 @@ const usersSlice = createSlice({
       }
       state.current?.lists.push(newList)
     },
+    addRecipe: (state, action) => {
+      const recipeId = action.payload.id
+      state.current?.recipes.push(recipeId)
+    },
   },
 })
 
-export const { addToList, removeFromList, createList } = usersSlice.actions
+export const { addToList, removeFromList, createList, addRecipe } = usersSlice.actions
 
 export default usersSlice.reducer

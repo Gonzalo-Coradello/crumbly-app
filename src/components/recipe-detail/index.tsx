@@ -63,7 +63,7 @@ const RecipeDetail = ({ recipeId, user, openModal }: Props) => {
             </Typography>
           </View>
           <View style={styles.description}>
-            <Description text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem deserunt ut perferendis unde, non laudantium laborum minus accusantium porro debitis reiciendis consectetur error omnis similique dolore. Dolore ratione quae error placeat magnam voluptatibus inventore deserunt consectetur in doloremque adipisci impedit voluptate numquam ab rerum qui perspiciatis sapiente consequuntur, et eligendi?" />
+            <Description text={recipe.description} />
           </View>
         </View>
         <View style={styles.recipe}>
@@ -86,8 +86,8 @@ const RecipeDetail = ({ recipeId, user, openModal }: Props) => {
             Pasos
           </Typography>
           <View style={styles.steps}>
-            {recipe?.steps.map((step, idx) => (
-              <View key={`step${idx}`} style={styles.step}>
+            {recipe?.steps.map(({ id, step }, idx) => (
+              <View key={id} style={styles.step}>
                 <Typography variant="semibold" size={18}>
                   {idx + 1}
                 </Typography>
@@ -108,7 +108,7 @@ const RecipeDetail = ({ recipeId, user, openModal }: Props) => {
           <Typography variant="semibold" size={18}>
             Valoraciones
           </Typography>
-          {recipe.reviews.length ? (
+          {recipe.reviews?.length ? (
             recipe.reviews.map((review) => (
               <View key={review}>
                 <Typography>{review}</Typography>

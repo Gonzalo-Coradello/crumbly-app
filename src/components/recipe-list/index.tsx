@@ -28,7 +28,7 @@ const RecipeList = ({ recipes, handleNavigate, emptyMessage, openModal }: Props)
           renderItem={({ item }) => (
             <RecipeItem {...item} handleNavigate={handleNavigate} openModal={openModal} />
           )}
-          keyExtractor={(item) => item.id.toString()}
+          keyExtractor={(item) => item.id}
           contentContainerStyle={styles.recipeList}
           showsVerticalScrollIndicator={false}
           overScrollMode="never"

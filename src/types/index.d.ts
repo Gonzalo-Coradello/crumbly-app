@@ -16,7 +16,7 @@ export interface Recipe {
   image: string
   description: string
   ingredients: { ingredient: string; quantity: number; unit: string }[]
-  steps: string[]
+  steps: { id: number; step: string }[]
   ratings: number[]
   reviews: string[]
   createdAt: date | string
@@ -88,4 +88,9 @@ export type ProfileNavigationProp = {
 export type CreateListNavigationProps = {
   navigation: NativeStackNavigationProp<CreateListParamList, 'CreateList'>
   route: RouteProp<CreateListParamList, 'CreateList'>
+}
+
+export type CreateRecipeNavigationProps = {
+  navigation: NativeStackNavigationProp<ProfileParamList, 'CreateRecipe'>
+  route: RouteProp<ProfileParamList, 'CreateRecipe'>
 }

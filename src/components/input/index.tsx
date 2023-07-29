@@ -7,17 +7,16 @@ type Props = {
   borderColor?: string
   placeholder: string
   multiline?: boolean
-  // handleChangeText: () => void
+  onChangeText: (text: string) => void
+  value: string
 }
 
 const Input = ({
   borderColor = COLORS.darkGray,
   placeholder,
   multiline,
-  // handleFocus,
-  // handleBlur,
-  // handleChangeText,
-  // handleCreate,
+  onChangeText,
+  value,
   ...props
 }: Props) => {
   return (
@@ -32,11 +31,11 @@ const Input = ({
             paddingTop: multiline ? 12 : 10,
           },
         ]}
-        autoCapitalize="none"
-        autoCorrect={false}
-        // onChangeText={handleChangeText}
+        onChangeText={onChangeText}
+        value={value}
         cursorColor={borderColor}
-        placeholderTextColor={borderColor}
+        placeholderTextColor={COLORS.darkGray}
+        selectionColor={COLORS.primary}
         placeholder={placeholder}
         multiline={multiline}
         numberOfLines={multiline ? 3 : 1}

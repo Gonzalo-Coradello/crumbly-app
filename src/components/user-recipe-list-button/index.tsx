@@ -7,7 +7,7 @@ import Typography from '../typography'
 type Props = {
   onPress: () => void
   title: string
-  icon: 'add-circle-outline' | 'star'
+  icon: 'add-circle-outline' | 'star' | 'book-outline'
   recipesLength?: number
 }
 
