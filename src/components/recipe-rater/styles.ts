@@ -6,5 +6,6 @@ export const styles = StyleSheet.create({
   },
   starsContainer: {
     flexDirection: 'row',
+    gap: 20,
   },
 })
