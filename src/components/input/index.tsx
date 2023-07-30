@@ -9,6 +9,7 @@ type Props = {
   multiline?: boolean
   onChangeText: (text: string) => void
   value: string
+  borderless?: boolean
 }
 
 const Input = ({
@@ -17,10 +18,11 @@ const Input = ({
   multiline,
   onChangeText,
   value,
+  borderless,
   ...props
 }: Props) => {
   return (
-    <View style={[styles.container, { borderColor }]}>
+    <View style={styles.container}>
       <TextInput
         {...props}
         style={[
@@ -29,6 +31,8 @@ const Input = ({
             minHeight: multiline ? 60 : 45,
             verticalAlign: multiline ? 'top' : 'middle',
             paddingTop: multiline ? 12 : 10,
+            borderWidth: borderless ? 0 : 1,
+            borderColor,
           },
         ]}
         onChangeText={onChangeText}

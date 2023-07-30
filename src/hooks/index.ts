@@ -7,8 +7,13 @@ export const useInput = () => {
     setValue(text)
   }
 
+  const reset = () => {
+    setValue('')
+  }
+
   return {
     value,
     onChangeText,
+    reset,
   }
 }
