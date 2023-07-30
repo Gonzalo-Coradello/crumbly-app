@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator<ProfileParamList>()
 
 export default function ProfileNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Profile">
+    <Stack.Navigator initialRouteName="Profile" screenOptions={{ headerBackVisible: false }}>
       <Stack.Screen
         name="Profile"
         component={Profile}
@@ -22,7 +22,17 @@ export default function ProfileNavigator() {
         name="Recipes"
         component={Recipes}
         options={({ navigation, route }) => ({
-          headerTitle: () => <Header title="Perfil" />,
+          headerTitle: () => (
+            <Header
+              title={
+                route.params.list === 'favorites'
+                  ? 'Mis favoritas'
+                  : route.params.list === 'author'
+                  ? 'Mis recetas'
+                  : route.params.list
+              }
+            />
+          ),
           headerTitleAlign: 'center',
           headerLeft: () => <HeaderArrow goBack={navigation.goBack} />,
         })}
@@ -50,6 +60,7 @@ export default function ProfileNavigator() {
         component={CreateRecipe}
         options={({ navigation, route }) => ({
           headerTitle: () => <Header title="Crear receta" />,
+          headerTitleAlign: 'center',
           headerLeft: () => <HeaderArrow goBack={navigation.goBack} />,
         })}
       />
