@@ -1,0 +1,358 @@
+[
+  { "ingredient": "Huevo", "quantity": 1, "units": ["unidad", "gramo"] },
+  {
+    "ingredient": "Harina de trigo",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Harina 000",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Harina 0000",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Harina leudante",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Harina integral",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Avena",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Harina de avena",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Harina de almendras",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Manteca",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Aceite",
+    "quantity": 1,
+    "units": ["mililitro", "cucharada", "cucharadita", "taza", "litro"]
+  },
+  {
+    "ingredient": "Polvo para hornear",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "pizca"]
+  },
+  {
+    "ingredient": "Levadura fresca",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "pizca"]
+  },
+  {
+    "ingredient": "Levadura seca",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "pizca"]
+  },
+  {
+    "ingredient": "Azúcar",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Agua",
+    "quantity": 1,
+    "units": ["mililitro", "cucharada", "cucharadita", "taza", "litro"]
+  },
+  {
+    "ingredient": "Leche",
+    "quantity": 1,
+    "units": ["mililitro", "cucharada", "cucharadita", "taza", "litro"]
+  },
+  {
+    "ingredient": "Leche entera",
+    "quantity": 1,
+    "units": ["mililitro", "cucharada", "cucharadita", "taza", "litro"]
+  },
+  {
+    "ingredient": "Leche de avena",
+    "quantity": 1,
+    "units": ["mililitro", "cucharada", "cucharadita", "taza", "litro"]
+  },
+  {
+    "ingredient": "Leche de almendras",
+    "quantity": 1,
+    "units": ["mililitro", "cucharada", "cucharadita", "taza", "litro"]
+  },
+  {
+    "ingredient": "Leche vegetal",
+    "quantity": 1,
+    "units": ["mililitro", "cucharada", "cucharadita", "taza", "litro"]
+  },
+  {
+    "ingredient": "Leche condensada",
+    "quantity": 1,
+    "units": ["mililitro", "cucharada", "cucharadita", "taza", "litro"]
+  },
+  {
+    "ingredient": "Leche evaporada",
+    "quantity": 1,
+    "units": ["mililitro", "cucharada", "cucharadita", "taza", "litro"]
+  },
+  { "ingredient": "Miel", "quantity": 1, "units": ["cucharadita", "cucharada", "gramo"] },
+  {
+    "ingredient": "Crema de leche",
+    "quantity": 1,
+    "units": ["mililitro", "cucharada", "cucharadita", "taza", "litro"]
+  },
+  {
+    "ingredient": "Yogur",
+    "quantity": 1,
+    "units": ["gramo", "mililitro", "cucharada", "cucharadita", "taza"]
+  },
+  { "ingredient": "Cacao amargo", "quantity": 1, "units": ["cucharadita", "cucharada", "gramo"] },
+  { "ingredient": "Cacao dulce", "quantity": 1, "units": ["cucharadita", "cucharada", "gramo"] },
+  {
+    "ingredient": "Chocolate con leche",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Chocolate negro",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Chocolate blanco",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Chips de chocolate",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "puñado"]
+  },
+  {
+    "ingredient": "Dulce de leche",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita"]
+  },
+  {
+    "ingredient": "Mantequilla de maní",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita"]
+  },
+  {
+    "ingredient": "Dulce de leche repostero",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita"]
+  },
+  {
+    "ingredient": "Coco rallado",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Maicena / Almidón de maíz",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Bicarbonato de sodio",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Queso crema",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza"]
+  },
+  { "ingredient": "Sal", "quantity": 1, "units": ["pizca", "cucharadita", "cucharada", "gramo"] },
+  { "ingredient": "Esencia de vainilla", "quantity": 1, "units": ["cucharadita", "cucharada"] },
+  {
+    "ingredient": "Canela",
+    "quantity": 1,
+    "units": ["cucharadita", "cucharada", "gramo", "pizca"]
+  },
+  {
+    "ingredient": "Jengibre en polvo",
+    "quantity": 1,
+    "units": ["cucharadita", "cucharada", "gramo", "pizca"]
+  },
+  {
+    "ingredient": "Clavo de olor",
+    "quantity": 1,
+    "units": ["cucharadita", "cucharada", "gramo", "pizca"]
+  },
+  {
+    "ingredient": "Anís estrellado",
+    "quantity": 1,
+    "units": ["cucharadita", "cucharada", "gramo", "pizca"]
+  },
+  {
+    "ingredient": "Semillas",
+    "quantity": 1,
+    "units": ["cucharadita", "cucharada", "gramo", "pizca", "puñado"]
+  },
+  {
+    "ingredient": "Semillas de sésamo",
+    "quantity": 1,
+    "units": ["cucharadita", "cucharada", "gramo", "pizca", "puñado"]
+  },
+  {
+    "ingredient": "Azúcar glass",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Azúcar de mascabo",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Azúcar rubia",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Azúcar morena",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "taza", "pizca"]
+  },
+  {
+    "ingredient": "Edulcorante",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "pizca"]
+  },
+  {
+    "ingredient": "Sucralosa",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "pizca"]
+  },
+  {
+    "ingredient": "Stevia",
+    "quantity": 1,
+    "units": ["gramo", "cucharada", "cucharadita", "pizca"]
+  },
+  {
+    "ingredient": "Frutos secos",
+    "quantity": 1,
+    "units": ["gramo", "taza", "puñado"]
+  },
+  {
+    "ingredient": "Nuez",
+    "quantity": 1,
+    "units": ["gramo", "taza", "puñado"]
+  },
+  {
+    "ingredient": "Almendra",
+    "quantity": 1,
+    "units": ["gramo", "taza", "puñado"]
+  },
+  {
+    "ingredient": "Castaña de cajú",
+    "quantity": 1,
+    "units": ["gramo", "taza", "puñado"]
+  },
+  {
+    "ingredient": "Maní",
+    "quantity": 1,
+    "units": ["gramo", "taza", "puñado"]
+  },
+  {
+    "ingredient": "Avellana",
+    "quantity": 1,
+    "units": ["gramo", "taza", "puñado"]
+  },
+  {
+    "ingredient": "Pistacho",
+    "quantity": 1,
+    "units": ["gramo", "taza", "puñado"]
+  },
+  {
+    "ingredient": "Manzana",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Manzana verde",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Banana",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Naranja",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Pera",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Mandarina",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Limón",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Lima",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Frutilla",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Frutos rojos",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Arándano",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Frambuesa",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Kiwi",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Calabaza",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  },
+  {
+    "ingredient": "Zanahoria",
+    "quantity": 1,
+    "units": ["unidad", "gramo"]
+  }
+]
