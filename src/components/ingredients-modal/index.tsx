@@ -1,5 +1,6 @@
 import { Ionicons, AntDesign } from '@expo/vector-icons'
 import { Modal, ScrollView, TouchableOpacity, View } from 'react-native'
+import { useSelector } from 'react-redux'
 import { useInput } from 'src/hooks'
 import { COLORS } from 'src/themes'
 import { Ingredient } from 'src/types'
@@ -15,35 +16,14 @@ type Props = {
   selectedIngredients: Ingredient[]
 }
 
-const ingredients: Ingredient[] = [
-  { ingredient: 'Huevo', quantity: 1, unit: 'unidad' },
-  { ingredient: 'Harina de trigo', quantity: 1, unit: 'gramo' },
-  { ingredient: 'Manteca', quantity: 1, unit: 'gramo' },
-  { ingredient: 'Aceite', quantity: 1, unit: 'mililitro' },
-  { ingredient: 'Polvo para hornear', quantity: 1, unit: 'gramo' },
-  { ingredient: 'Azúcar', quantity: 1, unit: 'gramo' },
-  { ingredient: 'Leche', quantity: 1, unit: 'mililitro' },
-  { ingredient: 'Miel', quantity: 1, unit: 'cucharadita' },
-  { ingredient: 'Crema de leche', quantity: 1, unit: 'mililitro' },
-  { ingredient: 'Yogur', quantity: 1, unit: 'mililitro' },
-  { ingredient: 'Cacao amargo', quantity: 1, unit: 'cucharadita' },
-  { ingredient: 'Cacao dulce', quantity: 1, unit: 'cucharadita' },
-  { ingredient: 'Chocolate', quantity: 1, unit: 'gramo' },
-  { ingredient: 'Sal', quantity: 1, unit: 'pizca' },
-  { ingredient: 'Esencia de vainilla', quantity: 1, unit: 'cucharadita' },
-  { ingredient: 'Canela', quantity: 1, unit: 'cucharadita' },
-  { ingredient: 'Azúcar glass', quantity: 1, unit: 'gramo' },
-  { ingredient: 'Azúcar de mascabo', quantity: 1, unit: 'gramo' },
-  { ingredient: 'Azúcar rubia', quantity: 1, unit: 'gramo' },
-  { ingredient: 'Azúcar morena', quantity: 1, unit: 'gramo' },
-]
-
 const IngredientsModal = ({
   modalVisible,
   setModalVisible,
   addIngredient,
   selectedIngredients,
 }: Props) => {
+  const ingredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.data)
+
   const search = useInput()
 
   const ingredientList = ingredients.filter((i) =>
@@ -110,7 +90,7 @@ const IngredientsModal = ({
             ))
           ) : (
             <>
-              {selectedIngredients.map(({ ingredient, quantity, unit }) => (
+              {selectedIngredients?.map(({ ingredient, quantity, units }) => (
                 <View style={styles.ingredient} key={ingredient}>
                   <View>
                     {/* <Image /> */}
@@ -119,7 +99,7 @@ const IngredientsModal = ({
                         {ingredient}
                       </Typography>
                       <Typography variant="light">
-                        {quantity} {unit}
+                        {quantity} {units[0]}
                       </Typography>
                     </View>
                   </View>

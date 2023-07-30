@@ -44,7 +44,7 @@ export interface User {
   lists: { name: string; recipes: string[] }[] // recipes: ["recipeId", "recipeId"]
 }
 
-export type Ingredient = { ingredient: string; quantity: number; unit: string }
+export type Ingredient = { ingredient: string; quantity: number; units: string[]; unit?: string }
 
 export type RecipesParamList = {
   Recipes: { categoryId: string; category: string; list: string }
