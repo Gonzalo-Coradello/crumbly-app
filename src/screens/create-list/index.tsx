@@ -1,5 +1,4 @@
-import { TextInput, View } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { TextInput, View, TouchableOpacity } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { Typography } from 'src/components'
 import { useInput } from 'src/hooks'
