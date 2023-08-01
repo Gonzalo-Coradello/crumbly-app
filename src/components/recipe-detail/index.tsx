@@ -3,6 +3,7 @@ import { Image, ScrollView, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeFromList } from 'src/store/users/users.slice'
 import { Recipe, User } from 'src/types'
+import { transformQuantity, transformUnit } from 'src/utils'
 
 import { styles } from './styles'
 import Description from '../description'
@@ -77,7 +78,7 @@ const RecipeDetail = ({ recipeId, user, openModal }: Props) => {
                   {ingredient.charAt(0).toUpperCase() + ingredient.slice(1)}
                 </Typography>
                 <Typography size={15}>
-                  {quantity} {unit}
+                  {transformQuantity(quantity)} {transformUnit(unit, quantity)}
                 </Typography>
               </View>
             ))}

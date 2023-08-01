@@ -1,62 +1,70 @@
 import { Ionicons, AntDesign } from '@expo/vector-icons'
-import { Modal, ScrollView, TouchableOpacity, View } from 'react-native'
-import { useSelector } from 'react-redux'
+import { useState } from 'react'
+import { ScrollView, TouchableOpacity, View } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
 import { useInput } from 'src/hooks'
+import {
+  addIngredients,
+  deleteIngredient,
+  editIngredient,
+} from 'src/store/ingredients/ingredients.slice'
 import { COLORS } from 'src/themes'
 import { Ingredient } from 'src/types'
+import { transformQuantity, transformUnit } from 'src/utils'
 
 import { styles } from './styles'
+import EditIngredientModal from '../edit-ingredient-modal'
 import Input from '../input'
 import Typography from '../typography'
 
-type Props = {
-  modalVisible: boolean
-  setModalVisible: (visible: boolean) => void
-  addIngredient: (ingredient: Ingredient) => void
-  selectedIngredients: Ingredient[]
-}
-
-const IngredientsModal = ({
-  modalVisible,
-  setModalVisible,
-  addIngredient,
-  selectedIngredients,
-}: Props) => {
+const SearchIngredients = () => {
+  const dispatch = useDispatch()
   const ingredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.data)
-
+  const selectedIngredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.selected)
+  const selectedIngredientNames = selectedIngredients.map((i) => i.ingredient)
+  const [modalVisible, setModalVisible] = useState(false)
+  const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null)
   const search = useInput()
 
   const ingredientList = ingredients.filter((i) =>
     i.ingredient.toLowerCase().includes(search.value.toLowerCase())
   )
   const isSelected = (ingredient: Ingredient) => {
-    return selectedIngredients.includes(ingredient)
+    return selectedIngredientNames.includes(ingredient.ingredient)
   }
 
   const handleAdd = (ingredient: Ingredient) => {
     search.reset()
-    addIngredient(ingredient)
+    dispatch(addIngredients([ingredient]))
+  }
+
+  const handleRemove = (ingredient: string) => {
+    dispatch(deleteIngredient({ ingredient }))
+  }
+
+  const handleEdit = (ingredient: Ingredient) => {
+    setSelectedIngredient(ingredient)
+    setModalVisible(true)
+  }
+
+  const handleUpdate = (ingredient: Ingredient) => {
+    dispatch(editIngredient({ ingredient }))
+    setModalVisible(false)
   }
 
   return (
-    <Modal
-      visible={modalVisible}
-      transparent
-      animationType="slide"
-      onRequestClose={() => {
-        setModalVisible(!modalVisible)
-      }}>
+    <>
+      <EditIngredientModal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        selectedIngredient={selectedIngredient}
+        handleUpdate={handleUpdate}
+      />
       <ScrollView
-        style={styles.modalContainer}
+        style={styles.container}
         contentContainerStyle={styles.contentContainer}
         overScrollMode="never"
         showsVerticalScrollIndicator={false}>
-        <TouchableOpacity onPress={() => setModalVisible(false)}>
-          <Ionicons name="close-circle-outline" size={30} />
-        </TouchableOpacity>
-        <Typography variant="semibold" size={20} centered>
-          Ingredientes
-        </Typography>
         <View style={styles.searchIngredients}>
           <Ionicons name="search" size={25} color={COLORS.darkGray} />
           <Input placeholder="Escribe ingredientes" borderless {...search} />
@@ -78,7 +86,10 @@ const IngredientsModal = ({
                   {ingredient.ingredient.charAt(0).toUpperCase() + ingredient.ingredient.slice(1)}
                 </Typography>
                 {isSelected(ingredient) ? (
-                  <TouchableOpacity onPress={() => {}}>
+                  <TouchableOpacity
+                    onPress={() => {
+                      handleRemove(ingredient.ingredient)
+                    }}>
                     <Ionicons name="trash-outline" size={28} />
                   </TouchableOpacity>
                 ) : (
@@ -90,7 +101,7 @@ const IngredientsModal = ({
             ))
           ) : (
             <>
-              {selectedIngredients?.map(({ ingredient, quantity, units }) => (
+              {selectedIngredients?.map(({ ingredient, quantity, unit, units }) => (
                 <View style={styles.ingredient} key={ingredient}>
                   <View>
                     {/* <Image /> */}
@@ -99,25 +110,31 @@ const IngredientsModal = ({
                         {ingredient}
                       </Typography>
                       <Typography variant="light">
-                        {quantity} {units[0]}
+                        {transformQuantity(quantity)} {transformUnit(unit, quantity)}
                       </Typography>
                     </View>
                   </View>
                   <View style={styles.iconsContainer}>
-                    <TouchableOpacity onPress={() => {}}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        handleRemove(ingredient)
+                      }}>
                       <Ionicons name="trash" size={25} color={COLORS.black} />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => {}}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        handleEdit({ ingredient, quantity, units, unit })
+                      }}>
                       <AntDesign name="edit" size={25} color={COLORS.black} />
                     </TouchableOpacity>
                   </View>
                 </View>
               ))}
-              <TouchableOpacity style={styles.button}>
+              {/* <TouchableOpacity style={styles.button} onPress={() => naviga}>
                 <Typography color="white" size={18} centered>
                   Añadir ingredientes
                 </Typography>
-              </TouchableOpacity>
+              </TouchableOpacity> */}
             </>
           )}
           {ingredientList.length === 0 && (
@@ -129,8 +146,8 @@ const IngredientsModal = ({
           )}
         </View>
       </ScrollView>
-    </Modal>
+    </>
   )
 }
 
-export default IngredientsModal
+export default SearchIngredients

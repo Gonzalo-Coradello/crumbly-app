@@ -1,44 +1,62 @@
-import { Platform, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { COLORS } from 'src/themes'
 
 export const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: COLORS.transparentDarker,
+    flex: 1,
+    margin: 0,
+    marginBottom: -30,
+  },
   modalContainer: {
-    paddingTop: Platform.OS === 'ios' ? 45 : 0,
     width: '100%',
+    height: 300,
     flex: 1,
     backgroundColor: COLORS.white,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    paddingHorizontal: 25,
-  },
-  contentContainer: {
-    gap: 15,
-    paddingTop: 15,
-    paddingBottom: 30,
-  },
-  searchIngredients: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 5,
-    borderColor: COLORS.black,
-    borderWidth: 1,
-    borderRadius: 10,
-    minHeight: 45,
-    paddingVertical: 5,
     paddingHorizontal: 15,
   },
-  ingredients: {
-    gap: 20,
-    paddingBottom: 60,
+  contentContainer: {
+    gap: 30,
+    paddingVertical: 30,
   },
-  ingredient: {
+  row: {
+    flexDirection: 'row',
+    gap: 30,
+    justifyContent: 'center',
+  },
+  column: {
+    flexBasis: '40%',
+    gap: 15,
+  },
+  unitSelector: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: COLORS.white,
-    paddingHorizontal: 15,
-    paddingVertical: 15,
+    minHeight: 45,
+    maxHeight: 120,
     borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    color: COLORS.black,
+    fontSize: 14,
+    width: '100%',
+    borderWidth: 1,
+    borderColor: COLORS.darkGray,
+  },
+  optionMenu: {
+    position: 'absolute',
+    top: '100%',
+    left: 0,
+    width: '100%',
+    backgroundColor: COLORS.white,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    gap: 10,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -47,24 +65,12 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 3,
-  },
-  selected: {
-    backgroundColor: COLORS.primary,
-  },
-  resetSearchButton: {
-    position: 'absolute',
-    right: 0,
-    padding: 15,
-  },
-  iconsContainer: {
-    flexDirection: 'row',
-    gap: 15,
-    alignItems: 'center',
+    zIndex: 100,
   },
   button: {
     backgroundColor: COLORS.primary,
     alignSelf: 'center',
-    marginTop: 10,
+    marginTop: 30,
     paddingVertical: 15,
     paddingHorizontal: 15,
     borderRadius: 10,
@@ -76,5 +82,6 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 3,
+    zIndex: -10,
   },
 })

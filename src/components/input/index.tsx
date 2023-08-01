@@ -10,6 +10,7 @@ type Props = {
   onChangeText: (text: string) => void
   value: string
   borderless?: boolean
+  numeric?: boolean
 }
 
 const Input = ({
@@ -19,6 +20,7 @@ const Input = ({
   onChangeText,
   value,
   borderless,
+  numeric,
   ...props
 }: Props) => {
   return (
@@ -43,6 +45,7 @@ const Input = ({
         placeholder={placeholder}
         multiline={multiline}
         numberOfLines={multiline ? 3 : 1}
+        keyboardType={numeric ? 'numeric' : 'default'}
       />
     </View>
   )

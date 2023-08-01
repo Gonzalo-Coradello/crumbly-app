@@ -3,13 +3,19 @@ import { useState } from 'react'
 import { Image, ScrollView, View, TouchableOpacity } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useInput } from 'src/hooks'
+import {
+  deleteIngredient,
+  editIngredient,
+  emptyIngredients,
+} from 'src/store/ingredients/ingredients.slice'
 import { createRecipe } from 'src/store/recipes/recipes.slice'
 import { addRecipe } from 'src/store/users/users.slice'
 import { COLORS } from 'src/themes'
 import { Category, Recipe, User, Ingredient } from 'src/types'
+import { transformQuantity, transformUnit } from 'src/utils'
 
 import { styles } from './styles'
-import IngredientsModal from '../ingredients-modal'
+import EditIngredientModal from '../edit-ingredient-modal'
 import Input from '../input'
 import Typography from '../typography'
 
@@ -18,6 +24,7 @@ const RecipeForm = ({ navigation }: any) => {
 
   const imageSelected = false
 
+  const ingredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.selected)
   const author: User = useSelector(({ users }) => users.current)
   const categories: Category[] = useSelector(({ categories }) => categories.data)
 
@@ -26,8 +33,8 @@ const RecipeForm = ({ navigation }: any) => {
 
   const [steps, setSteps] = useState<{ id: number; step: string }[]>([{ id: 1, step: '' }])
   const [selectedCategory, setSelectedCategory] = useState<string>('')
-  const [ingredients, setIngredients] = useState<Ingredient[]>([])
   const [modalVisible, setModalVisible] = useState(false)
+  const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null)
 
   const addStep = () => {
     setSteps((prev) => prev.concat({ id: prev[prev.length - 1]?.id + 1 || 1, step: '' }))
@@ -41,8 +48,18 @@ const RecipeForm = ({ navigation }: any) => {
     setSteps((prev) => prev.filter(({ id }) => id !== stepId))
   }
 
-  const addIngredient = (ingredient: Ingredient) => {
-    setIngredients((prev) => prev.concat(ingredient))
+  const handleEditIngredient = (ingredient: Ingredient) => {
+    setSelectedIngredient(ingredient)
+    setModalVisible(true)
+  }
+
+  const handleUpdateIngredient = (ingredient: Ingredient) => {
+    dispatch(editIngredient({ ingredient }))
+    setModalVisible(false)
+  }
+
+  const handleRemoveIngredient = (ingredient: string) => {
+    dispatch(deleteIngredient({ ingredient }))
   }
 
   const handleSubmit = () => {
@@ -52,7 +69,7 @@ const RecipeForm = ({ navigation }: any) => {
       image:
         'https://s3-alpha-sig.figma.com/img/c453/9086/acfc1569c43903acc16df5065a241de3?Expires=1691366400&Signature=aDeRmKtgeUv3oPSfJykouIkrOGoDKTCkLH49CHuTdmlBBYgBr7bE1Wnz7VdkgmozJMe9k0bF-ANN9G8j2AZFl9CX1sV6QrTyHLjJMG7SogGOBvoiaHqU7CBl9VkrRaL8QFwrelh6sS6zCDU-FA6cpA1QsQzzJrAN0Dk~M~x7alfJTY3dltzdu-TOtuKhXgow1MsuViQx9j1lykHP-W-NHAiY2yWUlikHG9m1NxmRn49~SEMQ2OsdZWo7QsfHvCTACfAvFdxfc4yZyjO4uVBinwxo3xDFods8dIJ3eqjcKP25EiB5BZYaUZ74bU76WlJljpHvhNV27CRPKL02Qn12Iw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       description: description.value,
-      ingredients: [],
+      ingredients,
       steps,
       categoryId: selectedCategory,
       authorId: author.id,
@@ -63,16 +80,17 @@ const RecipeForm = ({ navigation }: any) => {
     }
     dispatch(createRecipe({ recipe }))
     dispatch(addRecipe({ id: recipe.id }))
+    dispatch(emptyIngredients())
     navigation.navigate('Profile')
   }
 
   return (
     <>
-      <IngredientsModal
-        selectedIngredients={ingredients}
+      <EditIngredientModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
-        addIngredient={addIngredient}
+        selectedIngredient={selectedIngredient}
+        handleUpdate={handleUpdateIngredient}
       />
       <ScrollView
         style={styles.container}
@@ -114,13 +132,13 @@ const RecipeForm = ({ navigation }: any) => {
           <View>
             <TouchableOpacity
               style={styles.searchIngredients}
-              onPress={() => setModalVisible(true)}>
+              onPress={() => navigation.navigate('Ingredients')}>
               <Ionicons name="search" size={25} color={COLORS.darkGray} />
               <Typography color="gray">Escribe ingredientes</Typography>
             </TouchableOpacity>
           </View>
           <View>
-            {ingredients.map(({ ingredient, quantity, unit }) => (
+            {ingredients.map(({ ingredient, quantity, unit, units }) => (
               <View style={styles.ingredient} key={ingredient}>
                 <View>
                   {/* <Image /> */}
@@ -129,15 +147,16 @@ const RecipeForm = ({ navigation }: any) => {
                       {ingredient}
                     </Typography>
                     <Typography variant="light">
-                      {quantity} {unit}
+                      {transformQuantity(quantity)} {transformUnit(unit, quantity)}
                     </Typography>
                   </View>
                 </View>
                 <View style={styles.iconsContainer}>
-                  <TouchableOpacity onPress={() => {}}>
+                  <TouchableOpacity onPress={() => handleRemoveIngredient(ingredient)}>
                     <Ionicons name="trash" size={25} color={COLORS.black} />
                   </TouchableOpacity>
-                  <TouchableOpacity onPress={() => {}}>
+                  <TouchableOpacity
+                    onPress={() => handleEditIngredient({ ingredient, quantity, units, unit })}>
                     <AntDesign name="edit" size={25} color={COLORS.black} />
                   </TouchableOpacity>
                 </View>
