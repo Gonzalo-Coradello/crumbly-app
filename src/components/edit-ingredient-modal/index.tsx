@@ -30,7 +30,7 @@ const EditIngredientModal = ({
   selectedIngredient,
   handleUpdate,
 }: Props) => {
-  const quantity = useInput(selectedIngredient?.quantity.toString())
+  const quantity = useInput()
   const [optionMenuOpen, setOptionMenuOpen] = useState(false)
   const [unit, setUnit] = useState('')
 
@@ -47,6 +47,7 @@ const EditIngredientModal = ({
   useEffect(() => {
     if (selectedIngredient) {
       setUnit(selectedIngredient.unit)
+      quantity.setValue(selectedIngredient.quantity.toString())
     }
   }, [selectedIngredient])
 

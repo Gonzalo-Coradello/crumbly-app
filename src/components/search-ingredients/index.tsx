@@ -20,6 +20,7 @@ import Typography from '../typography'
 const SearchIngredients = () => {
   const dispatch = useDispatch()
   const ingredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.data)
+  const allUnits: string[] = useSelector(({ ingredients }) => ingredients.allUnits)
   const selectedIngredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.selected)
   const selectedIngredientNames = selectedIngredients.map((i) => i.ingredient)
   const [modalVisible, setModalVisible] = useState(false)
@@ -48,8 +49,26 @@ const SearchIngredients = () => {
   }
 
   const handleUpdate = (ingredient: Ingredient) => {
-    dispatch(editIngredient({ ingredient }))
+    const exists = ingredientList.find((i) => i.ingredient === ingredient.ingredient)
+    if (exists) {
+      dispatch(editIngredient({ ingredient }))
+    } else {
+      dispatch(addIngredients([ingredient]))
+    }
+    search.reset()
     setModalVisible(false)
+  }
+
+  const handleNewIngredient = () => {
+    const newIngredient: Ingredient = {
+      ingredient: search.value,
+      quantity: 1,
+      units: allUnits,
+      unit: allUnits[0],
+    }
+
+    setSelectedIngredient(newIngredient)
+    setModalVisible(true)
   }
 
   return (
@@ -138,7 +157,7 @@ const SearchIngredients = () => {
             </>
           )}
           {ingredientList.length === 0 && (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleNewIngredient}>
               <Typography size={16} centered>
                 Agregar "{search.value}"
               </Typography>

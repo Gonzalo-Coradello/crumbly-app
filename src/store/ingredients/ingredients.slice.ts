@@ -2,9 +2,20 @@ import { createSlice } from '@reduxjs/toolkit'
 import INGREDIENTS from 'src/constants/data/ingredients.json'
 import { Ingredient } from 'src/types'
 
-const initialState: { data: Ingredient[]; selected: Ingredient[] } = {
+const initialState: { data: Ingredient[]; selected: Ingredient[]; allUnits: string[] } = {
   data: INGREDIENTS,
   selected: [],
+  allUnits: [
+    'unidad',
+    'gramo',
+    'cucharada',
+    'cucharadita',
+    'taza',
+    'pizca',
+    'mililitro',
+    'litro',
+    'puñado',
+  ],
 }
 
 const ingredientsSlice = createSlice({

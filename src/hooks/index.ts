@@ -1,13 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
-export const useInput = (defaultValue?: string) => {
+export const useInput = () => {
   const [value, setValue] = useState<string>('')
-
-  useEffect(() => {
-    if (defaultValue) {
-      setValue(defaultValue)
-    }
-  }, [defaultValue])
 
   const onChangeText = (text: string) => {
     setValue(text)
@@ -21,5 +15,6 @@ export const useInput = (defaultValue?: string) => {
     value,
     onChangeText,
     reset,
+    setValue,
   }
 }
