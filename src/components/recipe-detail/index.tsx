@@ -1,6 +1,6 @@
 import { Ionicons, AntDesign } from '@expo/vector-icons'
 import { Image, ScrollView, View } from 'react-native'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { removeFromList } from 'src/store/users/users.slice'
 import { Recipe, User } from 'src/types'
 import { transformQuantity, transformUnit } from 'src/utils'
@@ -13,23 +13,20 @@ import RecipeRating from '../recipe-rating'
 import Typography from '../typography'
 
 type Props = {
-  recipeId: string
+  recipe: Recipe
   user: User
   openModal: () => void
   navigation: any
 }
 
-const RecipeDetail = ({ recipeId, user, openModal, navigation }: Props) => {
-  const recipes: Recipe[] = useSelector(({ recipes }) => recipes.data)
-  const recipe = recipes.find((recipe) => recipe.id === recipeId)
-
+const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
   const dispatch = useDispatch()
 
-  const isFavorite = user.favorites.includes(recipeId)
-  const isSaved = user.lists.find((list) => list.recipes.includes(recipeId))
+  const isFavorite = user.favorites.includes(recipe.id)
+  const isSaved = user.lists.find((list) => list.recipes.includes(recipe.id))
 
   const remove = () => {
-    dispatch(removeFromList({ id: recipeId, listName: isFavorite ? 'favorites' : isSaved?.name }))
+    dispatch(removeFromList({ id: recipe.id, listName: isFavorite ? 'favorites' : isSaved?.name }))
   }
 
   const author = recipe?.fromCrumbly ? 'Crumbly' : 'Someone'
