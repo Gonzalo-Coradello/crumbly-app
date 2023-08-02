@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
-import INGREDIENTS from 'src/constants/data/ingredients.json'
 import { Ingredient } from 'src/types'
 
 const initialState: { data: Ingredient[]; selected: Ingredient[]; allUnits: string[] } = {
-  data: INGREDIENTS,
+  data: [],
   selected: [],
   allUnits: [
     'unidad',
@@ -30,6 +29,9 @@ const ingredientsSlice = createSlice({
         state.data.push(ingredient)
       }
     },
+    setInitialIngredients: (state, action) => {
+      state.data = action.payload
+    },
     setIngredients: (state, action) => {
       state.selected = action.payload
     },
@@ -51,7 +53,13 @@ const ingredientsSlice = createSlice({
   },
 })
 
-export const { addIngredient, setIngredients, editIngredient, deleteIngredient, emptyIngredients } =
-  ingredientsSlice.actions
+export const {
+  addIngredient,
+  setInitialIngredients,
+  setIngredients,
+  editIngredient,
+  deleteIngredient,
+  emptyIngredients,
+} = ingredientsSlice.actions
 
 export default ingredientsSlice.reducer

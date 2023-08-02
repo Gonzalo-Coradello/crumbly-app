@@ -1,12 +1,14 @@
 import { Ionicons, AntDesign } from '@expo/vector-icons'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ScrollView, TouchableOpacity, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useInput } from 'src/hooks'
+import { useGetIngredientsQuery } from 'src/store/ingredients/api'
 import {
   addIngredient,
   deleteIngredient,
   editIngredient,
+  setInitialIngredients,
 } from 'src/store/ingredients/ingredients.slice'
 import { COLORS } from 'src/themes'
 import { Ingredient } from 'src/types'
@@ -15,11 +17,20 @@ import { transformQuantity, transformUnit } from 'src/utils'
 import { styles } from './styles'
 import EditIngredientModal from '../edit-ingredient-modal'
 import Input from '../input'
+import Loader from '../loader'
 import Typography from '../typography'
 
 const SearchIngredients = () => {
   const dispatch = useDispatch()
+  const { data, isLoading, isError, error } = useGetIngredientsQuery(null)
   const ingredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.data)
+
+  useEffect(() => {
+    if (!ingredients) {
+      dispatch(setInitialIngredients(data))
+    }
+  }, [data])
+
   const allUnits: string[] = useSelector(({ ingredients }) => ingredients.allUnits)
   const selectedIngredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.selected)
   const selectedIngredientNames = selectedIngredients.map((i) => i.ingredient)
@@ -27,7 +38,16 @@ const SearchIngredients = () => {
   const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null)
   const search = useInput()
 
-  const ingredientList = ingredients.filter((i) =>
+  if (isLoading) return <Loader />
+  if (isError) {
+    return (
+      <View>
+        <Typography>{error.toString()}</Typography>
+      </View>
+    )
+  }
+
+  const ingredientList = ingredients?.filter((i) =>
     i.ingredient.toLowerCase().includes(search.value.toLowerCase())
   )
   const isSelected = (ingredient: Ingredient) => {
@@ -158,7 +178,7 @@ const SearchIngredients = () => {
               </TouchableOpacity> */}
             </>
           )}
-          {ingredientList.length === 0 && (
+          {ingredientList?.length === 0 && (
             <TouchableOpacity onPress={handleNewIngredient}>
               <Typography size={16} centered>
                 Agregar "{search.value}"
