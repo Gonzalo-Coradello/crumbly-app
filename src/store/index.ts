@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/dist/query'
 
+import { categoriesApi } from './categories/api'
 import categoriesSlice from './categories/categories.slice'
 import ingredientsSlice from './ingredients/ingredients.slice'
 import { recipesApi } from './recipes/api'
@@ -14,8 +15,10 @@ const store = configureStore({
     users: usersSlice,
     ingredients: ingredientsSlice,
     [recipesApi.reducerPath]: recipesApi.reducer,
+    [categoriesApi.reducerPath]: categoriesApi.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(recipesApi.middleware),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(recipesApi.middleware, categoriesApi.middleware),
 })
 
 setupListeners(store.dispatch)
