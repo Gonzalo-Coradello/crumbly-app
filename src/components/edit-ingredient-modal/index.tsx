@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   View,
+  ScrollView,
 } from 'react-native'
 import { useInput } from 'src/hooks'
 import { COLORS } from 'src/themes'
@@ -94,11 +95,13 @@ const EditIngredientModal = ({
                 </TouchableOpacity>
                 {optionMenuOpen && (
                   <View style={styles.optionMenu}>
-                    {selectedIngredient.units.map((unit) => (
-                      <TouchableOpacity key={unit} onPress={() => handleSelectUnit(unit)}>
-                        <Typography>{transformUnit(unit, +quantity.value)}</Typography>
-                      </TouchableOpacity>
-                    ))}
+                    <ScrollView contentContainerStyle={styles.optionMenuContent}>
+                      {selectedIngredient.units.map((unit) => (
+                        <TouchableOpacity key={unit} onPress={() => handleSelectUnit(unit)}>
+                          <Typography>{transformUnit(unit, +quantity.value)}</Typography>
+                        </TouchableOpacity>
+                      ))}
+                    </ScrollView>
                   </View>
                 )}
               </View>

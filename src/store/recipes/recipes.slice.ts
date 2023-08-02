@@ -11,9 +11,15 @@ const recipesSlice = createSlice({
     createRecipe: (state, action) => {
       state.data.push(action.payload.recipe)
     },
+    updateRecipe: (state, action) => {
+      const updatedRecipe = action.payload.recipe
+      state.data = state.data.map((recipe) =>
+        recipe.id === updatedRecipe.id ? updatedRecipe : recipe
+      )
+    },
   },
 })
 
-export const { createRecipe } = recipesSlice.actions
+export const { createRecipe, updateRecipe } = recipesSlice.actions
 
 export default recipesSlice.reducer

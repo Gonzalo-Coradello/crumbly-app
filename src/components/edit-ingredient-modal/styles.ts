@@ -52,11 +52,11 @@ export const styles = StyleSheet.create({
     top: '100%',
     left: 0,
     width: '100%',
+    maxHeight: 150,
     backgroundColor: COLORS.white,
     borderRadius: 10,
     paddingHorizontal: 10,
     paddingVertical: 10,
-    gap: 10,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -66,6 +66,9 @@ export const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 3,
     zIndex: 100,
+  },
+  optionMenuContent: {
+    gap: 10,
   },
   button: {
     backgroundColor: COLORS.primary,

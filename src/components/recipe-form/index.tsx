@@ -1,5 +1,5 @@
 import { Ionicons, AntDesign } from '@expo/vector-icons'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Image, ScrollView, View, TouchableOpacity } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useInput } from 'src/hooks'
@@ -7,8 +7,9 @@ import {
   deleteIngredient,
   editIngredient,
   emptyIngredients,
+  setIngredients,
 } from 'src/store/ingredients/ingredients.slice'
-import { createRecipe } from 'src/store/recipes/recipes.slice'
+import { createRecipe, updateRecipe } from 'src/store/recipes/recipes.slice'
 import { addRecipe } from 'src/store/users/users.slice'
 import { COLORS } from 'src/themes'
 import { Category, Recipe, User, Ingredient } from 'src/types'
@@ -19,7 +20,12 @@ import EditIngredientModal from '../edit-ingredient-modal'
 import Input from '../input'
 import Typography from '../typography'
 
-const RecipeForm = ({ navigation }: any) => {
+type Props = {
+  navigation: any
+  recipe?: Recipe
+}
+
+const RecipeForm = ({ navigation, recipe }: Props) => {
   const dispatch = useDispatch()
 
   const imageSelected = false
@@ -35,6 +41,16 @@ const RecipeForm = ({ navigation }: any) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('')
   const [modalVisible, setModalVisible] = useState(false)
   const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null)
+
+  useEffect(() => {
+    if (recipe) {
+      name.setValue(recipe.name)
+      description.setValue(recipe.description)
+      setSteps(recipe.steps)
+      setSelectedCategory(recipe.categoryId)
+      dispatch(setIngredients(recipe.ingredients))
+    }
+  }, [recipe])
 
   const addStep = () => {
     setSteps((prev) => prev.concat({ id: prev[prev.length - 1]?.id + 1 || 1, step: '' }))
@@ -62,7 +78,7 @@ const RecipeForm = ({ navigation }: any) => {
     dispatch(deleteIngredient({ ingredient }))
   }
 
-  const handleSubmit = () => {
+  const handleCreate = () => {
     const recipe: Recipe = {
       id: String(Math.floor(Math.random() * 1000) + 1),
       name: name.value,
@@ -80,8 +96,33 @@ const RecipeForm = ({ navigation }: any) => {
     }
     dispatch(createRecipe({ recipe }))
     dispatch(addRecipe({ id: recipe.id }))
+  }
+
+  const handleUpdate = () => {
+    dispatch(
+      updateRecipe({
+        recipe: {
+          ...recipe,
+          name: name.value,
+          image:
+            'https://s3-alpha-sig.figma.com/img/c453/9086/acfc1569c43903acc16df5065a241de3?Expires=1691366400&Signature=aDeRmKtgeUv3oPSfJykouIkrOGoDKTCkLH49CHuTdmlBBYgBr7bE1Wnz7VdkgmozJMe9k0bF-ANN9G8j2AZFl9CX1sV6QrTyHLjJMG7SogGOBvoiaHqU7CBl9VkrRaL8QFwrelh6sS6zCDU-FA6cpA1QsQzzJrAN0Dk~M~x7alfJTY3dltzdu-TOtuKhXgow1MsuViQx9j1lykHP-W-NHAiY2yWUlikHG9m1NxmRn49~SEMQ2OsdZWo7QsfHvCTACfAvFdxfc4yZyjO4uVBinwxo3xDFods8dIJ3eqjcKP25EiB5BZYaUZ74bU76WlJljpHvhNV27CRPKL02Qn12Iw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+          description: description.value,
+          ingredients,
+          steps,
+          categoryId: selectedCategory,
+        },
+      })
+    )
+  }
+
+  const handleSubmit = () => {
+    if (recipe) {
+      handleUpdate()
+    } else {
+      handleCreate()
+    }
     dispatch(emptyIngredients())
-    navigation.navigate('Profile')
+    navigation.goBack()
   }
 
   return (

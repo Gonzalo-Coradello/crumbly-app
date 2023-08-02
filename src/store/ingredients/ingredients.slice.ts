@@ -22,14 +22,23 @@ const ingredientsSlice = createSlice({
   name: 'ingredients',
   initialState,
   reducers: {
-    addIngredients: (state, action) => {
-      const ingredients: Ingredient[] = action.payload
-      state.selected.push(...ingredients)
+    addIngredient: (state, action) => {
+      const ingredient: Ingredient = action.payload
+      state.selected.push(ingredient)
+      const exists = state.data.find((i) => i.ingredient === ingredient.ingredient)
+      if (!exists) {
+        state.data.push(ingredient)
+      }
+    },
+    setIngredients: (state, action) => {
+      state.selected = action.payload
     },
     editIngredient: (state, action) => {
       const updatedIngredient: Ingredient = action.payload.ingredient
       state.selected = state.selected.map((i) =>
-        i.ingredient === updatedIngredient.ingredient ? updatedIngredient : i
+        i.ingredient.toLowerCase() === updatedIngredient.ingredient.toLowerCase()
+          ? updatedIngredient
+          : i
       )
     },
     deleteIngredient: (state, action) => {
@@ -42,7 +51,7 @@ const ingredientsSlice = createSlice({
   },
 })
 
-export const { addIngredients, editIngredient, deleteIngredient, emptyIngredients } =
+export const { addIngredient, setIngredients, editIngredient, deleteIngredient, emptyIngredients } =
   ingredientsSlice.actions
 
 export default ingredientsSlice.reducer

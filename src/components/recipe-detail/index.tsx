@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons'
+import { Ionicons, AntDesign } from '@expo/vector-icons'
 import { Image, ScrollView, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeFromList } from 'src/store/users/users.slice'
@@ -16,9 +16,10 @@ type Props = {
   recipeId: string
   user: User
   openModal: () => void
+  navigation: any
 }
 
-const RecipeDetail = ({ recipeId, user, openModal }: Props) => {
+const RecipeDetail = ({ recipeId, user, openModal, navigation }: Props) => {
   const recipes: Recipe[] = useSelector(({ recipes }) => recipes.data)
   const recipe = recipes.find((recipe) => recipe.id === recipeId)
 
@@ -32,6 +33,10 @@ const RecipeDetail = ({ recipeId, user, openModal }: Props) => {
   }
 
   const author = recipe?.fromCrumbly ? 'Crumbly' : 'Someone'
+
+  const handleEdit = () => {
+    navigation.navigate('ProfileTab', { screen: 'CreateRecipe', params: { recipe } })
+  }
 
   if (!recipe) return null
 
@@ -48,6 +53,7 @@ const RecipeDetail = ({ recipeId, user, openModal }: Props) => {
         <View style={styles.row}>
           <RecipeRating ratings={recipe.ratings} />
           <View style={styles.iconsContainer}>
+            <AntDesign name="edit" size={25} onPress={handleEdit} />
             <Ionicons name="arrow-redo-outline" size={25} />
             {isFavorite || isSaved ? (
               <Ionicons name="bookmark" size={25} onPress={remove} />

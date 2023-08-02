@@ -4,7 +4,7 @@ import { ScrollView, TouchableOpacity, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useInput } from 'src/hooks'
 import {
-  addIngredients,
+  addIngredient,
   deleteIngredient,
   editIngredient,
 } from 'src/store/ingredients/ingredients.slice'
@@ -36,7 +36,7 @@ const SearchIngredients = () => {
 
   const handleAdd = (ingredient: Ingredient) => {
     search.reset()
-    dispatch(addIngredients([ingredient]))
+    dispatch(addIngredient(ingredient))
   }
 
   const handleRemove = (ingredient: string) => {
@@ -49,11 +49,13 @@ const SearchIngredients = () => {
   }
 
   const handleUpdate = (ingredient: Ingredient) => {
-    const exists = ingredientList.find((i) => i.ingredient === ingredient.ingredient)
+    const exists = ingredients.find(
+      (i) => i.ingredient.toLowerCase() === ingredient.ingredient.toLowerCase()
+    )
     if (exists) {
       dispatch(editIngredient({ ingredient }))
     } else {
-      dispatch(addIngredients([ingredient]))
+      dispatch(addIngredient(ingredient))
     }
     search.reset()
     setModalVisible(false)

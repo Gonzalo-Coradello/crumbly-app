@@ -8,9 +8,19 @@
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
-      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
-      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
-      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+      {
+        "ingredient": "Harina de trigo",
+        "quantity": 250,
+        "units": ["gramo", "unidad", "taza", "cucharada", "cucharadita"],
+        "unit": "gramo"
+      },
+      { "ingredient": "Huevo", "quantity": 3, "units": ["unidad", "gramo"], "unit": "unidad" },
+      {
+        "ingredient": "Leche",
+        "quantity": 100,
+        "units": ["mililitro", "taza", "cucharada", "cucharadita"],
+        "unit": "mililitro"
+      }
     ],
     "steps": [
       {
@@ -35,9 +45,19 @@
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
-      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
-      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
-      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+      {
+        "ingredient": "Harina de trigo",
+        "quantity": 250,
+        "units": ["gramo", "unidad", "taza", "cucharada", "cucharadita"],
+        "unit": "gramo"
+      },
+      { "ingredient": "Huevo", "quantity": 3, "units": ["unidad", "gramo"], "unit": "unidad" },
+      {
+        "ingredient": "Leche",
+        "quantity": 100,
+        "units": ["mililitro", "taza", "cucharada", "cucharadita"],
+        "unit": "mililitro"
+      }
     ],
     "steps": [
       {
@@ -62,9 +82,19 @@
     "image": "https://gimmedelicious.com/wp-content/uploads/2021/03/Double-Chocolate-Chip-Muffins-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
-      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
-      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
-      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+      {
+        "ingredient": "Harina de trigo",
+        "quantity": 250,
+        "units": ["gramo", "unidad", "taza", "cucharada", "cucharadita"],
+        "unit": "gramo"
+      },
+      { "ingredient": "Huevo", "quantity": 3, "units": ["unidad", "gramo"], "unit": "unidad" },
+      {
+        "ingredient": "Leche",
+        "quantity": 100,
+        "units": ["mililitro", "taza", "cucharada", "cucharadita"],
+        "unit": "mililitro"
+      }
     ],
     "steps": [
       {
@@ -89,9 +119,19 @@
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
-      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
-      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
-      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+      {
+        "ingredient": "Harina de trigo",
+        "quantity": 250,
+        "units": ["gramo", "unidad", "taza", "cucharada", "cucharadita"],
+        "unit": "gramo"
+      },
+      { "ingredient": "Huevo", "quantity": 3, "units": ["unidad", "gramo"], "unit": "unidad" },
+      {
+        "ingredient": "Leche",
+        "quantity": 100,
+        "units": ["mililitro", "taza", "cucharada", "cucharadita"],
+        "unit": "mililitro"
+      }
     ],
     "steps": [
       {
@@ -116,9 +156,19 @@
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
-      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
-      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
-      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+      {
+        "ingredient": "Harina de trigo",
+        "quantity": 250,
+        "units": ["gramo", "unidad", "taza", "cucharada", "cucharadita"],
+        "unit": "gramo"
+      },
+      { "ingredient": "Huevo", "quantity": 3, "units": ["unidad", "gramo"], "unit": "unidad" },
+      {
+        "ingredient": "Leche",
+        "quantity": 100,
+        "units": ["mililitro", "taza", "cucharada", "cucharadita"],
+        "unit": "mililitro"
+      }
     ],
     "steps": [
       {
@@ -143,9 +193,19 @@
     "image": "https://www.abakingjourney.com/wp-content/uploads/2019/11/French-Apple-Tart-Feature.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
-      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
-      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
-      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+      {
+        "ingredient": "Harina de trigo",
+        "quantity": 250,
+        "units": ["gramo", "unidad", "taza", "cucharada", "cucharadita"],
+        "unit": "gramo"
+      },
+      { "ingredient": "Huevo", "quantity": 3, "units": ["unidad", "gramo"], "unit": "unidad" },
+      {
+        "ingredient": "Leche",
+        "quantity": 100,
+        "units": ["mililitro", "taza", "cucharada", "cucharadita"],
+        "unit": "mililitro"
+      }
     ],
     "steps": [
       {
@@ -170,9 +230,19 @@
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
-      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
-      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
-      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+      {
+        "ingredient": "Harina de trigo",
+        "quantity": 250,
+        "units": ["gramo", "unidad", "taza", "cucharada", "cucharadita"],
+        "unit": "gramo"
+      },
+      { "ingredient": "Huevo", "quantity": 3, "units": ["unidad", "gramo"], "unit": "unidad" },
+      {
+        "ingredient": "Leche",
+        "quantity": 100,
+        "units": ["mililitro", "taza", "cucharada", "cucharadita"],
+        "unit": "mililitro"
+      }
     ],
     "steps": [
       {
@@ -197,9 +267,19 @@
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
-      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
-      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
-      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+      {
+        "ingredient": "Harina de trigo",
+        "quantity": 250,
+        "units": ["gramo", "unidad", "taza", "cucharada", "cucharadita"],
+        "unit": "gramo"
+      },
+      { "ingredient": "Huevo", "quantity": 3, "units": ["unidad", "gramo"], "unit": "unidad" },
+      {
+        "ingredient": "Leche",
+        "quantity": 100,
+        "units": ["mililitro", "taza", "cucharada", "cucharadita"],
+        "unit": "mililitro"
+      }
     ],
     "steps": [
       {
@@ -224,9 +304,19 @@
     "image": "https://lifemadesweeter.com/wp-content/uploads/Soft-and-Chewy-Keto-Chocolate-Chip-Cookies-Recipe-Photo-Picture-Paleo-Gluten-Free-copy-500x500.jpg",
     "description": "Descripción de la receta",
     "ingredients": [
-      { "ingredient": "harina", "quantity": 250, "unit": "gr" },
-      { "ingredient": "huevos", "quantity": 3, "unit": "un" },
-      { "ingredient": "leche", "quantity": 100, "unit": "ml" }
+      {
+        "ingredient": "Harina de trigo",
+        "quantity": 250,
+        "units": ["gramo", "unidad", "taza", "cucharada", "cucharadita"],
+        "unit": "gramo"
+      },
+      { "ingredient": "Huevo", "quantity": 3, "units": ["unidad", "gramo"], "unit": "unidad" },
+      {
+        "ingredient": "Leche",
+        "quantity": 100,
+        "units": ["mililitro", "taza", "cucharada", "cucharadita"],
+        "unit": "mililitro"
+      }
     ],
     "steps": [
       {

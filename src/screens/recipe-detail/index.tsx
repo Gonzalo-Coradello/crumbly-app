@@ -20,7 +20,12 @@ const RecipeDetailContainer = ({ navigation, route }: DetailNavigationProps) => 
         navigation={navigation}
       />
       <View style={styles.container}>
-        <RecipeDetail recipeId={recipeId} user={user} openModal={() => setModalVisible(true)} />
+        <RecipeDetail
+          recipeId={recipeId}
+          user={user}
+          openModal={() => setModalVisible(true)}
+          navigation={navigation}
+        />
       </View>
     </>
   )
