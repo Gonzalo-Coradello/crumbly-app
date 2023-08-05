@@ -26,7 +26,7 @@ const SearchIngredients = () => {
   const ingredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.data)
 
   useEffect(() => {
-    if (!ingredients) {
+    if (!ingredients || !ingredients?.length) {
       dispatch(setInitialIngredients(data))
     }
   }, [data])

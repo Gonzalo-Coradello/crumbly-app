@@ -3,16 +3,17 @@ import { useEffect, useState } from 'react'
 import { Image, ScrollView, View, TouchableOpacity } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useInput } from 'src/hooks'
+import { useGetCategoriesQuery } from 'src/store/categories/api'
 import {
   deleteIngredient,
   editIngredient,
   emptyIngredients,
   setIngredients,
 } from 'src/store/ingredients/ingredients.slice'
-import { createRecipe, updateRecipe } from 'src/store/recipes/recipes.slice'
+import { useCreateOrUpdateRecipeMutation } from 'src/store/recipes/api'
 import { addRecipe } from 'src/store/users/users.slice'
 import { COLORS } from 'src/themes'
-import { Category, Recipe, User, Ingredient } from 'src/types'
+import { Recipe, User, Ingredient } from 'src/types'
 import { transformQuantity, transformUnit } from 'src/utils'
 
 import { styles } from './styles'
@@ -30,9 +31,11 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
 
   const imageSelected = false
 
+  const [createOrUpdateRecipe] = useCreateOrUpdateRecipeMutation()
+
   const ingredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.selected)
   const author: User = useSelector(({ users }) => users.current)
-  const categories: Category[] = useSelector(({ categories }) => categories.data)
+  const { data: categories } = useGetCategoriesQuery(null)
 
   const name = useInput()
   const description = useInput()
@@ -78,7 +81,7 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
     dispatch(deleteIngredient({ ingredient }))
   }
 
-  const handleCreate = () => {
+  const handleCreate = async () => {
     const recipe: Recipe = {
       id: String(Math.floor(Math.random() * 1000) + 1),
       name: name.value,
@@ -94,25 +97,25 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
       reviews: [],
       ratings: [],
     }
-    dispatch(createRecipe({ recipe }))
+    await createOrUpdateRecipe(recipe)
     dispatch(addRecipe({ id: recipe.id }))
   }
 
-  const handleUpdate = () => {
-    dispatch(
-      updateRecipe({
-        recipe: {
-          ...recipe,
-          name: name.value,
-          image:
-            'https://s3-alpha-sig.figma.com/img/c453/9086/acfc1569c43903acc16df5065a241de3?Expires=1691366400&Signature=aDeRmKtgeUv3oPSfJykouIkrOGoDKTCkLH49CHuTdmlBBYgBr7bE1Wnz7VdkgmozJMe9k0bF-ANN9G8j2AZFl9CX1sV6QrTyHLjJMG7SogGOBvoiaHqU7CBl9VkrRaL8QFwrelh6sS6zCDU-FA6cpA1QsQzzJrAN0Dk~M~x7alfJTY3dltzdu-TOtuKhXgow1MsuViQx9j1lykHP-W-NHAiY2yWUlikHG9m1NxmRn49~SEMQ2OsdZWo7QsfHvCTACfAvFdxfc4yZyjO4uVBinwxo3xDFods8dIJ3eqjcKP25EiB5BZYaUZ74bU76WlJljpHvhNV27CRPKL02Qn12Iw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
-          description: description.value,
-          ingredients,
-          steps,
-          categoryId: selectedCategory,
-        },
-      })
-    )
+  const handleUpdate = async () => {
+    if (!recipe) return
+
+    const updatedRecipe: Recipe = {
+      ...recipe,
+      name: name.value,
+      image:
+        'https://s3-alpha-sig.figma.com/img/c453/9086/acfc1569c43903acc16df5065a241de3?Expires=1691366400&Signature=aDeRmKtgeUv3oPSfJykouIkrOGoDKTCkLH49CHuTdmlBBYgBr7bE1Wnz7VdkgmozJMe9k0bF-ANN9G8j2AZFl9CX1sV6QrTyHLjJMG7SogGOBvoiaHqU7CBl9VkrRaL8QFwrelh6sS6zCDU-FA6cpA1QsQzzJrAN0Dk~M~x7alfJTY3dltzdu-TOtuKhXgow1MsuViQx9j1lykHP-W-NHAiY2yWUlikHG9m1NxmRn49~SEMQ2OsdZWo7QsfHvCTACfAvFdxfc4yZyjO4uVBinwxo3xDFods8dIJ3eqjcKP25EiB5BZYaUZ74bU76WlJljpHvhNV27CRPKL02Qn12Iw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+      description: description.value,
+      ingredients,
+      steps,
+      categoryId: selectedCategory,
+    }
+
+    await createOrUpdateRecipe(updatedRecipe)
   }
 
   const handleSubmit = () => {
@@ -239,7 +242,7 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
           </Typography>
           <View>
             <View style={styles.categoriesContainer}>
-              {categories.map(({ id, name, backgroundImage }) => (
+              {categories?.map(({ id, name, backgroundImage }) => (
                 <TouchableOpacity
                   style={
                     selectedCategory === id

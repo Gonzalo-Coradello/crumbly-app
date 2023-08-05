@@ -9,6 +9,15 @@ type Props = {
 }
 
 const RecipeRating = ({ ratings }: Props) => {
+  if (!ratings)
+    return (
+      <View style={styles.starsContainer}>
+        {[1, 2, 3, 4, 5].map((star) => (
+          <FontAwesome key={star} name="star-o" size={25} color={COLORS.yellow} />
+        ))}
+      </View>
+    )
+
   const rating = ratings.reduce((acc, curr) => acc + curr, 0) / ratings.length
   const stars = [1, 2, 3, 4, 5].map((star) =>
     rating >= star ? (
