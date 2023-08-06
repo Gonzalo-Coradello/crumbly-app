@@ -12,6 +12,7 @@ const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
+    setUser: (state, action) => {},
     addToList: (state, action) => {
       const { id, listName } = action.payload
       const list =

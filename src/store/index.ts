@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/dist/query'
 
+import { authApi } from './auth/api'
+import authSlice from './auth/auth.slice'
 import { categoriesApi } from './categories/api'
 import categoriesSlice from './categories/categories.slice'
 import { ingredientsApi } from './ingredients/api'
@@ -15,15 +17,18 @@ const store = configureStore({
     categories: categoriesSlice,
     users: usersSlice,
     ingredients: ingredientsSlice,
+    auth: authSlice,
     [recipesApi.reducerPath]: recipesApi.reducer,
     [categoriesApi.reducerPath]: categoriesApi.reducer,
     [ingredientsApi.reducerPath]: ingredientsApi.reducer,
+    [authApi.reducerPath]: authApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
       recipesApi.middleware,
       categoriesApi.middleware,
-      ingredientsApi.middleware
+      ingredientsApi.middleware,
+      authApi.middleware
     ),
 })
 

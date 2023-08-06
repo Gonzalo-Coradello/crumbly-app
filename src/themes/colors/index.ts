@@ -10,5 +10,6 @@ export const COLORS = {
   darkGray: '#939393',
   transparent: '#3F3E3E66',
   transparentDarker: '#00000080',
-  yellow: '#ffd31b',
+  yellow: '#FFD31B',
+  error: '#FF3333',
 }

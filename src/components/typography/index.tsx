@@ -6,7 +6,7 @@ interface Props extends TextProps {
   size?: number
   centered?: boolean
   style?: object
-  color?: 'black' | 'white' | 'gray'
+  color?: 'black' | 'white' | 'gray' | 'primary' | 'error'
   children: React.ReactNode
 }
 
@@ -40,7 +40,15 @@ const Typography = ({
           fontSize: size,
           textAlign: centered ? 'center' : 'left',
           color:
-            color === 'black' ? COLORS.text : color === 'white' ? COLORS.white : COLORS.darkGray,
+            color === 'black'
+              ? COLORS.text
+              : color === 'white'
+              ? COLORS.white
+              : color === 'primary'
+              ? COLORS.primary
+              : color === 'error'
+              ? COLORS.error
+              : COLORS.darkGray,
         },
         style,
       ]}
