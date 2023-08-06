@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { AuthForm } from 'src/components'
 import { useLoginMutation, useSignUpMutation } from 'src/store/auth/api'
 import { setUser } from 'src/store/auth/auth.slice'
+import { useCreateUserMutation } from 'src/store/users/api'
 import { UPDATE_FORM, onInputChange } from 'src/utils/validations'
 
 const initialLoginState = {
@@ -66,6 +67,7 @@ const Auth = () => {
   const [formState, dispatchFormState] = useReducer(formReducer, initialLoginState)
   const [signUp] = useSignUpMutation()
   const [login] = useLoginMutation()
+  const [createUser] = useCreateUserMutation()
   const [authError, setAuthError] = useState('')
 
   const handleSubmit = async () => {
@@ -73,16 +75,24 @@ const Auth = () => {
       if (!formState.isFormValid) return
       if (isLogin) {
         const result = await login({
-          email: formState.email,
-          password: formState.password,
+          email: formState.email.value,
+          password: formState.password.value,
         }).unwrap()
-        if (result?.data) dispatch(setUser(result.data))
+        dispatch(setUser(result))
       } else {
         const result = await signUp({
           email: formState.email.value,
           password: formState.password.value,
         }).unwrap()
-        if (result?.data) dispatch(setUser(result.data))
+        const { email, idToken, localId } = result
+        const newUser = {
+          name: formState.name?.value,
+          email,
+          idToken,
+          localId,
+        }
+        dispatch(setUser(newUser))
+        await createUser(newUser)
       }
 
       /* registerData = {

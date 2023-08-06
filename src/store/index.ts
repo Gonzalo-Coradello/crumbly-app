@@ -9,6 +9,7 @@ import { ingredientsApi } from './ingredients/api'
 import ingredientsSlice from './ingredients/ingredients.slice'
 import { recipesApi } from './recipes/api'
 import recipesSlice from './recipes/recipes.slice'
+import { usersApi } from './users/api'
 import usersSlice from './users/users.slice'
 
 const store = configureStore({
@@ -22,13 +23,15 @@ const store = configureStore({
     [categoriesApi.reducerPath]: categoriesApi.reducer,
     [ingredientsApi.reducerPath]: ingredientsApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
+    [usersApi.reducerPath]: usersApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
       recipesApi.middleware,
       categoriesApi.middleware,
       ingredientsApi.middleware,
-      authApi.middleware
+      authApi.middleware,
+      usersApi.middleware
     ),
 })
 
