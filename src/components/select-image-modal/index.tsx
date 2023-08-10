@@ -28,12 +28,15 @@ const SelectImageModal = ({
         <View style={styles.container} />
       </TouchableWithoutFeedback>
       <View style={styles.modalContainer}>
-        {/* <Typography>¿De dónde quieres seleccionar la foto?</Typography> */}
-        <TouchableOpacity onPress={pickCameraImage}>
-          <Typography>Tomar foto</Typography>
+        <TouchableOpacity style={styles.button} onPress={pickCameraImage}>
+          <Typography color="white" variant="medium" centered size={14}>
+            Tomar foto
+          </Typography>
         </TouchableOpacity>
-        <TouchableOpacity onPress={pickGalleryImage}>
-          <Typography>Seleccionar desde la galería</Typography>
+        <TouchableOpacity style={styles.button} onPress={pickGalleryImage}>
+          <Typography color="white" variant="medium" centered size={14}>
+            Seleccionar desde la galería
+          </Typography>
         </TouchableOpacity>
       </View>
     </Modal>

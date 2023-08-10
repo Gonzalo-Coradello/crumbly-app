@@ -81,33 +81,37 @@ const ImageSelector = ({ navigation }: any) => {
         pickGalleryImage={pickGalleryImage}
       />
       <View style={styles.container}>
-        <View>
-          {image || profileImage ? (
-            <View>
-              <Image source={{ uri: image || profileImage }} style={styles.image} />
-            </View>
-          ) : (
-            <View>
-              <Ionicons name="person" size={26} />
-            </View>
-          )}
-          {image ? (
-            <View>
-              <TouchableOpacity style={styles.button} onPress={() => setOpenModal(true)}>
-                <Typography>Elegir otra foto</Typography>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.button} onPress={confirmImage}>
-                <Typography>Confirmar foto</Typography>
-              </TouchableOpacity>
-            </View>
-          ) : (
-            <View>
-              <TouchableOpacity style={styles.button} onPress={() => setOpenModal(true)}>
-                <Typography>Seleccionar foto</Typography>
-              </TouchableOpacity>
-            </View>
-          )}
-        </View>
+        {image || profileImage ? (
+          <View style={styles.imageContainer}>
+            <Image source={{ uri: image || profileImage }} style={styles.image} />
+          </View>
+        ) : (
+          <View style={styles.imageContainer}>
+            <Ionicons name="person" size={160} />
+          </View>
+        )}
+        {image ? (
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.button} onPress={() => setOpenModal(true)}>
+              <Typography color="white" variant="medium" size={14}>
+                Elegir otra foto
+              </Typography>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={confirmImage}>
+              <Typography color="white" variant="medium" size={14}>
+                Confirmar foto
+              </Typography>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.button} onPress={() => setOpenModal(true)}>
+              <Typography color="white" variant="medium" size={14}>
+                Seleccionar foto
+              </Typography>
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
     </>
   )

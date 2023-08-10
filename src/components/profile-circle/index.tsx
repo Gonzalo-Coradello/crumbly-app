@@ -20,7 +20,7 @@ const ProfileCircle = ({ size, crumbly = false, picture }: Props) => {
     <View
       style={[
         styles.container,
-        { width: size, height: size, borderRadius: size / 2, borderWidth: picture ? 0 : 2 },
+        { width: size, height: size, borderRadius: size / 2, borderWidth: picture ? 0 : 1 },
       ]}>
       {picture ? (
         <Image source={{ uri: picture }} style={styles.image} />
@@ -28,7 +28,7 @@ const ProfileCircle = ({ size, crumbly = false, picture }: Props) => {
         // <Typography variant="bold" size={size / 2} style={styles.text}>
         //   {name.charAt(0)}
         // </Typography>
-        <Ionicons size={size} name="person" />
+        <Ionicons size={size / 1.5} name="person" />
       )}
     </View>
   )
