@@ -1,4 +1,5 @@
 import { Ionicons, AntDesign } from '@expo/vector-icons'
+import * as ImagePicker from 'expo-image-picker'
 import { useEffect, useState } from 'react'
 import { Image, ScrollView, View, TouchableOpacity } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,6 +20,7 @@ import { transformQuantity, transformUnit } from 'src/utils'
 import { styles } from './styles'
 import EditIngredientModal from '../edit-ingredient-modal'
 import Input from '../input'
+import SelectImageModal from '../select-image-modal'
 import Typography from '../typography'
 
 type Props = {
@@ -28,11 +30,7 @@ type Props = {
 
 const RecipeForm = ({ navigation, recipe }: Props) => {
   const dispatch = useDispatch()
-
-  const imageSelected = false
-
   const [createOrUpdateRecipe] = useCreateOrUpdateRecipeMutation()
-
   const ingredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.selected)
   const author: User = useSelector(({ users }) => users.current)
   const { data: categories } = useGetCategoriesQuery(null)
@@ -40,10 +38,62 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
   const name = useInput()
   const description = useInput()
 
+  const [image, setImage] = useState('')
   const [steps, setSteps] = useState<{ id: number; step: string }[]>([{ id: 1, step: '' }])
   const [selectedCategory, setSelectedCategory] = useState<string>('')
   const [modalVisible, setModalVisible] = useState(false)
+  const [imageModalVisible, setImageModalVisible] = useState(false)
   const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null)
+
+  const verifyCameraPermission = async () => {
+    const { granted } = await ImagePicker.requestCameraPermissionsAsync()
+    if (!granted) {
+      return false
+    }
+    return true
+  }
+
+  const verifyGalleryPermission = async () => {
+    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync()
+    if (!granted) {
+      return false
+    }
+    return true
+  }
+
+  const pickCameraImage = async () => {
+    const isCameraOk = await verifyCameraPermission()
+    if (isCameraOk) {
+      const result = await ImagePicker.launchCameraAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [1, 1],
+        base64: true,
+        quality: 0.5,
+      })
+      if (!result.canceled) {
+        setImageModalVisible(false)
+        setImage(`data:image/jpeg;base64,${result.assets[0].base64}`)
+      }
+    }
+  }
+
+  const pickGalleryImage = async () => {
+    const isGalleryOk = await verifyGalleryPermission()
+    if (isGalleryOk) {
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [1, 1],
+        base64: true,
+        quality: 0.5,
+      })
+      if (!result.canceled) {
+        setImageModalVisible(false)
+        setImage(`data:image/jpeg;base64,${result.assets[0].base64}`)
+      }
+    }
+  }
 
   useEffect(() => {
     if (recipe) {
@@ -51,6 +101,7 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
       description.setValue(recipe.description)
       setSteps(recipe.steps)
       setSelectedCategory(recipe.categoryId)
+      setImage(recipe.image)
       dispatch(setIngredients(recipe.ingredients))
     }
   }, [recipe])
@@ -85,8 +136,7 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
     const recipe: Recipe = {
       id: String(Math.floor(Math.random() * 1000) + 1),
       name: name.value,
-      image:
-        'https://s3-alpha-sig.figma.com/img/c453/9086/acfc1569c43903acc16df5065a241de3?Expires=1691366400&Signature=aDeRmKtgeUv3oPSfJykouIkrOGoDKTCkLH49CHuTdmlBBYgBr7bE1Wnz7VdkgmozJMe9k0bF-ANN9G8j2AZFl9CX1sV6QrTyHLjJMG7SogGOBvoiaHqU7CBl9VkrRaL8QFwrelh6sS6zCDU-FA6cpA1QsQzzJrAN0Dk~M~x7alfJTY3dltzdu-TOtuKhXgow1MsuViQx9j1lykHP-W-NHAiY2yWUlikHG9m1NxmRn49~SEMQ2OsdZWo7QsfHvCTACfAvFdxfc4yZyjO4uVBinwxo3xDFods8dIJ3eqjcKP25EiB5BZYaUZ74bU76WlJljpHvhNV27CRPKL02Qn12Iw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+      image,
       description: description.value,
       ingredients,
       steps,
@@ -107,8 +157,7 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
     const updatedRecipe: Recipe = {
       ...recipe,
       name: name.value,
-      image:
-        'https://s3-alpha-sig.figma.com/img/c453/9086/acfc1569c43903acc16df5065a241de3?Expires=1691366400&Signature=aDeRmKtgeUv3oPSfJykouIkrOGoDKTCkLH49CHuTdmlBBYgBr7bE1Wnz7VdkgmozJMe9k0bF-ANN9G8j2AZFl9CX1sV6QrTyHLjJMG7SogGOBvoiaHqU7CBl9VkrRaL8QFwrelh6sS6zCDU-FA6cpA1QsQzzJrAN0Dk~M~x7alfJTY3dltzdu-TOtuKhXgow1MsuViQx9j1lykHP-W-NHAiY2yWUlikHG9m1NxmRn49~SEMQ2OsdZWo7QsfHvCTACfAvFdxfc4yZyjO4uVBinwxo3xDFods8dIJ3eqjcKP25EiB5BZYaUZ74bU76WlJljpHvhNV27CRPKL02Qn12Iw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+      image: image ? image : recipe.image,
       description: description.value,
       ingredients,
       steps,
@@ -130,6 +179,12 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
 
   return (
     <>
+      <SelectImageModal
+        openModal={imageModalVisible}
+        setOpenModal={setImageModalVisible}
+        pickCameraImage={pickCameraImage}
+        pickGalleryImage={pickGalleryImage}
+      />
       <EditIngredientModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
@@ -151,9 +206,11 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
           <Typography variant="semibold" size={18}>
             Imagen
           </Typography>
-          <TouchableOpacity style={styles.imageButton}>
-            {imageSelected ? (
-              <Image source={{}} />
+          <TouchableOpacity
+            style={image ? styles.imageButton : [styles.imageButton, styles.imageButtonSmall]}
+            onPress={() => setImageModalVisible(true)}>
+            {image ? (
+              <Image source={{ uri: image }} style={styles.image} />
             ) : (
               <Ionicons name="add" size={25} color="black" />
             )}

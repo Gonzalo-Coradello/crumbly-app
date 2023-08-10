@@ -17,11 +17,12 @@ export const styles = StyleSheet.create({
   },
   imageButton: {
     backgroundColor: COLORS.primary,
-    width: 50,
-    height: 50,
+    width: 200,
+    height: 200,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+    overflow: 'hidden',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -30,6 +31,14 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+  },
+  imageButtonSmall: {
+    width: 50,
+    height: 50,
+  },
+  image: {
+    width: 200,
+    height: 200,
   },
   searchIngredients: {
     flexDirection: 'row',
