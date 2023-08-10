@@ -1,20 +1,36 @@
-import { ScrollView, View } from 'react-native'
+import { ScrollView, View, TouchableOpacity } from 'react-native'
 import { useSelector } from 'react-redux'
-import { Typography, ProfileCircle, ProfileLists, ProfileRecipes } from 'src/components'
+import { Typography, ProfileCircle, ProfileLists, ProfileRecipes, Loader } from 'src/components'
+import { useGetUserByIdQuery } from 'src/store/users/api'
 import { ProfileNavigationProp } from 'src/types'
 
 import { styles } from './styles'
 
 const Profile = ({ navigation, route }: ProfileNavigationProp) => {
-  const user = useSelector(({ users }) => users.current)
+  const image = useSelector(({ auth }) => auth.value.image)
+  // const user = useSelector(({ users }) => users.current)
+  const localId = useSelector(({ auth }) => auth.value.localId)
+  const { data, isLoading, isError, error } = useGetUserByIdQuery(localId)
 
   // const navigateToRecipes = (list: string) => {
   //   navigation.navigate('Recipes', { categoryId: '', category: '', list })
   // }
 
-  const navigateTo = (screenName: 'Recipes' | 'CreateList' | 'CreateRecipe', list?: string) => {
+  const navigateTo = (
+    screenName: 'Recipes' | 'CreateList' | 'CreateRecipe' | 'ImagePicker',
+    list?: string
+  ) => {
     const screen: any = screenName
     navigation.navigate(screen, { list })
+  }
+
+  if (isError) {
+    console.warn(error)
+    return <Typography>Ha ocurrido un error</Typography>
+  }
+
+  if (isLoading) {
+    return <Loader />
   }
 
   return (
@@ -23,13 +39,15 @@ const Profile = ({ navigation, route }: ProfileNavigationProp) => {
       overScrollMode="never"
       showsVerticalScrollIndicator={false}>
       <View style={styles.user}>
-        <ProfileCircle crumbly={false} size={50} />
+        <TouchableOpacity onPress={() => navigateTo('ImagePicker')}>
+          <ProfileCircle picture={image || data.image} size={60} />
+        </TouchableOpacity>
         <View>
           <Typography variant="semibold" size={22} style={{ lineHeight: 26 }}>
-            {user.name}
+            {data.name}
           </Typography>
           <Typography variant="medium" style={styles.email}>
-            {user.email}
+            {data.email}
           </Typography>
         </View>
       </View>

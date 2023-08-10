@@ -17,22 +17,14 @@ export const usersApi = createApi({
         body: user,
       }),
     }),
-    // createOrUpdateRecipe: builder.mutation({
-    //   query: (recipe: Recipe) => ({
-    //     url: `recipes/${recipe.id}.json`,
-    //     method: 'PUT',
-    //     body: recipe,
-    //   }),
-    //   invalidatesTags: ['Recipes'],
-    // }),
     updateUser: builder.mutation({
-      query: (credentials) => ({
-        url: ``,
-        method: 'POST',
-        body: credentials,
+      query: ({ localId, ...user }) => ({
+        url: `users/${localId}.json`,
+        method: 'PATCH',
+        body: user,
       }),
     }),
   }),
 })
 
-export const { useCreateUserMutation } = usersApi
+export const { useCreateUserMutation, useGetUserByIdQuery, useUpdateUserMutation } = usersApi

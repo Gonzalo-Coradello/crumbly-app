@@ -57,10 +57,11 @@ export type HomeParamList = RecipesParamList & {
 }
 
 export type ProfileParamList = RecipesParamList & {
-  Profile: { userId: string }
+  Profile: undefined
   CreateList: { recipeId: string | undefined }
   CreateRecipe: { recipe?: Recipe }
   Ingredients: undefined
+  ImagePicker: undefined
 }
 
 export type CreateListParamList = {

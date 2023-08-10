@@ -1,6 +1,13 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Header, HeaderArrow } from 'src/components'
-import { CreateList, CreateRecipe, Profile, RecipeDetailContainer, Recipes } from 'src/screens'
+import {
+  CreateList,
+  CreateRecipe,
+  ImageSelector,
+  Profile,
+  RecipeDetailContainer,
+  Recipes,
+} from 'src/screens'
 import Ingredients from 'src/screens/ingredients'
 import { ProfileParamList } from 'src/types'
 
@@ -70,6 +77,15 @@ export default function ProfileNavigator() {
         component={Ingredients}
         options={({ navigation, route }) => ({
           headerTitle: () => <Header title="Ingredientes" />,
+          headerTitleAlign: 'center',
+          headerLeft: () => <HeaderArrow goBack={navigation.goBack} />,
+        })}
+      />
+      <Stack.Screen
+        name="ImagePicker"
+        component={ImageSelector}
+        options={({ navigation, route }) => ({
+          headerTitle: () => <Header title="Perfil" />,
           headerTitleAlign: 'center',
           headerLeft: () => <HeaderArrow goBack={navigation.goBack} />,
         })}
