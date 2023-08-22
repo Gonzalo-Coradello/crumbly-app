@@ -2,8 +2,9 @@ import { NavigationContainer } from '@react-navigation/native'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Loader, Typography } from 'src/components'
-import { setUser } from 'src/store/auth/auth.slice'
+import { setUserSession } from 'src/store/auth/auth.slice'
 import { useGetUserByIdQuery } from 'src/store/users/api'
+import { setUserData } from 'src/store/users/users.slice'
 
 import AuthStack from './auth'
 import TabNavigator from './tabs'
@@ -15,7 +16,8 @@ export default function RootNavigator() {
 
   useEffect(() => {
     if (data) {
-      dispatch(setUser({ ...user, image: data.image }))
+      dispatch(setUserSession({ ...user, image: data.image }))
+      dispatch(setUserData({ ...user, image: data.image }))
     }
   }, [data])
 

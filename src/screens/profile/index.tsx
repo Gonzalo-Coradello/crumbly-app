@@ -1,20 +1,17 @@
 import { ScrollView, View, TouchableOpacity } from 'react-native'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Typography, ProfileCircle, ProfileLists, ProfileRecipes, Loader } from 'src/components'
+import { clearUser } from 'src/store/auth/auth.slice'
 import { useGetUserByIdQuery } from 'src/store/users/api'
 import { ProfileNavigationProp } from 'src/types'
 
 import { styles } from './styles'
 
 const Profile = ({ navigation, route }: ProfileNavigationProp) => {
+  const dispatch = useDispatch()
   const image = useSelector(({ auth }) => auth.value.image)
-  // const user = useSelector(({ users }) => users.current)
   const localId = useSelector(({ auth }) => auth.value.localId)
   const { data, isLoading, isError, error } = useGetUserByIdQuery(localId)
-
-  // const navigateToRecipes = (list: string) => {
-  //   navigation.navigate('Recipes', { categoryId: '', category: '', list })
-  // }
 
   const navigateTo = (
     screenName: 'Recipes' | 'CreateList' | 'CreateRecipe' | 'ImagePicker',
@@ -53,6 +50,11 @@ const Profile = ({ navigation, route }: ProfileNavigationProp) => {
       </View>
       <ProfileLists navigateTo={navigateTo} />
       <ProfileRecipes navigateTo={navigateTo} />
+      <TouchableOpacity style={styles.logoutButton} onPress={() => dispatch(clearUser())}>
+        <Typography variant="medium" centered>
+          Cerrar sesión
+        </Typography>
+      </TouchableOpacity>
     </ScrollView>
   )
 }

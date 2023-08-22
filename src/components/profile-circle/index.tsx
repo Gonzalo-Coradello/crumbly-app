@@ -8,14 +8,10 @@ import { styles } from './styles'
 
 type Props = {
   size: number
-  crumbly?: boolean
   picture: string
 }
 
-const ProfileCircle = ({ size, crumbly = false, picture }: Props) => {
-  // const user: User = useSelector(({ users }) => users.current)
-  // const { name, picture } = crumbly ? { name: 'Crumbly', picture: '' } : user
-
+const ProfileCircle = ({ size, picture }: Props) => {
   return (
     <View
       style={[
@@ -25,9 +21,6 @@ const ProfileCircle = ({ size, crumbly = false, picture }: Props) => {
       {picture ? (
         <Image source={{ uri: picture }} style={styles.image} />
       ) : (
-        // <Typography variant="bold" size={size / 2} style={styles.text}>
-        //   {name.charAt(0)}
-        // </Typography>
         <Ionicons size={size / 1.5} name="person" />
       )}
     </View>

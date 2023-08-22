@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { AuthForm } from 'src/components'
 import { useLoginMutation, useSignUpMutation } from 'src/store/auth/api'
-import { setUser } from 'src/store/auth/auth.slice'
+import { setUserSession } from 'src/store/auth/auth.slice'
 import { useCreateUserMutation } from 'src/store/users/api'
 import { UPDATE_FORM, onInputChange } from 'src/utils/validations'
 
@@ -78,7 +78,7 @@ const Auth = () => {
           email: formState.email.value,
           password: formState.password.value,
         }).unwrap()
-        dispatch(setUser(result))
+        dispatch(setUserSession(result))
       } else {
         const result = await signUp({
           email: formState.email.value,
@@ -91,7 +91,7 @@ const Auth = () => {
           idToken,
           localId,
         }
-        dispatch(setUser(newUser))
+        dispatch(setUserSession(newUser))
         await createUser(newUser)
       }
 

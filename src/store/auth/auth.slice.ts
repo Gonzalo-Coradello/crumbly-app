@@ -6,7 +6,7 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setUser: (state, action) => {
+    setUserSession: (state, action) => {
       state.value = {
         user: action.payload.email,
         idToken: action.payload.idToken,
@@ -31,6 +31,6 @@ export const authSlice = createSlice({
   },
 })
 
-export const { setUser, clearUser, setCameraImage } = authSlice.actions
+export const { setUserSession, clearUser, setCameraImage } = authSlice.actions
 
 export default authSlice.reducer

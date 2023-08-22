@@ -1,12 +1,14 @@
 import { Ionicons, AntDesign } from '@expo/vector-icons'
 import { Image, ScrollView, View } from 'react-native'
 import { useDispatch } from 'react-redux'
+import { useGetUserByIdQuery } from 'src/store/users/api'
 import { removeFromList } from 'src/store/users/users.slice'
 import { Recipe, User } from 'src/types'
 import { transformQuantity, transformUnit } from 'src/utils'
 
 import { styles } from './styles'
 import Description from '../description'
+import Loader from '../loader'
 import ProfileCircle from '../profile-circle'
 import RecipeRater from '../recipe-rater'
 import RecipeRating from '../recipe-rating'
@@ -22,6 +24,8 @@ type Props = {
 const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
   const dispatch = useDispatch()
 
+  const { data, isLoading, isError } = useGetUserByIdQuery(recipe.authorId)
+
   const isFavorite = user.favorites.includes(recipe.id)
   const isSaved = user.lists.find((list) => list.recipes.includes(recipe.id))
 
@@ -29,13 +33,25 @@ const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
     dispatch(removeFromList({ id: recipe.id, listName: isFavorite ? 'favorites' : isSaved?.name }))
   }
 
-  const author = recipe?.fromCrumbly ? 'Crumbly' : 'Someone'
-
   const handleEdit = () => {
     navigation.navigate('ProfileTab', { screen: 'CreateRecipe', params: { recipe } })
   }
 
+  if (isLoading) {
+    return <Loader />
+  }
+
+  if (isError) {
+    return (
+      <View>
+        <Typography>Ha ocurrido un error</Typography>
+      </View>
+    )
+  }
+
   if (!recipe) return null
+
+  const author: User = data
 
   return (
     <ScrollView
@@ -61,9 +77,9 @@ const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
         </View>
         <View style={styles.recipeInfo}>
           <View style={styles.author}>
-            <ProfileCircle size={45} crumbly={recipe.fromCrumbly} />
+            <ProfileCircle size={45} picture={author.picture} />
             <Typography variant="semibold" size={18}>
-              {author}
+              {author.name}
             </Typography>
           </View>
           <View style={styles.description}>

@@ -19,4 +19,23 @@ export const styles = StyleSheet.create({
     color: COLORS.darkGray,
     lineHeight: 18,
   },
+  logoutButton: {
+    marginBottom: 30,
+    // borderWidth: 1,
+    // borderColor: COLORS.darkGray,
+    borderRadius: 10,
+    maxWidth: 120,
+    alignSelf: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    backgroundColor: COLORS.white,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 3,
+  },
 })

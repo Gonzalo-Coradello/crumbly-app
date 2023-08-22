@@ -12,7 +12,6 @@ export interface Recipe {
   name: string
   categoryId: string
   authorId: string
-  fromCrumbly: boolean
   image: string
   description: string
   ingredients: { ingredient: string; quantity: number; unit: string }[]

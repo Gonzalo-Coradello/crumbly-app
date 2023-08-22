@@ -12,7 +12,9 @@ const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    setUser: (state, action) => {},
+    setUserData: (state, action) => {
+      state.current = action.payload
+    },
     addToList: (state, action) => {
       const { id, listName } = action.payload
       const list =
@@ -56,6 +58,6 @@ const usersSlice = createSlice({
   },
 })
 
-export const { addToList, removeFromList, createList, addRecipe } = usersSlice.actions
+export const { setUserData, addToList, removeFromList, createList, addRecipe } = usersSlice.actions
 
 export default usersSlice.reducer

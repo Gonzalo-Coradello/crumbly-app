@@ -12,6 +12,7 @@ import {
   setIngredients,
 } from 'src/store/ingredients/ingredients.slice'
 import { useCreateOrUpdateRecipeMutation } from 'src/store/recipes/api'
+import { useUpdateUserMutation } from 'src/store/users/api'
 import { addRecipe } from 'src/store/users/users.slice'
 import { COLORS } from 'src/themes'
 import { Recipe, User, Ingredient } from 'src/types'
@@ -31,8 +32,11 @@ type Props = {
 const RecipeForm = ({ navigation, recipe }: Props) => {
   const dispatch = useDispatch()
   const [createOrUpdateRecipe] = useCreateOrUpdateRecipeMutation()
+  const [updateUser] = useUpdateUserMutation()
   const ingredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.selected)
   const author: User = useSelector(({ users }) => users.current)
+  const { localId } = useSelector(({ auth }) => auth.value)
+
   const { data: categories } = useGetCategoriesQuery(null)
 
   const name = useInput()
@@ -142,12 +146,12 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
       steps,
       categoryId: selectedCategory,
       authorId: author.id,
-      fromCrumbly: author.name === 'Crumbly',
       createdAt: Date.now(),
       reviews: [],
       ratings: [],
     }
     await createOrUpdateRecipe(recipe)
+    await updateUser({ localId, recipes: [...author.recipes, recipe.id] })
     dispatch(addRecipe({ id: recipe.id }))
   }
 
