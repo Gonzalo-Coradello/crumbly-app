@@ -1,5 +1,6 @@
 import { Modal, ScrollView, TouchableWithoutFeedback, View } from 'react-native'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useUpdateUserMutation } from 'src/store/users/api'
 import { addToList } from 'src/store/users/users.slice'
 import { User } from 'src/types'
 
@@ -23,8 +24,22 @@ const SaveRecipeModal = ({
   navigation,
 }: Props) => {
   const dispatch = useDispatch()
+  const [updateUser] = useUpdateUserMutation()
+  const { localId } = useSelector(({ auth }) => auth.value)
 
-  const saveRecipe = (listName: string) => {
+  const saveRecipe = async (listName: string) => {
+    const updatedList =
+      listName === 'favorites'
+        ? { localId, favorites: [...user.favorites, selectedRecipe] }
+        : {
+            localId,
+            lists: user.lists.map((list) =>
+              list.name === listName
+                ? { name: listName, recipes: [...list.recipes, selectedRecipe] }
+                : list
+            ),
+          }
+    await updateUser(updatedList)
     dispatch(addToList({ id: selectedRecipe, listName }))
     setModalVisible(false)
   }
