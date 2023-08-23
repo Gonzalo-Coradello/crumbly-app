@@ -2,9 +2,17 @@ import { useFonts } from 'expo-font'
 import { ActivityIndicator, Platform, StatusBar, View } from 'react-native'
 import { Provider } from 'react-redux'
 
+import { init } from './db'
 import RootNavigator from './navigations'
 import store from './store'
 import { styles } from './styles'
+
+init()
+  .then(() => console.log('DB initialized'))
+  .catch((err) => {
+    console.log('DB initialization failed:')
+    console.log(err.message)
+  })
 
 export default function App() {
   const [loaded, error] = useFonts({

@@ -18,7 +18,7 @@ const RecipeList = ({ recipes, handleNavigate, emptyMessage, openModal }: Props)
   const isTablet = width > 650
   return (
     <View style={isTablet ? styles.tabletContainer : styles.container}>
-      {recipes.length === 0 ? (
+      {recipes?.length === 0 ? (
         <Typography size={20} centered style={styles.empty}>
           {emptyMessage}
         </Typography>

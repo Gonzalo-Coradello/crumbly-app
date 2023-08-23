@@ -13,6 +13,7 @@ const usersSlice = createSlice({
   initialState,
   reducers: {
     setUserData: (state, action) => {
+      console.log(action.payload)
       state.current = action.payload
     },
     addToList: (state, action) => {

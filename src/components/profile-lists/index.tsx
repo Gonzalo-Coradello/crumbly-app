@@ -12,6 +12,7 @@ type Props = {
 
 const ProfileLists = ({ navigateTo }: Props) => {
   const user: User = useSelector(({ users }) => users.current)
+  // const { localId } = useSelector(({ auth }) => auth.value)
 
   return (
     <View style={styles.container}>
@@ -35,7 +36,7 @@ const ProfileLists = ({ navigateTo }: Props) => {
             key={name}
             onPress={() => navigateTo('Recipes', name)}
             title={name}
-            recipesLength={recipes.length}
+            recipesLength={recipes?.length}
             icon="book-outline"
           />
         ))}

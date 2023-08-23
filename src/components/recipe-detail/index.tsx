@@ -26,8 +26,8 @@ const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
 
   const { data, isLoading, isError } = useGetUserByIdQuery(recipe.authorId)
 
-  const isFavorite = user.favorites.includes(recipe.id)
-  const isSaved = user.lists.find((list) => list.recipes.includes(recipe.id))
+  const isFavorite = user.favorites?.includes(recipe.id)
+  const isSaved = user.lists.find((list) => list.recipes?.includes(recipe.id))
 
   const remove = () => {
     dispatch(removeFromList({ id: recipe.id, listName: isFavorite ? 'favorites' : isSaved?.name }))
@@ -77,9 +77,9 @@ const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
         </View>
         <View style={styles.recipeInfo}>
           <View style={styles.author}>
-            <ProfileCircle size={45} picture={author.picture} />
+            <ProfileCircle size={45} picture={author?.picture} />
             <Typography variant="semibold" size={18}>
-              {author.name}
+              {author?.name}
             </Typography>
           </View>
           <View style={styles.description}>

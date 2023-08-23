@@ -28,7 +28,7 @@ const ProfileRecipes = ({ navigateTo }: Props) => {
           onPress={() => navigateTo('Recipes', 'author')}
           icon="book-outline"
           title="Mis recetas"
-          recipesLength={user.recipes.length}
+          recipesLength={user.recipes?.length}
         />
       </View>
     </View>

@@ -22,8 +22,8 @@ const RecipeItem = ({ id, name, image, authorId, handleNavigate, openModal }: Pr
 
   const dispatch = useDispatch()
 
-  const isFavorite = user.favorites.includes(id)
-  const isSaved = user.lists.find((list) => list.recipes.includes(id))
+  const isFavorite = user.favorites?.includes(id)
+  const isSaved = user.lists.find((list) => list.recipes?.includes(id))
 
   const remove = () => {
     dispatch(removeFromList({ id, listName: isFavorite ? 'favorites' : isSaved?.name }))

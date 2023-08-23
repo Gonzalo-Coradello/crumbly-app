@@ -4,6 +4,9 @@ import { COLORS } from 'src/themes'
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  contentContainer: {
+    // flex: 1,
     backgroundColor: COLORS.background,
     paddingTop: 30,
     paddingHorizontal: 15,
@@ -20,6 +23,7 @@ export const styles = StyleSheet.create({
     lineHeight: 18,
   },
   logoutButton: {
+    marginTop: 10,
     marginBottom: 30,
     // borderWidth: 1,
     // borderColor: COLORS.darkGray,

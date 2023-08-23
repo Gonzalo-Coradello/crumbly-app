@@ -28,20 +28,24 @@ const SaveRecipeModal = ({
   const { localId } = useSelector(({ auth }) => auth.value)
 
   const saveRecipe = async (listName: string) => {
-    const updatedList =
-      listName === 'favorites'
-        ? { localId, favorites: [...user.favorites, selectedRecipe] }
-        : {
-            localId,
-            lists: user.lists.map((list) =>
-              list.name === listName
-                ? { name: listName, recipes: [...list.recipes, selectedRecipe] }
-                : list
-            ),
-          }
-    await updateUser(updatedList)
-    dispatch(addToList({ id: selectedRecipe, listName }))
-    setModalVisible(false)
+    try {
+      const updatedList =
+        listName === 'favorites'
+          ? { localId, favorites: [...user.favorites, selectedRecipe] }
+          : {
+              localId,
+              lists: user.lists.map((list) =>
+                list.name === listName
+                  ? { name: listName, recipes: [...list.recipes, selectedRecipe] }
+                  : list
+              ),
+            }
+      await updateUser(updatedList)
+      dispatch(addToList({ id: selectedRecipe, listName }))
+      setModalVisible(false)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const handleNavigate = () => {
@@ -75,7 +79,7 @@ const SaveRecipeModal = ({
         <UserRecipeListButton
           onPress={() => saveRecipe('favorites')}
           icon="star"
-          recipesLength={user.favorites.length}
+          recipesLength={user.favorites?.length}
           title="Mis favoritas"
         />
         {user.lists.map(({ name, recipes }) => (
@@ -84,7 +88,7 @@ const SaveRecipeModal = ({
             title={name}
             onPress={() => saveRecipe(name)}
             icon="star"
-            recipesLength={recipes.length}
+            recipesLength={recipes?.length}
           />
         ))}
       </ScrollView>
