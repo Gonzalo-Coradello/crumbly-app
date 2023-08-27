@@ -20,7 +20,6 @@ export default function ProfileNavigator() {
         name="Profile"
         component={Profile}
         options={({ navigation, route }) => ({
-          // headerShown: false,
           headerTitle: () => <Header title="Perfil" />,
           headerTitleAlign: 'center',
           headerLeft: () => null,

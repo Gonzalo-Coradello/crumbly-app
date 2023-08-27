@@ -1,6 +1,6 @@
-import { TextInput, View, TouchableOpacity } from 'react-native'
+import { TextInput, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-import { Typography } from 'src/components'
+import { Button } from 'src/components'
 import { useInput } from 'src/hooks'
 import { useUpdateUserMutation } from 'src/store/users/api'
 import { createList } from 'src/store/users/users.slice'
@@ -26,11 +26,14 @@ const CreateList = ({ navigation, route }: CreateListNavigationProps) => {
   return (
     <View style={styles.container}>
       <TextInput placeholder="Ponle un nombre" style={styles.input} {...name} />
-      <TouchableOpacity style={styles.button} onPress={create}>
+      {/* <TouchableOpacity style={styles.button} onPress={create}>
         <Typography size={18} variant="semibold">
           Crear lista
         </Typography>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+      <Button variant="primary" fontSize={16} fontWeight="medium" onPress={create}>
+        Crear lista
+      </Button>
     </View>
   )
 }

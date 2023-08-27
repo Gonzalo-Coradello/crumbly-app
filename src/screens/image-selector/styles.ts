@@ -25,19 +25,4 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 15,
   },
-  button: {
-    backgroundColor: COLORS.primary,
-    alignSelf: 'center',
-    paddingVertical: 15,
-    paddingHorizontal: 15,
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 3,
-  },
 })

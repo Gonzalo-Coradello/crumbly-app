@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
-    // flex: 1,
     backgroundColor: COLORS.background,
     paddingTop: 30,
     paddingHorizontal: 15,
@@ -21,25 +20,5 @@ export const styles = StyleSheet.create({
   email: {
     color: COLORS.darkGray,
     lineHeight: 18,
-  },
-  logoutButton: {
-    marginTop: 10,
-    marginBottom: 30,
-    // borderWidth: 1,
-    // borderColor: COLORS.darkGray,
-    borderRadius: 10,
-    maxWidth: 120,
-    alignSelf: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 10,
-    backgroundColor: COLORS.white,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 3,
   },
 })

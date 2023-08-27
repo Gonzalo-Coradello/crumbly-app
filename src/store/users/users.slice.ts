@@ -63,7 +63,7 @@ const usersSlice = createSlice({
       state.current?.recipes.push(recipeId)
     },
     removeRecipe: (state, action) => {
-      const recipeId = action.payload.id
+      const recipeId = action.payload
       if (!state.current) {
         return
       }

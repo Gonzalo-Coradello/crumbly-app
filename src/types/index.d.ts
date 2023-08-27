@@ -16,7 +16,6 @@ export interface Recipe {
   description: string
   ingredients: { ingredient: string; quantity: number; unit: string }[]
   steps: { id: number; step: string }[]
-  ratings: number[]
   reviews: string[]
   createdAt: date | string
 }
@@ -27,9 +26,8 @@ export interface Review {
   userId: number | string
   rating: number
   review: string
-  images: string[]
+  image: string
   createdAt: date | string
-  likes: number
 }
 
 export interface User {

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { ScrollView, View, TouchableOpacity } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-import { Typography, ProfileCircle, ProfileLists, ProfileRecipes } from 'src/components'
-import ConfirmModal from 'src/components/confirm-modal'
+import { Typography, ProfileCircle, ProfileLists, ProfileRecipes, Button } from 'src/components'
+import ConfirmModal from 'src/components/common/confirm-modal'
 import { deleteSession } from 'src/db'
 import { clearUser } from 'src/store/auth/auth.slice'
 import { ProfileNavigationProp } from 'src/types'
@@ -15,7 +15,6 @@ const Profile = ({ navigation, route }: ProfileNavigationProp) => {
   const image = useSelector(({ auth }) => auth.value.image)
   const localId = useSelector(({ auth }) => auth.value.localId)
   const user = useSelector(({ users }) => users.current)
-  // const { data, isLoading, isError, error } = useGetUserByIdQuery(localId)
 
   const navigateTo = (
     screenName: 'Recipes' | 'CreateList' | 'CreateRecipe' | 'ImagePicker',
@@ -29,15 +28,6 @@ const Profile = ({ navigation, route }: ProfileNavigationProp) => {
     dispatch(clearUser())
     await deleteSession(localId)
   }
-
-  // if (isError) {
-  //   console.warn(error)
-  //   return <Typography>Ha ocurrido un error</Typography>
-  // }
-
-  // if (isLoading) {
-  //   return <Loader />
-  // }
 
   return (
     <>
@@ -67,11 +57,13 @@ const Profile = ({ navigation, route }: ProfileNavigationProp) => {
         </View>
         <ProfileLists navigateTo={navigateTo} />
         <ProfileRecipes navigateTo={navigateTo} />
-        <TouchableOpacity style={styles.logoutButton} onPress={() => setModalVisible(true)}>
-          <Typography variant="medium" centered>
-            Cerrar sesión
-          </Typography>
-        </TouchableOpacity>
+        <Button
+          variant="small"
+          fontWeight="medium"
+          marginBottom={30}
+          onPress={() => setModalVisible(true)}>
+          Cerrar sesión
+        </Button>
       </ScrollView>
     </>
   )

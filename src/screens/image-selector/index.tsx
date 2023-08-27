@@ -1,9 +1,9 @@
 import { Ionicons } from '@expo/vector-icons'
 import * as ImagePicker from 'expo-image-picker'
 import { useState } from 'react'
-import { View, Image, TouchableOpacity } from 'react-native'
+import { View, Image } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-import { SelectImageModal, Typography } from 'src/components'
+import { Button, SelectImageModal } from 'src/components'
 import { setCameraImage } from 'src/store/auth/auth.slice'
 import { useUpdateUserMutation } from 'src/store/users/api'
 
@@ -92,24 +92,18 @@ const ImageSelector = ({ navigation }: any) => {
         )}
         {image ? (
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={() => setOpenModal(true)}>
-              <Typography color="white" variant="medium" size={14}>
-                Elegir otra foto
-              </Typography>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={confirmImage}>
-              <Typography color="white" variant="medium" size={14}>
-                Confirmar foto
-              </Typography>
-            </TouchableOpacity>
+            <Button variant="primary" fontWeight="medium" onPress={() => setOpenModal(true)}>
+              Elegir otra foto
+            </Button>
+            <Button variant="primary" fontWeight="medium" onPress={confirmImage}>
+              Confirmar foto
+            </Button>
           </View>
         ) : (
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={() => setOpenModal(true)}>
-              <Typography color="white" variant="medium" size={14}>
-                Seleccionar foto
-              </Typography>
-            </TouchableOpacity>
+            <Button variant="primary" fontWeight="medium" onPress={() => setOpenModal(true)}>
+              Seleccionar foto
+            </Button>
           </View>
         )}
       </View>

@@ -1,7 +1,7 @@
 import { SafeAreaView } from 'react-native'
 
 import { styles } from './styles'
-import Typography from '../typography'
+import Typography from '../common/typography'
 
 type Props = {
   title: string

@@ -17,7 +17,7 @@ export const recipesApi = createApi({
       providesTags: ['Recipes'],
     }),
     getRecipesByCategory: builder.query<Recipe[], string>({
-      query: (categoryId) => `recipes.json?orderBy="categoryId"&equalTo="${categoryId}"`,
+      query: (categoryId: string) => `recipes.json?orderBy="categoryId"&equalTo="${categoryId}"`,
       transformResponse: (response: any) =>
         Object.keys(response).map((key) => ({
           id: key,

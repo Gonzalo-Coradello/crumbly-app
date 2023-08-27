@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import { useSelector } from 'react-redux'
 import { Loader, RecipeList, SaveRecipeModal, Typography } from 'src/components'
 import { useGetRecipesQuery } from 'src/store/recipes/api'
-import { RecipesNavigationProp, User } from 'src/types'
+import { Recipe, RecipesNavigationProp, User } from 'src/types'
 
 import { styles } from './styles'
 
@@ -11,9 +11,9 @@ const Recipes = ({ navigation, route }: RecipesNavigationProp) => {
   const [modalVisible, setModalVisible] = useState(false)
   const [selectedRecipe, setSelectedRecipe] = useState('')
   const { categoryId, list } = route.params
-  const { data: recipes, isLoading, isError, error } = useGetRecipesQuery(null)
+  const { data, isLoading, isError, error } = useGetRecipesQuery(null)
   const user: User = useSelector(({ users }) => users.current)
-  const userRecipeList = user.lists.find((l) => l.name === list)?.recipes || []
+  const userRecipeList = user?.lists?.find((l) => l.name === list)?.recipes || []
 
   if (isLoading) return <Loader />
   if (isError) {
@@ -23,7 +23,9 @@ const Recipes = ({ navigation, route }: RecipesNavigationProp) => {
       </View>
     )
   }
-  if (!recipes) return null
+
+  if (!data) return null
+  const recipes: Recipe[] = data
 
   const recipeList = categoryId
     ? recipes.filter((recipe) => recipe.categoryId === categoryId)
