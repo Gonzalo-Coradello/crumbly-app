@@ -33,11 +33,11 @@ export interface Review {
 }
 
 export interface User {
-  id: string
+  localId: string
   name: string
   email: string
   password: string
-  picture: string // url
+  image: string // url
   recipes: string[] //recipeId
   favorites: string[] //recipeId
   lists: { name: string; recipes: string[] }[] // recipes: ["recipeId", "recipeId"]

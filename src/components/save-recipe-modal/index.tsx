@@ -31,17 +31,24 @@ const SaveRecipeModal = ({
     try {
       const updatedList =
         listName === 'favorites'
-          ? { localId, favorites: [...user.favorites, selectedRecipe] }
+          ? {
+              localId,
+              favorites: user.favorites ? [...user.favorites, selectedRecipe] : [selectedRecipe],
+            }
           : {
               localId,
               lists: user.lists.map((list) =>
                 list.name === listName
-                  ? { name: listName, recipes: [...list.recipes, selectedRecipe] }
+                  ? {
+                      name: listName,
+                      recipes: list.recipes ? [...list.recipes, selectedRecipe] : [selectedRecipe],
+                    }
                   : list
               ),
             }
-      await updateUser(updatedList)
+
       dispatch(addToList({ id: selectedRecipe, listName }))
+      await updateUser(updatedList)
       setModalVisible(false)
     } catch (error) {
       console.log(error)

@@ -44,7 +44,7 @@ export const recipesApi = createApi({
     }),
     deleteRecipe: builder.mutation({
       query: (id: string) => ({
-        url: `recipes.json?orderBy="id"&equalTo="${id}"`,
+        url: `recipes/${id}.json`,
         method: 'DELETE',
       }),
       invalidatesTags: ['Recipes'],

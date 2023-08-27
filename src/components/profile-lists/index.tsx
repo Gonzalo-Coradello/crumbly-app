@@ -29,9 +29,9 @@ const ProfileLists = ({ navigateTo }: Props) => {
           onPress={() => navigateTo('Recipes', 'favorites')}
           icon="star"
           title="Mis favoritas"
-          recipesLength={user.favorites.length}
+          recipesLength={user.favorites?.length}
         />
-        {user.lists.map(({ name, recipes }) => (
+        {user.lists?.map(({ name, recipes }) => (
           <UserRecipeListButton
             key={name}
             onPress={() => navigateTo('Recipes', name)}

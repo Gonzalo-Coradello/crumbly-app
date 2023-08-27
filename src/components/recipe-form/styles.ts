@@ -99,6 +99,14 @@ export const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 3,
   },
+  invalidButton: {
+    backgroundColor: COLORS.gray,
+  },
+  deleteButton: {
+    backgroundColor: COLORS.white,
+    borderWidth: 1,
+    borderColor: COLORS.error,
+  },
   categoriesContainer: {
     width: '90%',
     gap: 15,

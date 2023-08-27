@@ -11,14 +11,15 @@ import {
   emptyIngredients,
   setIngredients,
 } from 'src/store/ingredients/ingredients.slice'
-import { useCreateOrUpdateRecipeMutation } from 'src/store/recipes/api'
+import { useCreateOrUpdateRecipeMutation, useDeleteRecipeMutation } from 'src/store/recipes/api'
 import { useUpdateUserMutation } from 'src/store/users/api'
-import { addRecipe } from 'src/store/users/users.slice'
+import { addRecipe, removeRecipe } from 'src/store/users/users.slice'
 import { COLORS } from 'src/themes'
 import { Recipe, User, Ingredient } from 'src/types'
 import { transformQuantity, transformUnit } from 'src/utils'
 
 import { styles } from './styles'
+import ConfirmModal from '../confirm-modal'
 import EditIngredientModal from '../edit-ingredient-modal'
 import Input from '../input'
 import SelectImageModal from '../select-image-modal'
@@ -32,6 +33,8 @@ type Props = {
 const RecipeForm = ({ navigation, recipe }: Props) => {
   const dispatch = useDispatch()
   const [createOrUpdateRecipe] = useCreateOrUpdateRecipeMutation()
+  const [deleteRecipeById] = useDeleteRecipeMutation()
+
   const [updateUser] = useUpdateUserMutation()
   const ingredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.selected)
   const author: User = useSelector(({ users }) => users.current)
@@ -47,6 +50,7 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('')
   const [modalVisible, setModalVisible] = useState(false)
   const [imageModalVisible, setImageModalVisible] = useState(false)
+  const [confirmModalVisible, setConfirmModalVisible] = useState(false)
   const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null)
 
   const verifyCameraPermission = async () => {
@@ -145,14 +149,17 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
       ingredients,
       steps,
       categoryId: selectedCategory,
-      authorId: author.id,
+      authorId: author.localId,
       createdAt: Date.now(),
       reviews: [],
       ratings: [],
     }
-    await createOrUpdateRecipe(recipe)
-    await updateUser({ localId, recipes: [...author.recipes, recipe.id] })
     dispatch(addRecipe({ id: recipe.id }))
+    await createOrUpdateRecipe(recipe)
+    await updateUser({
+      localId,
+      recipes: author.recipes?.length ? [...author.recipes, recipe.id] : [recipe.id],
+    })
   }
 
   const handleUpdate = async () => {
@@ -181,6 +188,31 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
     navigation.goBack()
   }
 
+  const deleteRecipe = async () => {
+    console.log('deleting...', recipe?.id)
+    if (!recipe) return
+
+    removeRecipe(recipe.id)
+    await deleteRecipeById(recipe.id).unwrap()
+
+    const updatedUser = {
+      localId,
+      recipes: author.recipes.filter((r) => r !== recipe.id),
+    }
+    await updateUser(updatedUser)
+    console.log('finished deleting')
+    setConfirmModalVisible(false)
+    navigation.navigate('Profile')
+  }
+
+  const isFormValid =
+    name.value !== '' &&
+    description.value !== '' &&
+    ingredients.length > 0 &&
+    steps.length > 0 &&
+    selectedCategory !== '' &&
+    image !== ''
+
   return (
     <>
       <SelectImageModal
@@ -194,6 +226,12 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
         setModalVisible={setModalVisible}
         selectedIngredient={selectedIngredient}
         handleUpdate={handleUpdateIngredient}
+      />
+      <ConfirmModal
+        modalVisible={confirmModalVisible}
+        setModalVisible={setConfirmModalVisible}
+        confirmFunction={deleteRecipe}
+        message="¿Desea eliminar esta receta?"
       />
       <ScrollView
         style={styles.container}
@@ -322,11 +360,26 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
             </View>
           </View>
         </View>
-        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-          <Typography variant="medium" color="white" size={16}>
-            Guardar cambios
-          </Typography>
-        </TouchableOpacity>
+        {isFormValid ? (
+          <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+            <Typography variant="medium" color="white" size={16}>
+              Guardar cambios
+            </Typography>
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity style={[styles.button, styles.invalidButton]}>
+            <Typography variant="medium" color="white" size={16}>
+              Guardar cambios
+            </Typography>
+          </TouchableOpacity>
+        )}
+        {recipe && (
+          <TouchableOpacity
+            style={[styles.button, styles.deleteButton]}
+            onPress={() => setConfirmModalVisible(true)}>
+            <Typography color="error">Eliminar receta</Typography>
+          </TouchableOpacity>
+        )}
       </ScrollView>
     </>
   )

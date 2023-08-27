@@ -13,7 +13,7 @@ const ImageSelector = ({ navigation }: any) => {
   const [image, setImage] = useState('')
   const [openModal, setOpenModal] = useState(false)
   const dispatch = useDispatch()
-  const { localId, image: profileImage } = useSelector(({ auth }) => auth.value)
+  const { localId, image: profileImage } = useSelector(({ users }) => users.current)
   const [updateUser] = useUpdateUserMutation()
 
   const verifyCameraPermission = async () => {

@@ -1,11 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
-import USERS from 'src/constants/data/users.json'
 import { User } from 'src/types'
 
-const loggedUserId = '1'
-const initialState: { current: User | undefined; userList: User[] } = {
-  current: USERS.find((u) => u.id === loggedUserId),
-  userList: USERS,
+const initialState: { current: User | null } = {
+  current: null,
 }
 
 const usersSlice = createSlice({
@@ -13,19 +10,28 @@ const usersSlice = createSlice({
   initialState,
   reducers: {
     setUserData: (state, action) => {
-      console.log(action.payload)
       state.current = action.payload
     },
     addToList: (state, action) => {
       const { id, listName } = action.payload
-      const list =
-        listName === 'favorites'
-          ? state.current?.favorites
-          : state.current?.lists.find((l) => l.name === listName)?.recipes
-      if (list === undefined) {
-        return console.warn('No se pudo encontrar la lista')
+
+      if (listName === 'favorites') {
+        if (state.current?.favorites) {
+          state.current.favorites.push(id)
+        } else if (state.current) {
+          state.current.favorites = [id]
+        }
+      } else {
+        const list = state.current?.lists?.find((l) => l.name === listName)
+
+        if (list === undefined) {
+          return console.warn('No se pudo encontrar la lista')
+        } else if (list?.recipes) {
+          list.recipes.push(id)
+        } else {
+          list.recipes = [id]
+        }
       }
-      list.push(id)
     },
     removeFromList: (state, action) => {
       const { id, listName } = action.payload
@@ -56,9 +62,17 @@ const usersSlice = createSlice({
       const recipeId = action.payload.id
       state.current?.recipes.push(recipeId)
     },
+    removeRecipe: (state, action) => {
+      const recipeId = action.payload.id
+      if (!state.current) {
+        return
+      }
+      state.current.recipes = state.current.recipes.filter((recipe) => recipe !== recipeId)
+    },
   },
 })
 
-export const { setUserData, addToList, removeFromList, createList, addRecipe } = usersSlice.actions
+export const { setUserData, addToList, removeFromList, createList, addRecipe, removeRecipe } =
+  usersSlice.actions
 
 export default usersSlice.reducer
