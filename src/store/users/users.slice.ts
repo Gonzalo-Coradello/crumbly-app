@@ -58,6 +58,12 @@ const usersSlice = createSlice({
       }
       state.current?.lists.push(newList)
     },
+    removeList: (state, action) => {
+      const listName = action.payload
+
+      if (!state.current?.lists) return
+      state.current.lists = state.current?.lists.filter((list) => list.name !== listName)
+    },
     addRecipe: (state, action) => {
       const recipeId = action.payload.id
       state.current?.recipes.push(recipeId)
@@ -72,7 +78,14 @@ const usersSlice = createSlice({
   },
 })
 
-export const { setUserData, addToList, removeFromList, createList, addRecipe, removeRecipe } =
-  usersSlice.actions
+export const {
+  setUserData,
+  addToList,
+  removeFromList,
+  createList,
+  removeList,
+  addRecipe,
+  removeRecipe,
+} = usersSlice.actions
 
 export default usersSlice.reducer

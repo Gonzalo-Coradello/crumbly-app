@@ -1,5 +1,10 @@
+import { Ionicons } from '@expo/vector-icons'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { useState } from 'react'
+import { TouchableOpacity } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
 import { Header, HeaderArrow } from 'src/components'
+import ConfirmModal from 'src/components/common/confirm-modal'
 import {
   CreateList,
   CreateRecipe,
@@ -9,11 +14,28 @@ import {
   Recipes,
 } from 'src/screens'
 import Ingredients from 'src/screens/ingredients'
-import { ProfileParamList } from 'src/types'
+import { useUpdateUserMutation } from 'src/store/users/api'
+import { removeList } from 'src/store/users/users.slice'
+import { ProfileParamList, User } from 'src/types'
 
 const Stack = createNativeStackNavigator<ProfileParamList>()
 
 export default function ProfileNavigator() {
+  const [modalVisible, setModalVisible] = useState(false)
+  const dispatch = useDispatch()
+  const user: User = useSelector(({ users }) => users.current)
+  const [updateUser] = useUpdateUserMutation()
+
+  const deleteList = async (listName: string, navigation: any) => {
+    dispatch(removeList(listName))
+    await updateUser({
+      localId: user?.localId,
+      lists: user.lists.filter((list) => list.name !== listName),
+    })
+    setModalVisible(false)
+    navigation.navigate('Profile')
+  }
+
   return (
     <Stack.Navigator initialRouteName="Profile" screenOptions={{ headerBackVisible: false }}>
       <Stack.Screen
@@ -42,6 +64,20 @@ export default function ProfileNavigator() {
           ),
           headerTitleAlign: 'center',
           headerLeft: () => <HeaderArrow goBack={navigation.goBack} />,
+          headerRight: () =>
+            route.params.list !== 'favorites' && route.params.list !== 'author' ? (
+              <>
+                <ConfirmModal
+                  message="¿Estás seguro de que quieres eliminar esta lista?"
+                  modalVisible={modalVisible}
+                  setModalVisible={setModalVisible}
+                  confirmFunction={() => deleteList(route.params.list, navigation)}
+                />
+                <TouchableOpacity onPress={() => setModalVisible(true)}>
+                  <Ionicons name="trash-outline" size={25} />
+                </TouchableOpacity>
+              </>
+            ) : null,
         })}
       />
       <Stack.Screen
