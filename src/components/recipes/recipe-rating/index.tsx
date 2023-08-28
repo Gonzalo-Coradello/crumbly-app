@@ -1,15 +1,16 @@
 import { FontAwesome } from '@expo/vector-icons'
 import { View } from 'react-native'
 import { COLORS } from 'src/themes'
+import { Review } from 'src/types'
 
 import { styles } from './styles'
 
 type Props = {
-  ratings: number[]
+  reviews?: Review[]
 }
 
-const RecipeRating = ({ ratings }: Props) => {
-  if (!ratings)
+const RecipeRating = ({ reviews }: Props) => {
+  if (!reviews)
     return (
       <View style={styles.starsContainer}>
         {[1, 2, 3, 4, 5].map((star) => (
@@ -18,6 +19,7 @@ const RecipeRating = ({ ratings }: Props) => {
       </View>
     )
 
+  const ratings = reviews.map((review) => review.rating)
   const rating = ratings.reduce((acc, curr) => acc + curr, 0) / ratings.length
   const stars = [1, 2, 3, 4, 5].map((star) =>
     rating >= star ? (

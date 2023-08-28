@@ -68,9 +68,6 @@ export const styles = StyleSheet.create({
   ratingContainer: {
     alignItems: 'center',
     gap: 10,
-    marginBottom: 15,
-  },
-  emptyReviews: {
     marginVertical: 15,
   },
 })

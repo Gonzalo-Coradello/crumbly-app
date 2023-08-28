@@ -2,6 +2,7 @@ import { Ionicons, AntDesign } from '@expo/vector-icons'
 import { useState } from 'react'
 import { Image, ScrollView, View } from 'react-native'
 import { useDispatch } from 'react-redux'
+import { useGetReviewsByRecipeQuery } from 'src/store/reviews/api'
 import { useGetUserByIdQuery, useUpdateUserMutation } from 'src/store/users/api'
 import { removeFromList } from 'src/store/users/users.slice'
 import { Recipe, User } from 'src/types'
@@ -12,6 +13,7 @@ import ConfirmModal from '../../common/confirm-modal'
 import Loader from '../../common/loader'
 import Typography from '../../common/typography'
 import ProfileCircle from '../../profile/profile-circle'
+import Ratings from '../../ratings/rating-list'
 import RecipeRater from '../../ratings/recipe-rater'
 import Description from '../description'
 import RecipeRating from '../recipe-rating'
@@ -27,9 +29,11 @@ const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
   const dispatch = useDispatch()
 
   const [modalVisible, setModalVisible] = useState(false)
-  const { data: author, isLoading, isError } = useGetUserByIdQuery(recipe?.authorId)
-  const [updateUser] = useUpdateUserMutation()
 
+  const { data: author, isLoading, isError } = useGetUserByIdQuery(recipe?.authorId)
+  const { data: reviews, isLoading: isLoadingReviews } = useGetReviewsByRecipeQuery(recipe.id)
+
+  const [updateUser] = useUpdateUserMutation()
   const isFavorite = user.favorites?.includes(recipe?.id)
   const isSaved = user.lists.find((list) => list.recipes?.includes(recipe?.id))
 
@@ -51,6 +55,10 @@ const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
 
   const handleEdit = () => {
     navigation.navigate('ProfileTab', { screen: 'CreateRecipe', params: { recipe } })
+  }
+
+  const handleSelectRating = (selectedRating: number) => {
+    navigation.navigate('CreateRating', { recipeId: recipe.id, selectedRating })
   }
 
   if (isLoading) {
@@ -85,7 +93,7 @@ const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
             {recipe?.name}
           </Typography>
           <View style={styles.row}>
-            <RecipeRating ratings={recipe.ratings} />
+            <RecipeRating reviews={reviews} />
             <View style={styles.iconsContainer}>
               {recipe.authorId === author?.localId && (
                 <AntDesign name="edit" size={25} onPress={handleEdit} />
@@ -145,25 +153,13 @@ const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
             <Typography variant="semibold" size={18}>
               ¿Te ha gustado la receta?
             </Typography>
-            <RecipeRater />
+            <RecipeRater selected={0} fn={handleSelectRating} />
           </View>
           <View>
             <Typography variant="semibold" size={18}>
               Valoraciones
             </Typography>
-            {recipe.reviews?.length ? (
-              recipe.reviews.map((review) => (
-                <View key={review}>
-                  <Typography>{review}</Typography>
-                </View>
-              ))
-            ) : (
-              <View style={styles.emptyReviews}>
-                <Typography variant="light" size={15}>
-                  Esta receta aún no tiene valoraciones.
-                </Typography>
-              </View>
-            )}
+            {isLoadingReviews ? <Loader /> : <Ratings reviews={reviews} />}
           </View>
         </View>
       </ScrollView>

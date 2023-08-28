@@ -19,7 +19,7 @@ export const usersApi = createApi({
       }),
     }),
     updateUser: builder.mutation({
-      query: ({ localId, ...user }: User) => ({
+      query: ({ localId, ...user }) => ({
         url: `users/${localId}.json`,
         method: 'PATCH',
         body: user,

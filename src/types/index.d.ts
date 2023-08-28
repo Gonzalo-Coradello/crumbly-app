@@ -16,14 +16,13 @@ export interface Recipe {
   description: string
   ingredients: { ingredient: string; quantity: number; unit: string }[]
   steps: { id: number; step: string }[]
-  reviews: string[]
   createdAt: date | string
 }
 
 export interface Review {
   id: string
   recipeId: string
-  userId: number | string
+  userId: string
   rating: number
   review: string
   image: string
@@ -47,6 +46,7 @@ export type RecipesParamList = {
   Recipes: { categoryId: string; category: string; list: string }
   RecipeDetail: { recipeId: string }
   CreateList: { recipeId: string | undefined }
+  CreateRating: { recipeId: string; selectedRating: number }
 }
 
 export type HomeParamList = RecipesParamList & {

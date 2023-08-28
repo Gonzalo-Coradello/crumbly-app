@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import { Header, HeaderArrow } from 'src/components'
-import { Home, RecipeDetailContainer, Recipes } from 'src/screens'
+import { CreateRating, Home, RecipeDetailContainer, Recipes } from 'src/screens'
 import { HomeParamList } from 'src/types'
 
 const Stack = createStackNavigator<HomeParamList>()
@@ -24,6 +24,15 @@ export default function RecipesNavigator() {
         options={({ navigation, route }) => ({
           headerTransparent: true,
           headerTitle: '',
+          headerLeft: () => <HeaderArrow goBack={navigation.goBack} />,
+        })}
+      />
+      <Stack.Screen
+        name="CreateRating"
+        component={CreateRating}
+        options={({ navigation, route }) => ({
+          headerTitle: () => <Header title="Deja tu reseña" />,
+          headerTitleAlign: 'center',
           headerLeft: () => <HeaderArrow goBack={navigation.goBack} />,
         })}
       />

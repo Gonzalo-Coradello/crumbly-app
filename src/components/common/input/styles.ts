@@ -4,7 +4,7 @@ import { FONTS } from 'src/themes/fonts'
 
 export const styles = StyleSheet.create({
   container: {
-    minWidth: '85%',
+    minWidth: '80%',
   },
   input: {
     maxHeight: 120,
@@ -15,5 +15,6 @@ export const styles = StyleSheet.create({
     fontFamily: FONTS.regular,
     fontSize: 14,
     width: '100%',
+    maxWidth: '100%',
   },
 })

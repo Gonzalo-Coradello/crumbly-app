@@ -143,7 +143,7 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
 
   const handleCreate = async () => {
     const recipe: Recipe = {
-      id: String(Math.floor(Math.random() * 1000) + 1),
+      id: String(Math.floor(Math.random() * 10000) + 1),
       name: name.value,
       image,
       description: description.value,
@@ -152,8 +152,6 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
       categoryId: selectedCategory,
       authorId: author.localId,
       createdAt: Date.now(),
-      reviews: [],
-      ratings: [],
     }
     dispatch(addRecipe({ id: recipe.id }))
     await createOrUpdateRecipe(recipe)
