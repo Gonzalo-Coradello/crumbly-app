@@ -23,8 +23,7 @@ export default function TabNavigator() {
         },
         tabBarActiveTintColor: COLORS.black,
         tabBarInactiveTintColor: COLORS.gray,
-      }}
-      backBehavior="initialRoute">
+      }}>
       <Tab.Screen
         name="RecipeTab"
         component={RecipesNavigator}

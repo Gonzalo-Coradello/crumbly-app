@@ -22,7 +22,9 @@ const RatingItem = ({ id, rating, image, review, userId, createdAt, recipeId }: 
           <View>
             <Typography variant="medium">{user?.name}</Typography>
             {createdAt && (
-              <Typography variant="light">{new Date(createdAt)?.toLocaleDateString()}</Typography>
+              <Typography variant="light">
+                {new Date(createdAt)?.toLocaleDateString('en-GB')}
+              </Typography>
             )}
           </View>
         </View>

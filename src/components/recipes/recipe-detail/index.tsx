@@ -75,6 +75,8 @@ const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
 
   if (!recipe) return null
 
+  const isRatedByUser = reviews?.some((review) => review?.userId === user.localId)
+
   return (
     <>
       <ConfirmModal
@@ -95,7 +97,7 @@ const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
           <View style={styles.row}>
             <RecipeRating reviews={reviews} />
             <View style={styles.iconsContainer}>
-              {recipe.authorId === author?.localId && (
+              {recipe.authorId === user.localId && (
                 <AntDesign name="edit" size={25} onPress={handleEdit} />
               )}
               <Ionicons name="arrow-redo-outline" size={25} />
@@ -149,12 +151,23 @@ const RecipeDetail = ({ recipe, user, openModal, navigation }: Props) => {
               ))}
             </View>
           </View>
-          <View style={styles.ratingContainer}>
-            <Typography variant="semibold" size={18}>
-              ¿Te ha gustado la receta?
-            </Typography>
-            <RecipeRater selected={0} fn={handleSelectRating} />
-          </View>
+          {isRatedByUser ? (
+            <View style={styles.ratingContainer}>
+              <Typography variant="semibold" size={18}>
+                ¡Gracias por valorar!
+              </Typography>
+              <RecipeRating
+                reviews={[reviews?.find((review) => review.userId === user.localId)!]}
+              />
+            </View>
+          ) : (
+            <View style={styles.ratingContainer}>
+              <Typography variant="semibold" size={18}>
+                ¿Te ha gustado la receta?
+              </Typography>
+              <RecipeRater selected={0} fn={handleSelectRating} />
+            </View>
+          )}
           <View>
             <Typography variant="semibold" size={18}>
               Valoraciones
