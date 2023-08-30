@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 import { FIREBASE_BASE_URL } from 'src/constants/firebase'
-import { User } from 'src/types'
 
 export const usersApi = createApi({
   reducerPath: 'usersApi',
@@ -12,7 +11,7 @@ export const usersApi = createApi({
       }),
     }),
     createUser: builder.mutation({
-      query: (user: User) => ({
+      query: (user) => ({
         url: `users/${user.localId}.json`,
         method: 'PUT',
         body: user,

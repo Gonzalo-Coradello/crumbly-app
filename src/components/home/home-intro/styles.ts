@@ -3,7 +3,7 @@ import { COLORS } from 'src/themes'
 
 export const styles = StyleSheet.create({
   heading: {
-    width: 200,
+    width: 220,
     marginBottom: 30,
   },
   tabletHeading: {

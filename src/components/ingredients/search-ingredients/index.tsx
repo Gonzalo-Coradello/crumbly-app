@@ -64,7 +64,6 @@ const SearchIngredients = () => {
   }
 
   const handleEdit = (ingredient: Ingredient) => {
-    console.log({ selectedIngredient: ingredient })
     setSelectedIngredient(ingredient)
     setModalVisible(true)
   }

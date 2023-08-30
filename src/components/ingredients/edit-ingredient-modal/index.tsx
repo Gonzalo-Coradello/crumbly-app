@@ -57,9 +57,6 @@ const EditIngredientModal = ({
 
   if (!selectedIngredient) return null
 
-  console.log(selectedIngredient)
-  console.log(allUnits)
-
   return (
     <Modal
       visible={modalVisible}
