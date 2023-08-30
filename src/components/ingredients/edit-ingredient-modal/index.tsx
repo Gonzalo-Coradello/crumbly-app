@@ -24,6 +24,7 @@ type Props = {
   setModalVisible: (visible: boolean) => void
   selectedIngredient: Ingredient | null
   handleUpdate: (ingredient: Ingredient) => void
+  allUnits: string[]
 }
 
 const EditIngredientModal = ({
@@ -31,6 +32,7 @@ const EditIngredientModal = ({
   setModalVisible,
   selectedIngredient,
   handleUpdate,
+  allUnits,
 }: Props) => {
   const quantity = useInput()
   const [optionMenuOpen, setOptionMenuOpen] = useState(false)
@@ -55,6 +57,9 @@ const EditIngredientModal = ({
 
   if (!selectedIngredient) return null
 
+  console.log(selectedIngredient)
+  console.log(allUnits)
+
   return (
     <Modal
       visible={modalVisible}
@@ -70,7 +75,8 @@ const EditIngredientModal = ({
         <TouchableWithoutFeedback onPress={handleClose}>
           <View style={styles.contentContainer}>
             <Typography variant="semibold" size={20} centered>
-              {selectedIngredient.ingredient}
+              {selectedIngredient.ingredient.charAt(0).toUpperCase() +
+                selectedIngredient.ingredient.slice(1)}
             </Typography>
             <View style={styles.row}>
               <View style={styles.column}>
@@ -97,7 +103,7 @@ const EditIngredientModal = ({
                 {optionMenuOpen && (
                   <View style={styles.optionMenu}>
                     <ScrollView contentContainerStyle={styles.optionMenuContent}>
-                      {selectedIngredient.units.map((unit) => (
+                      {(selectedIngredient.units || allUnits)?.map((unit) => (
                         <TouchableOpacity key={unit} onPress={() => handleSelectUnit(unit)}>
                           <Typography>{transformUnit(unit, +quantity.value)}</Typography>
                         </TouchableOpacity>
@@ -107,19 +113,21 @@ const EditIngredientModal = ({
                 )}
               </View>
             </View>
-            <Button
-              variant="primary"
-              fontSize={16}
-              fontWeight="medium"
-              onPress={() =>
-                handleUpdate({
-                  ...selectedIngredient,
-                  quantity: Number(quantity.value.replace(',', '.')),
-                  unit,
-                })
-              }>
-              Guardar
-            </Button>
+            <View style={{ zIndex: -10 }}>
+              <Button
+                variant="primary"
+                fontSize={16}
+                fontWeight="medium"
+                onPress={() =>
+                  handleUpdate({
+                    ...selectedIngredient,
+                    quantity: Number(quantity.value.replace(',', '.')),
+                    unit,
+                  })
+                }>
+                Guardar
+              </Button>
+            </View>
           </View>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>

@@ -26,20 +26,20 @@ const RecipeItem = ({ id, name, image, authorId, handleNavigate, openModal }: Pr
   const dispatch = useDispatch()
 
   const isFavorite = user.favorites?.includes(id)
-  const isSaved = user.lists.find((list) => list.recipes?.includes(id))
+  const isSaved = user.lists?.find((list) => list.recipes?.includes(id))
 
   const remove = async () => {
     setModalVisible(false)
     dispatch(removeFromList({ id, listName: isFavorite ? 'favorites' : isSaved?.name }))
     if (isFavorite) {
-      const updatedFavorites = user.favorites.filter((r) => r !== id)
+      const updatedFavorites = user.favorites?.filter((r) => r !== id)
       await updateUser({ localId: user.localId, favorites: updatedFavorites })
     } else {
       const updatedList = {
         name: isSaved?.name,
         recipes: isSaved?.recipes.filter((r) => r !== id),
       }
-      const updatedLists = user.lists.map((l) => (l.name === isSaved?.name ? updatedList : l))
+      const updatedLists = user.lists?.map((l) => (l.name === isSaved?.name ? updatedList : l))
       await updateUser({ localId: user.localId, lists: updatedLists })
     }
   }

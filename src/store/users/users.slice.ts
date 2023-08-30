@@ -56,7 +56,14 @@ const usersSlice = createSlice({
       if (recipeId) {
         newList.recipes.push(recipeId)
       }
-      state.current?.lists.push(newList)
+
+      if (!state.current) return
+
+      if (state.current.lists) {
+        state.current.lists.push(newList)
+      } else {
+        state.current.lists = [newList]
+      }
     },
     removeList: (state, action) => {
       const listName = action.payload

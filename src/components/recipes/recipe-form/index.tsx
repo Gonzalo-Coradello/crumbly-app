@@ -40,6 +40,7 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
   const ingredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.selected)
   const author: User = useSelector(({ users }) => users.current)
   const { localId } = useSelector(({ auth }) => auth.value)
+  const allUnits: string[] = useSelector(({ ingredients }) => ingredients.allUnits)
 
   const { data } = useGetCategoriesQuery(null)
 
@@ -227,6 +228,7 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
         setModalVisible={setModalVisible}
         selectedIngredient={selectedIngredient}
         handleUpdate={handleUpdateIngredient}
+        allUnits={allUnits}
       />
       <ConfirmModal
         modalVisible={confirmModalVisible}
@@ -288,7 +290,7 @@ const RecipeForm = ({ navigation, recipe }: Props) => {
                   {/* <Image /> */}
                   <View>
                     <Typography variant="semibold" size={16}>
-                      {ingredient}
+                      {ingredient.charAt(0).toUpperCase() + ingredient.slice(1)}
                     </Typography>
                     <Typography variant="light">
                       {transformQuantity(quantity)} {transformUnit(unit, quantity)}

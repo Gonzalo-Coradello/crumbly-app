@@ -37,7 +37,7 @@ const SaveRecipeModal = ({
             }
           : {
               localId,
-              lists: user.lists.map((list) =>
+              lists: user.lists?.map((list) =>
                 list.name === listName
                   ? {
                       name: listName,
@@ -89,7 +89,7 @@ const SaveRecipeModal = ({
           recipesLength={user.favorites?.length}
           title="Mis favoritas"
         />
-        {user.lists.map(({ name, recipes }) => (
+        {user.lists?.map(({ name, recipes }) => (
           <UserRecipeListButton
             key={name}
             title={name}

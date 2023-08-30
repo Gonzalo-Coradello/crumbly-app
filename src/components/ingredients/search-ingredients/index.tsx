@@ -33,7 +33,7 @@ const SearchIngredients = () => {
 
   const allUnits: string[] = useSelector(({ ingredients }) => ingredients.allUnits)
   const selectedIngredients: Ingredient[] = useSelector(({ ingredients }) => ingredients.selected)
-  const selectedIngredientNames = selectedIngredients.map((i) => i.ingredient)
+  const selectedIngredientNames = selectedIngredients.map((i) => i.ingredient.toLowerCase())
   const [modalVisible, setModalVisible] = useState(false)
   const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null)
   const search = useInput()
@@ -51,7 +51,7 @@ const SearchIngredients = () => {
     i.ingredient.toLowerCase().includes(search.value.toLowerCase())
   )
   const isSelected = (ingredient: Ingredient) => {
-    return selectedIngredientNames.includes(ingredient.ingredient)
+    return selectedIngredientNames.includes(ingredient.ingredient.toLowerCase())
   }
 
   const handleAdd = (ingredient: Ingredient) => {
@@ -64,6 +64,7 @@ const SearchIngredients = () => {
   }
 
   const handleEdit = (ingredient: Ingredient) => {
+    console.log({ selectedIngredient: ingredient })
     setSelectedIngredient(ingredient)
     setModalVisible(true)
   }
@@ -100,6 +101,7 @@ const SearchIngredients = () => {
         setModalVisible={setModalVisible}
         selectedIngredient={selectedIngredient}
         handleUpdate={handleUpdate}
+        allUnits={allUnits}
       />
       <ScrollView
         style={styles.container}
@@ -148,7 +150,10 @@ const SearchIngredients = () => {
                     {/* <Image /> */}
                     <View>
                       <Typography variant="semibold" size={16}>
-                        {ingredient}
+                        {ingredient
+                          .charAt(0)
+                          .toUpperCase()
+                          .concat(ingredient.slice(1).toLowerCase())}
                       </Typography>
                       <Typography variant="light">
                         {transformQuantity(quantity)} {transformUnit(unit, quantity)}

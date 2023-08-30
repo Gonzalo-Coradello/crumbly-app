@@ -30,7 +30,7 @@ export default function ProfileNavigator() {
     dispatch(removeList(listName))
     await updateUser({
       localId: user?.localId,
-      lists: user.lists.filter((list) => list.name !== listName),
+      lists: user.lists?.filter((list) => list.name !== listName),
     })
     setModalVisible(false)
     navigation.navigate('Profile')

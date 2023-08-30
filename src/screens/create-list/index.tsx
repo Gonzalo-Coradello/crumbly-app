@@ -18,7 +18,8 @@ const CreateList = ({ navigation, route }: CreateListNavigationProps) => {
 
   const create = async () => {
     const recipes = recipeId ? [recipeId] : []
-    await updateUser({ localId, lists: [...user.lists, { name: name.value, recipes }] })
+    const lists = user.lists ? user.lists : []
+    await updateUser({ localId, lists: [...lists, { name: name.value, recipes }] })
     dispatch(createList({ listName: name.value, recipeId }))
     navigation.navigate('Profile')
   }
@@ -26,11 +27,6 @@ const CreateList = ({ navigation, route }: CreateListNavigationProps) => {
   return (
     <View style={styles.container}>
       <TextInput placeholder="Ponle un nombre" style={styles.input} {...name} />
-      {/* <TouchableOpacity style={styles.button} onPress={create}>
-        <Typography size={18} variant="semibold">
-          Crear lista
-        </Typography>
-      </TouchableOpacity> */}
       <Button variant="primary" fontSize={16} fontWeight="medium" onPress={create}>
         Crear lista
       </Button>
