@@ -1,5 +1,5 @@
 import { BlurView } from 'expo-blur'
-import { ImageBackground, Platform, TouchableOpacity } from 'react-native'
+import { ImageBackground, TouchableOpacity } from 'react-native'
 import { Category } from 'src/types'
 
 import { styles } from './styles'
@@ -16,10 +16,7 @@ const CategoryItem = ({ id, name, backgroundImage, handleNavigate }: Props) => {
         source={{ uri: backgroundImage }}
         resizeMode="cover"
         style={styles.backgroundImage}>
-        <BlurView
-          style={styles.nameContainer}
-          intensity={Platform.OS === 'ios' ? 5 : 85}
-          tint="dark">
+        <BlurView style={styles.nameContainer} intensity={5} tint="dark">
           <Typography variant="semibold" size={16} centered style={styles.categoryName}>
             {name}
           </Typography>

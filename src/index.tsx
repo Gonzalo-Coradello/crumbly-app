@@ -1,11 +1,11 @@
 import { useFonts } from 'expo-font'
-import { ActivityIndicator, Platform, StatusBar, View } from 'react-native'
+import { Platform, StatusBar } from 'react-native'
 import { Provider } from 'react-redux'
 
+import { Loader } from './components'
 import { init } from './db'
 import RootNavigator from './navigations'
 import store from './store'
-import { styles } from './styles'
 
 init()
   .then(() => console.log('DB initialized'))
@@ -29,12 +29,7 @@ export default function App() {
     return
   }
 
-  if (!loaded)
-    return (
-      <View style={styles.loaderContainer}>
-        <ActivityIndicator size="large" />
-      </View>
-    )
+  if (!loaded) return <Loader />
 
   return (
     <Provider store={store}>

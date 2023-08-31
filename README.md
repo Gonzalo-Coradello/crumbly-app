@@ -2,18 +2,18 @@
 
 ## Recipe app
 
-_[en]_ **Crumbly** description  
-_[es]_ **Crumbly** descripción
+<!-- _[en]_ **Crumbly** description   -->
+<!-- _[es]_ **Crumbly** descripción -->
 
-[LOGO]
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/assets/images/logo.png)
 
-## Features
+<!-- ## Features
 
 -
 
 ## Características:
 
--
+- -->
 
 ## Created with:
 
@@ -55,17 +55,17 @@ Runs the app in the iOS simulator.
 
 Runs the app in the Android simulator.
 
-## Credits
+<!-- ## Credits -->
 
 <!-- _[en]_ Branding, logo and design: [Talia Laborde](https://www.linkedin.com/in/talia-laborde/)
 _[es]_ Diseño, branding y logo: [Talia Laborde](https://www.linkedin.com/in/talia-laborde/) -->
 
-## Screeenshots
+<!-- ## Screeenshots -->
 
 <!-- ![](https://github.com/Gonzalo-Coradello/the-mistery-fox_ecommerce/blob/main/screenshots/the-mistery-fox-1.png)
 ![](https://github.com/Gonzalo-Coradello/the-mistery-fox_ecommerce/blob/main/screenshots/the-mistery-fox-2.png) -->
 
-## Demo
+<!-- ## Demo -->
 
 <!-- ### Proceso de compra / Purchasing process
 
