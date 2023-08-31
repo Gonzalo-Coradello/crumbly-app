@@ -12,7 +12,7 @@ _[en]_ **Crumbly** is a mobile application that aims to provide you with delicio
 
 _[es]_ **Crumbly** es una aplicación móvil que tiene el objetivo de brindarte deliciosas recetas para que acompañes tu bebida favorita. ☕
 
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/assets/images/logo.PNG)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/assets/images/logo.png)
 
 <!-- ## Features
 
