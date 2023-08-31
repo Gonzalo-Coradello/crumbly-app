@@ -2,8 +2,15 @@
 
 ## Recipe app
 
-<!-- _[en]_ **Crumbly** description   -->
-<!-- _[es]_ **Crumbly** descripción -->
+<!-- Se describe el proyecto dentro del archivo MD. Se
+comprenden los alcances del proyecto, los features
+incluidos, se detalla brevemente cada librería utilizada y el
+por qué de su utilización. Se detallan los pasos de
+instalación y puesta a punto del proyecto. -->
+
+_[en]_ **Crumbly** is a mobile application that aims to provide you with delicious recipes to accompany your favorite drink. ☕
+
+_[es]_ **Crumbly** es una aplicación móvil que tiene el objetivo de brindarte deliciosas recetas para que acompañes tu bebida favorita. ☕
 
 ![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/assets/images/logo.png)
 
@@ -60,13 +67,29 @@ Runs the app in the Android simulator.
 <!-- _[en]_ Branding, logo and design: [Talia Laborde](https://www.linkedin.com/in/talia-laborde/)
 _[es]_ Diseño, branding y logo: [Talia Laborde](https://www.linkedin.com/in/talia-laborde/) -->
 
-<!-- ## Screeenshots -->
+## Demo
 
-<!-- ![](https://github.com/Gonzalo-Coradello/the-mistery-fox_ecommerce/blob/main/screenshots/the-mistery-fox-1.png)
-![](https://github.com/Gonzalo-Coradello/the-mistery-fox_ecommerce/blob/main/screenshots/the-mistery-fox-2.png) -->
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/lists.gif)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/review.gif)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/profile.gif)
 
-<!-- ## Demo -->
+## Screeenshots
 
-<!-- ### Proceso de compra / Purchasing process
-
-![](https://github.com/Gonzalo-Coradello/the-mistery-fox_ecommerce/blob/main/screenshots/demo-purchase.gif) -->
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/1.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/2.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/3.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/4.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/5.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/6.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/7.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/8.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/9.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/10.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/11.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/12.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/13.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/14.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/15.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/16.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/17.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/18.png)
