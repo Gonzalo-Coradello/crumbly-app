@@ -12,7 +12,7 @@ _[en]_ **Crumbly** is a mobile application that aims to provide you with delicio
 
 _[es]_ **Crumbly** es una aplicación móvil que tiene el objetivo de brindarte deliciosas recetas para que acompañes tu bebida favorita. ☕
 
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/assets/images/logo.png)
+![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/assets/images/logo.PNG)
 
 <!-- ## Features
 
@@ -69,27 +69,27 @@ _[es]_ Diseño, branding y logo: [Talia Laborde](https://www.linkedin.com/in/tal
 
 ## Demo
 
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/lists.gif)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/review.gif)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/profile.gif)
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/lists.gif" alt="" style="max-width: 250px; display: inline-block;" data-target="animated-image.originalImage">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/review.gif" alt="" style="max-width: 250px; display: inline-block;" data-target="animated-image.originalImage">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/profile.gif" alt="" style="max-width: 250px; display: inline-block;" data-target="animated-image.originalImage">
 
 ## Screeenshots
 
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/1.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/2.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/3.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/4.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/5.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/6.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/7.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/8.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/9.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/10.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/11.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/12.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/13.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/14.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/15.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/16.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/17.png)
-![](https://github.com/Gonzalo-Coradello/crumbly-app/blob/main/screenshots/18.png)
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/1.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/2.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/3.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/4.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/5.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/6.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/7.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/8.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/9.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/10.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/11.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/12.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/13.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/14.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/15.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/16.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/17.PNG" alt="" style="max-width: 250px; display: inline-block;">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/18.PNG" alt="" style="max-width: 250px; display: inline-block;">
