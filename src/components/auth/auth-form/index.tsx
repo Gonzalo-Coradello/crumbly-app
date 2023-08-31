@@ -80,7 +80,7 @@ const AuthForm = ({
         </View>
         <View>
           <Typography variant="light" centered>
-            {isLogin ? 'No tienes cuenta?' : '¿Ya tienes cuenta?'}
+            {isLogin ? '¿No tienes cuenta?' : '¿Ya tienes cuenta?'}
           </Typography>
           <TouchableOpacity onPress={handleFormChange}>
             <Typography variant="medium" centered color="primary">

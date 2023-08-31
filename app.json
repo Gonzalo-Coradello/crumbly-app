@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "crumbly",
-    "slug": "Crumbly.",
+    "name": "Crumbly",
+    "slug": "Crumbly",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,7 +28,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "eedf1db6-6494-421a-afb4-90e1aae0c8bf"
+        "projectId": "0ce8ad3a-442b-4b38-9739-2a0185d9795a"
       }
     }
   }
