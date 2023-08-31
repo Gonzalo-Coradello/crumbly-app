@@ -69,27 +69,27 @@ _[es]_ Diseño, branding y logo: [Talia Laborde](https://www.linkedin.com/in/tal
 
 ## Demo
 
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/lists.gif" width="250" data-target="animated-image.originalImage">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/review.gif" width="250" data-target="animated-image.originalImage">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/profile.gif" width="250" data-target="animated-image.originalImage">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/lists.gif" width="320" data-target="animated-image.originalImage">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/review.gif" width="320" data-target="animated-image.originalImage">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/profile.gif" width="320" data-target="animated-image.originalImage">
 
 ## Screeenshots
 
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/1.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/2.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/3.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/4.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/5.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/6.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/7.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/8.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/9.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/10.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/11.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/12.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/13.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/14.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/15.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/16.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/17.PNG" width="250">
-<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/18.PNG" width="250">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/1.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/2.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/3.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/4.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/5.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/6.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/7.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/8.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/9.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/10.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/11.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/12.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/13.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/14.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/15.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/16.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/17.PNG" width="320">
+<img src="https://github.com/Gonzalo-Coradello/crumbly-app/raw/main/screenshots/18.PNG" width="320">
