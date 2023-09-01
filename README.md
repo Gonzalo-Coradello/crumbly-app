@@ -25,7 +25,7 @@ A pesar de que la aplicación es completamente funcional, aún no está lista pa
 - Cross-platform mobile app developed with React Native and TypeScript.
 - Data persistance using Firebase Realtime Database.
 - Global state management with Redux Toolkit and HTTP communication with RTK Query.
-- Atractive and intuitiva UI.
+- Atractive and intuitive UI.
 - Sign up and sign in functionality.
 - Session persistance with SQLite.
 - Profile picture update from camera or image gallery.
@@ -57,8 +57,6 @@ A pesar de que la aplicación es completamente funcional, aún no está lista pa
 ![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37)
 
 #### This project was bootstrapped with [Expo](https://expo.dev/).
-
-<!-- Librerías ¿? -->
 
 ## Installation
 
