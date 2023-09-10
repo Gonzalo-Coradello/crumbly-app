@@ -30,9 +30,9 @@ A pesar de que la aplicación es completamente funcional, aún no está lista pa
 - Session persistance with SQLite.
 - Profile picture update from camera or image gallery.
 - Recipes filtered by categories.
-- User can save recipes in his favorites as well as create custom lists.
-- User can create, update and delete his own recipes.
-- User can review recipes, optionally including a picture.
+- Users can save recipes to their favorites as well as create custom lists.
+- Users can create, update and delete their own recipes.
+- Users can review recipes, optionally including a picture.
 
 ## Características:
 
@@ -44,9 +44,9 @@ A pesar de que la aplicación es completamente funcional, aún no está lista pa
 - Persistencia de la sesión del usuario con SQLite.
 - Actualización de foto de perfil por medio de la cámara o la galería de imágenes.
 - Visualización de recetas filtradas por categorías.
-- El usuario puede guardar recetas en su lista de favoritos o crear listas personalizadas.
-- El usuario puede crear, actualizar y eliminar sus propias recetas.
-- El usuario puede dejar reseñas en las recetas, compartiendo opcionalmente una foto.
+- Los usuarios pueden guardar recetas en su lista de favoritos o crear listas personalizadas.
+- Los usuarios pueden crear, actualizar y eliminar sus propias recetas.
+- Los usuarios pueden dejar reseñas en las recetas, compartiendo opcionalmente una foto.
 
 ## Created with:
 
